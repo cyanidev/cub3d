@@ -17,17 +17,11 @@ static void	north_south(t_player_pos *player_pos)
 {
 	if (player_pos->dir == 'S')
 	{
-		player_pos->x = 0;
-		player_pos->y = 1;
-		player_pos->plane_x = -0.66;
-		player_pos->plane_y = 0;
+		player_pos->angle = 90;
 	}
 	else if (player_pos->dir == 'N')
 	{
-		player_pos->x = 0;
-		player_pos->y = -1;
-		player_pos->plane_x = 0.66;
-		player_pos->plane_y = 0;
+		player_pos->angle = 270;
 	}
 	else
 		return ;
@@ -37,17 +31,11 @@ static void	east_west(t_player_pos *player_pos)
 {
 	if (player_pos->dir == 'W')
 	{
-		player_pos->x = -1;
-		player_pos->y = 0;
-		player_pos->plane_x = 0;
-		player_pos->plane_y = -0.66;
+		player_pos->angle = 180;
 	}
 	else if (player_pos->dir == 'E')
 	{
-		player_pos->x = 1;
-		player_pos->y = 0;
-		player_pos->plane_x = 0;
-		player_pos->plane_y = 0.66;
+		player_pos->angle = 0;
 	}
 	else
 		return ;

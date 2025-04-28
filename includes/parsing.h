@@ -36,6 +36,7 @@ typedef struct s_player_pos
 	char	dir;
 	double	plane_x;
 	double	plane_y;
+	float	angle;
 }	t_player_pos;
 
 typedef struct s_map_info

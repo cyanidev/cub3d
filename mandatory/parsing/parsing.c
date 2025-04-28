@@ -100,7 +100,7 @@ int	parsing(t_cubp *cubp, char **argv)
 		return (0);
 	}
 	//needs to be fixed
-	//player_dir(cubp);
+	player_dir(cubp);
 
 	return (1);
 }

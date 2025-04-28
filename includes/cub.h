@@ -82,6 +82,7 @@ typedef struct s_cub
 
 	float				parsing_px;
 	float				parsing_py;
+	float				player_angle;
 
 
 	float				ambient_occlusion;

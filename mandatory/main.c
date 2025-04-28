@@ -6,7 +6,7 @@
 /*   By: Andie <Andie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 21:15:29 by afelicia          #+#    #+#             */
-/*   Updated: 2025/04/23 23:03:44 by Andie            ###   ########.fr       */
+/*   Updated: 2025/04/28 22:13:34 by afelicia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,6 @@ int	main(int argc, char **argv)
 	cub->map_editor = map_editor();
 	cub->game_mode = GAME;
 	cub->player = new_player(NULL);
-	cub->player->camera->angle = 90;
 	calculate_deltas(cub->player, &cub->p_deltas, &cub->fov1_deltas, &cub->fov2_deltas);
 	// make screen limits
 	cub->fov1_screen.pz = (float)(((float)(cub->main_window->res.width + 2) / 4.0f)) / cub->fov1_deltas.px;
@@ -117,18 +116,13 @@ int	main(int argc, char **argv)
 
 	cub->player->camera->pos.pz = cub->player->camera->fov * cub->height_multiplier;//0.0576f;
 	//cub->player->camera->pos.pz = 17;//0.0576f;
-	update_player_angle(cub->player, &cub->p_deltas, &cub->fov1_deltas, &cub->fov2_deltas, 270);
+	printf("anlgeeee: %f\n", cub->player_angle);
+	update_player_angle(cub->player, &cub->p_deltas, &cub->fov1_deltas, &cub->fov2_deltas, cub->player_angle);
 
 	
 	cub->ambient_occlusion = 0.875;
 	cub->near_plane = 0.0f;
 	cub->max_dist = 1.684f;
-	//cub->floor = color(RED);
-	//cub->ceiling = color(GREEN);
-	printf("east texture: %s\n", cub->east_path);
-	printf("east texture: %s\n", cub->west_path);
-	printf("north texture: %s\n", cub->north_path);
-	printf("south texture: %s\n", cub->south_path);
 
 	cub->game_mode = GAME;
 	// here goes the real angle and the real camera

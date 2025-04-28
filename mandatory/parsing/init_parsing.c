@@ -20,6 +20,7 @@ void	init_player(t_player_pos *player_pos)
 	player_pos->y = 0.0;
 	player_pos->plane_x = 0.0;
 	player_pos->plane_y = 0.0;
+	player_pos->angle = 0.0;
 }
 
 void	init_info(t_map_info *map_info)
@@ -60,6 +61,7 @@ static void	fill_structure(t_cub *cub, t_cubp *cubp)
 	cub->ceiling = color_from_rgb(cubp->ceiling[0], cubp->ceiling[1], cubp->ceiling[2]);
 	cub->parsing_px = cubp->player_pos.plane_x;
 	cub->parsing_py = cubp->player_pos.plane_y;
+	cub->player_angle = cubp->player_pos.angle;
 	//free_resources(cubp);
 }
 
@@ -67,13 +69,10 @@ int	parsingmap(char **argv, t_cub *cub)
 {
 	t_cubp	cubp;
 
-	printf("%s\n", argv[1]);
+	printf("nombre del mapa:%s\n", argv[1]);
 	init_parsing_info(&cubp);
-	printf("c");
 	if (parsing(&cubp, argv) == 0)
 		return (0);
-	printf("x");
 	fill_structure(cub, &cubp);
 	return (1);
 }
-//////AQUIESTA^^^
