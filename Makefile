@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: samusanc <samusanc@student.42madrid.com>   +#+  +:+       +#+         #
+#    By: acaceres <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/08/05 01:22:18 by samusanc          #+#    #+#              #
-#    Updated: 2024/08/10 23:02:21 by samusanc         ###   ########.fr        #
+#    Created: 2025/05/08 10:52:32 by acaceres          #+#    #+#              #
+#    Updated: 2025/05/08 11:19:50 by acaceres         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,7 @@ INC			+= -I./T-Engine/includes/
 INC			+= -I./ft_math/
 INC			+= -I./ft_math/includes/
 INC			+= -I/usr/include -O3 -I./minilibx-linux/ 
+INC			+= -I./mandatory/includes/
 
 #============================== LIBRARIES ===============================#
 
