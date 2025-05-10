@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/18 21:27:11 by andie             #+#    #+#             */
-/*   Updated: 2024/08/19 03:13:40 by marvin           ###   ########.fr       */
+/*   Updated: 2025/05/10 14:15:48 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,10 +85,12 @@ int	check_map(t_cubp *cubp, char **map)
 		return (print_msg("Map is too small.", 0));
 	if (check_player(cubp, map) == 0)
 		return (print_msg("Player not found or more than one.", 0));
-	printf("player positionnn: %f %f\n", cubp->player_pos.plane_x, cubp->player_pos.plane_y);
+	printf("player positionnn: %f %f\n",
+		cubp->player_pos.plane_x, cubp->player_pos.plane_y);
 	if (replace_player_with_floor(cubp, map) == 0)
 		return (print_msg("Player not found or more than one.", 0));
-	printf("player positionnn after replacing it with floor: %f %f\n", cubp->player_pos.plane_x, cubp->player_pos.plane_y);
+	printf("player positionnn after replacing it with floor: %f %f\n",
+		cubp->player_pos.plane_x, cubp->player_pos.plane_y);
 	if (map_end(cubp) == 0)
 		return (print_msg("Invalid map.", 0));
 	return (1);
