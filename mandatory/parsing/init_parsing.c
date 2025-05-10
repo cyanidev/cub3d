@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 14:03:11 by andie             #+#    #+#             */
-/*   Updated: 2024/08/19 17:19:18 by marvin           ###   ########.fr       */
+/*   Updated: 2025/05/10 17:51:14 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,12 +57,13 @@ static void	fill_structure(t_cub *cub, t_cubp *cubp)
 	cub->east_path = cubp->east_path;
 	cub->west_path = cubp->west_path;
 	cub->map = cubp->map;
-	cub->floor = color_from_rgb(cubp->floor[0], cubp->floor[1], cubp->floor[2]);
-	cub->ceiling = color_from_rgb(cubp->ceiling[0], cubp->ceiling[1], cubp->ceiling[2]);
+	cub->floor = color_from_rgb(cubp->floor[0],
+			cubp->floor[1], cubp->floor[2]);
+	cub->ceiling = color_from_rgb(cubp->ceiling[0],
+			cubp->ceiling[1], cubp->ceiling[2]);
 	cub->parsing_px = cubp->player_pos.plane_x;
 	cub->parsing_py = cubp->player_pos.plane_y;
 	cub->player_angle = cubp->player_pos.angle;
-	//free_resources(cubp);
 }
 
 int	parsingmap(char **argv, t_cub *cub)
