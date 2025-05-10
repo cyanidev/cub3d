@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/17 15:46:23 by andie             #+#    #+#             */
-/*   Updated: 2024/08/18 00:24:53 by marvin           ###   ########.fr       */
+/*   Updated: 2025/05/10 17:54:02 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,10 +77,14 @@ static int	map_alloc_width(t_map_info *map_info, char **map, int i)
 	return (1);
 }
 
+/* TODO:
+	* line 88: this need to be changed
+	cubp->map = malloc(sizeof(char *) * (cubp->map_info.height + 1));
+*/
+
 int	map_alloc_height(t_cubp *cubp, char **file, int i)
 {
 	cubp->map_info.height = map_lines(cubp, file, i);
-	// this need to be changed
 	cubp->map = malloc(sizeof(char *) * (cubp->map_info.height + 1));
 	if (cubp->map == NULL)
 		return (print_msg("Malloc failed.", 0));
