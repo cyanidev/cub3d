@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 20:23:09 by andie             #+#    #+#             */
-/*   Updated: 2024/08/15 20:27:24 by marvin           ###   ########.fr       */
+/*   Updated: 2025/05/10 14:10:55 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,12 @@
 must exit properly and return "Error\n" followed by an explicit error message
 of your choice"✅*/
 
+/* TODO:
+	ft_putstr_fd("Error\n", 2); at line 26: need to be fixed.
+*/
+
 int	print_msg(char *msg, int ret)
 {
-	// need to be fixed
 	ft_putstr_fd("Error\n", 2);
 	if (msg)
 	{
