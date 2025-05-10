@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parse_textures.c                                   :+:      :+:    :+:   */
+/*   fill_textures.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 00:59:44 by andie             #+#    #+#             */
-/*   Updated: 2024/08/16 02:52:51 by marvin           ###   ########.fr       */
+/*   Updated: 2025/05/10 17:49:30 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ char	*texture_path(char *line, int i)
 	return (path);
 }
 
-int ft_isprint_no_ws(int c)
+int	ft_isprint_no_ws(int c)
 {
 	if (c >= 33 && c < 127)
 		return (1);
