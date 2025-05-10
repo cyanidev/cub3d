@@ -6,7 +6,7 @@
 /*   By: acaceres <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 11:16:43 by acaceres          #+#    #+#             */
-/*   Updated: 2025/05/08 12:01:00 by acaceres         ###   ########.fr       */
+/*   Updated: 2025/05/10 13:47:07 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 typedef struct s_helper
 {
-	int	x;
-	int	y;
+	int		x;
+	int		y;
 	float	x_prop;
 	float	y_prop;
 	float	aspect_ratio;

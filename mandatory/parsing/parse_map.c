@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   file_info.c                                        :+:      :+:    :+:   */
+/*   parse_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 00:35:37 by andie             #+#    #+#             */
-/*   Updated: 2024/08/21 18:35:46 by marvin           ###   ########.fr       */
+/*   Updated: 2025/05/10 13:56:40 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,8 @@ static void	fill_tab(int row, int column, int i, t_cubp *cubp)
 	line = get_next_line(cubp->map_info.fd);
 	while (line != NULL)
 	{
-		cubp->map_info.file[row] = ft_calloc((ft_strlen(line) + 1), sizeof(char));
+		cubp->map_info.file[row] = ft_calloc((ft_strlen(line) + 1),
+				sizeof(char));
 		if (cubp->map_info.file[row] == NULL)
 		{
 			print_msg("Malloc failed.", 1);
@@ -50,9 +51,8 @@ static void	fill_tab(int row, int column, int i, t_cubp *cubp)
 		}
 		while (line[i] != '\0')
 		{
-			cubp->map_info.file[row][column] = line[i];
+			cubp->map_info.file[row][column] = line[i++];
 			column++;
-			i++;
 		}
 		cubp->map_info.file[row++][column] = '\0';
 		column = 0;
