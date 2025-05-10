@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 00:41:51 by samusanc          #+#    #+#             */
-/*   Updated: 2024/08/19 17:12:51 by marvin           ###   ########.fr       */
+/*   Updated: 2025/05/10 14:08:37 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,10 +74,16 @@ static void	fill_structure(t_cub *cub, t_cubp *cubp)
 	cub->east_path = cubp->east_path;
 	cub->west_path = cubp->west_path;
 	cub->map = cubp->map;
-	cub->floor = color_from_rgb(cubp->floor[0], cubp->floor[1], cubp->floor[2]);
-	cub->ceiling = color_from_rgb(cubp->ceiling[0], cubp->ceiling[1], cubp->ceiling[2]);
+	cub->floor = color_from_rgb(cubp->floor[0],
+			cubp->floor[1], cubp->floor[2]);
+	cub->ceiling = color_from_rgb(cubp->ceiling[0],
+			cubp->ceiling[1], cubp->ceiling[2]);
 	free_parsing(cubp);
 }
+
+/* TODO:
+	player_dir(cubp); -> at line 106: need to be fixed
+*/
 
 int	parsing(t_cubp *cubp, char **argv)
 {
@@ -99,8 +105,6 @@ int	parsing(t_cubp *cubp, char **argv)
 		free_parsing(cubp);
 		return (0);
 	}
-	//needs to be fixed
 	player_dir(cubp);
-
 	return (1);
 }
