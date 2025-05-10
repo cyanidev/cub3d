@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 20:23:09 by andie             #+#    #+#             */
-/*   Updated: 2025/05/10 14:10:55 by acaceres         ###   ########.fr       */
+/*   Updated: 2025/05/10 17:55:08 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,4 @@ int	print_msg(char *msg, int ret)
 		ft_putstr_fd("\n", 2);
 	}
 	return (ret);
-
 }
