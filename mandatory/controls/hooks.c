@@ -53,18 +53,18 @@ t_win	*new_window(void *mlx, t_resolution res, char *title)
 	return (result);
 }
 
-void	start_hooks_in_window (t_win *win, t_win_hooks win_hooks, void *data)
+void	start_hooks_in_window(t_win *win, t_win_hooks win_hooks, void *data)
 {
 	if (!win)
 		return ;
 	if (win_hooks.mouse.option1)
-		mlx_hook(win->mlx_win, 4, (1L<<2), win_hooks.mouse.option1, data);
+		mlx_hook(win->mlx_win, 4, (1L << 2), win_hooks.mouse.option1, data);
 	if (win_hooks.mouse.option2)
-		mlx_hook(win->mlx_win, 5, (1L<<3), win_hooks.mouse.option2, data);
+		mlx_hook(win->mlx_win, 5, (1L << 3), win_hooks.mouse.option2, data);
 	if (win_hooks.key.option1)
-		mlx_hook(win->mlx_win, 2, (1L<<0), win_hooks.key.option1, data);
+		mlx_hook(win->mlx_win, 2, (1L << 0), win_hooks.key.option1, data);
 	if (win_hooks.focus.option1)
-		mlx_hook(win->mlx_win, 9, (1L<<21), win_hooks.focus.option1, data);
+		mlx_hook(win->mlx_win, 9, (1L << 21), win_hooks.focus.option1, data);
 	if (win_hooks.focus.option2)
-		mlx_hook(win->mlx_win, 10, (1L<<21), win_hooks.focus.option2, data);
+		mlx_hook(win->mlx_win, 10, (1L << 21), win_hooks.focus.option2, data);
 }
