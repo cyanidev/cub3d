@@ -1,1 +1,6 @@
 */**/*.swp
+.mandatory
+.mlx
+.submod
+cub3d
+objects/

@@ -32,6 +32,25 @@ typedef	struct s_action
 	void	(*del)();
 }				t_action;
 
+typedef struct s_hline
+{
+	int	x0;
+	int	y0;
+	int	x1;
+}		t_hline;
+
+typedef struct s_dcircle
+{
+	int	cx;
+	int	cy;
+	int	error;
+	int	x;
+	int	y;
+	int	lasty;
+	t_img	*img;
+	t_color	color;
+}		t_dcircle;
+
 
 //ERRORS
 int	i_g_s_error(t_cub *cub);
