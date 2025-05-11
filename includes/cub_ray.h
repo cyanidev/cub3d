@@ -21,4 +21,25 @@ typedef	struct s_cub_ray
 	int		(*del)();
 }				t_cub_ray;
 
+typedef struct s_cubcastray
+{
+	t_cub_ray	*result;
+	t_point		player;
+	t_point		tmp_ray1;
+	t_point		tmp_ray2;
+	t_point		ray;
+	float		hypo;
+	float		screen_dist;
+	float		delta_x;
+	float		delta_y;
+	int			limits;
+}		t_ccr; // type cube cast ray
+
+
+
+void	ray_angle_zero_to_nineth(t_cub *cub, t_ccr *ccr);
+void	ray_angle_two_seven_three_sixth(t_cub *cub, t_ccr *ccr);
+void	ray_angle_nineth_onehundred(t_cub *cub, t_ccr *ccr);
+void	ray_angle_onehundred_twohundred_seventh(t_cub *cub, t_ccr *ccr);
+
 # endif
