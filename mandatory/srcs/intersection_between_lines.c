@@ -6,7 +6,7 @@
 /*   By: Andie <Andie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 19:41:44 by Andie             #+#    #+#             */
-/*   Updated: 2025/03/08 21:31:58 by Andie            ###   ########.fr       */
+/*   Updated: 2025/05/17 13:40:45 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ t_point	get_intersection_between_lines(t_line line1, t_line line2, int *error)
 	if (div < EPS || div == 0)
 	{
 		*error = 1;
-		return(point(0, 0));
+		return (point(0, 0));
 	}
 	d = point(det(line1.a, line1.b), det(line2.a, line2.b));
 	x = det(d, xdiff) / div;
