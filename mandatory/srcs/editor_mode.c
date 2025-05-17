@@ -6,7 +6,7 @@
 /*   By: Andie <Andie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 21:21:13 by Andie             #+#    #+#             */
-/*   Updated: 2025/03/08 21:23:52 by Andie            ###   ########.fr       */
+/*   Updated: 2025/05/17 13:28:34 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ int	editor_mode(t_cub *cub)
 				cub->main_window);
 	clean_pixels(cub->editor_img);
 	mlx_mouse_show(cub->mlx, cub->main_window->mlx_win);
-	draw_grid(cub->map_editor, cub->editor_img, color_from_rgb(100, 100, 100));
-	//draw_fov_intersection(cub, cub->map_editor, color_from_rgb(255, 0, 255), cub->editor_img);
+	draw_grid(cub->map_editor, cub->editor_img,
+		color_from_rgb(100, 100, 100));
 	draw_map_walls(cub, cub->map_editor, cub->editor_img);
 	ray_casting(cub, cub->map_editor);
 	draw_player(cub, cub->map_editor, color_from_rgb(255, 255, 0),
