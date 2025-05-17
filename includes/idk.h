@@ -71,7 +71,7 @@ void	start_hooks_in_window (t_win *win, t_win_hooks win_hooks, void *data);
 //DRAW STUFF
 void	draw_circle(int radius, t_img *img, t_point center);
 int	draw_player(t_cub *cub, t_map_editor map_editor, t_color col, t_img *img);
-void draw_sky_and_ground(int wall_top, int wall_bottom, t_cub *cub, size_t wall_n, float lerp, int wall_height, t_cub_ray *ray, float angle, float max_dist);
+void	draw_sky_and_ground(t_cub *cub, int wall_top, size_t wall_n, int wall_bottom);
 int	draw_grid(t_map_editor editor, t_img *img, t_color color);
 int	draw_map_walls(t_cub *cub, t_map_editor editor, t_img *img);
 int	draw_square(size_t length, t_img *img, t_point start);

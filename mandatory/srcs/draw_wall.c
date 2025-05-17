@@ -6,7 +6,7 @@
 /*   By: Andie <Andie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 19:40:30 by Andie             #+#    #+#             */
-/*   Updated: 2025/03/08 19:40:31 by Andie            ###   ########.fr       */
+/*   Updated: 2025/05/17 13:05:33 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void draw_wall(float max_dist, int wall_height, t_cub *cub, size_t wall_n, t_cub
 	color_mix_lerp *= 4;
 	if (color_mix_lerp > 1)
 		color_mix_lerp = 1;
-	draw_sky_and_ground(wall_top, wall_bottom, cub, wall_n, color_mix_lerp, wall_height, ray, angle, max_dist);
+	draw_sky_and_ground(cub, wall_top, wall_n, wall_bottom);
 	y = wall_top;
 	real_pos_x = get_real_pos_x(ray->real_x, ray->real_y, ray->side);
 	mirror_helper = 0;

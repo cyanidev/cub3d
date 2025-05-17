@@ -6,7 +6,7 @@
 /*   By: Andie <Andie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 19:40:18 by Andie             #+#    #+#             */
-/*   Updated: 2025/03/08 19:40:19 by Andie            ###   ########.fr       */
+/*   Updated: 2025/05/17 13:05:31 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 #include "cub.h"
 #include "idk.h"
 
-void draw_sky_and_ground(int wall_top, int wall_bottom, t_cub *cub, size_t wall_n, float lerp, int wall_height, t_cub_ray *ray, float angle, float max_dist)
+void	draw_sky_and_ground(t_cub *cub, int wall_top,
+		size_t wall_n, int wall_bottom)
 {
 	int		i;
 	t_point	pixel;
