@@ -6,7 +6,7 @@
 /*   By: Andie <Andie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 19:41:00 by Andie             #+#    #+#             */
-/*   Updated: 2025/03/08 21:25:54 by Andie            ###   ########.fr       */
+/*   Updated: 2025/05/17 13:36:24 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 #include "idk.h"
 #include "engine.h"
 #include <time.h>
-
-clock_t	g_start_t;
 
 int	frame(void *p_cub)
 {

@@ -9,6 +9,8 @@
 
 #define EPS 1e-4
 
+clock_t	g_start_t;
+
 typedef enum e_event_type
 {
 	mouse,
