@@ -9,7 +9,7 @@
 
 #define EPS 1e-4
 
-clock_t	g_start_t;
+extern clock_t	g_start_t;
 
 typedef enum e_event_type
 {
@@ -94,6 +94,19 @@ t_point	mouse_pos_relative(t_cub *cub, t_win *win);
 //KEY EVENTS
 int	key_press(int key, void *param);
 int	key_press_game(int key, t_cub *cub);
+
+// KEY EVENTS CALCS
+int	key_press_editor(int key, t_cub *cub);
+void	k_e(t_cub *cub);
+void	k_q(t_cub *cub);
+void	k_0(t_cub *cub);
+void	k_9(t_cub *cub);
+
+// KEY EVENTS UTILS
+void	k_w(t_cub *cub);
+void	k_s(t_cub *cub);
+void	k_a(t_cub *cub);
+void	k_d(t_cub *cub);
 
 //FRAME UPDATE
 int	frame(void *p_cub);
