@@ -6,7 +6,7 @@
 /*   By: Andie <Andie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 19:42:32 by Andie             #+#    #+#             */
-/*   Updated: 2025/03/08 22:03:10 by Andie            ###   ########.fr       */
+/*   Updated: 2025/05/17 15:41:57 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 #include "cub_ray.h"
 #include "engine_obj.h"
 
+//srry implement latter or maybe never :p
 t_engine_obj	*get_component(t_engine_obj *parent, char *name)
 {
-	//srry implement latter or maybe never :p
 	return (NULL);
 }
 
@@ -31,7 +31,7 @@ t_transform	transform(void)
 	return (result);
 }
 
-void			del_obj_engine_obj(t_engine_obj *obj)
+void	del_obj_engine_obj(t_engine_obj *obj)
 {
 	if (obj)
 		list_clear(&obj->transform.components);
@@ -47,7 +47,6 @@ t_engine_obj	*new_obj_engine_obj(void *engine)
 	if (!result)
 		return (NULL);
 	ft_bzero(result, sizeof(t_engine_obj));
-
 	result->engine = engine;
 	result->transform = transform();
 	result->transform.parent = engine;
