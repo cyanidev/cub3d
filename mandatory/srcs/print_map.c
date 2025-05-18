@@ -6,7 +6,7 @@
 /*   By: Andie <Andie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 19:42:57 by Andie             #+#    #+#             */
-/*   Updated: 2025/03/08 22:06:24 by Andie            ###   ########.fr       */
+/*   Updated: 2025/05/18 21:15:36 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,27 +43,25 @@ int	draw_map_walls(t_cub *cub, t_map_editor editor, t_img *img)
 	size_t	x;
 	size_t	y;
 
-	y = 0;
-	printf("\n\n the map...\n");
+	y = -1;
 	print_map_cub(cub);
-	printf("\n\n the map...\n");
-	while (cub->map[y])
+	while (cub->map[++y])
 	{
 		x = 0;
 		while (cub->map[y][x])
 		{
 			if (cub->map[y][x] == '1')
 			{
-				tmp = remap_point(point(x, y), 
-					editor.screen_zoom, editor.screen_center, 
-					img->resolution);
+				tmp = remap_point(point(x, y),
+						editor.screen_zoom,
+						editor.screen_center,
+						img->resolution);
 				tmp.color = color(WHITE);
 				put_pixel(img, tmp);
 				draw_square(editor.screen_zoom + 1, img, tmp);
 			}
 			x++;
 		}
-		y++;
 	}
 	return (1);
 }
