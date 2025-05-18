@@ -6,7 +6,7 @@
 /*   By: Andie <Andie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 19:42:48 by Andie             #+#    #+#             */
-/*   Updated: 2025/03/08 22:04:53 by Andie            ###   ########.fr       */
+/*   Updated: 2025/05/18 20:50:55 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,10 @@ int	update_player_angle_from_angle(t_cub *cub, float angle)
 	cub->fov2_deltas.py = sin(deg2_rad(angle + fov));
 }
 
-int	update_player_angle(t_player *player, t_point *deltas, t_point *fov1, t_point *fov2, float angle)
+int	update_player_angle(t_player *player, t_point *deltas, t_angle *angle)
 {
-	if (player)
-	{
-		player->camera->angle = fix_angle(angle);
-		calculate_deltas(player, deltas, fov1, fov2);
-	}
+	if (!player)
+		return ;
+	player->camera->angle = fix_angle(angle->angle);
+	calculate_deltas(player, deltas, angle->fov1, angle->fov2);
 }

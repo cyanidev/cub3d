@@ -11,6 +11,14 @@
 
 extern clock_t	g_start_t;
 
+// player angle struct
+typedef struct s_angle
+{
+	t_point	*fov1;
+	t_point	*fov2;
+	float	angle;
+}		t_angle;
+
 typedef enum e_event_type
 {
 	mouse,
@@ -120,7 +128,9 @@ t_player *new_player(t_camera *camera);
 
 //MATH
 int calculate_deltas(t_player *player, t_point *deltas, t_point *fov1, t_point *fov2);
-int	update_player_angle(t_player *player, t_point *deltas, t_point *fov1, t_point *fov2, float angle);
+//int	update_player_angle(t_player *player, t_point *deltas, t_point *fov1, t_point *fov2, float angle);
+int	update_player_angle(t_player *player, t_point *deltas, t_angle *angle);
+
 int	update_player_angle_from_angle(t_cub *cub, float angle);//prolynot
 float	deg2_rad(float angle);
 float	get_dist_delt(float delta_y, float y, float start_y);

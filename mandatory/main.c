@@ -6,7 +6,7 @@
 /*   By: Andie <Andie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 21:15:29 by afelicia          #+#    #+#             */
-/*   Updated: 2025/04/28 22:13:34 by afelicia         ###   ########.fr       */
+/*   Updated: 2025/05/18 21:00:32 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ t_map_editor	map_editor()
 int	main(int argc, char **argv)
 {
 	t_cub	*cub;
+	t_angle	angle;
 
 	if (argc != 2)
 	{
@@ -117,8 +118,10 @@ int	main(int argc, char **argv)
 	cub->player->camera->pos.pz = cub->player->camera->fov * cub->height_multiplier;//0.0576f;
 	//cub->player->camera->pos.pz = 17;//0.0576f;
 	printf("anlgeeee: %f\n", cub->player_angle);
-	update_player_angle(cub->player, &cub->p_deltas, &cub->fov1_deltas, &cub->fov2_deltas, cub->player_angle);
-
+	angle.fov1 = &cub->fov1_deltas;
+	angle.fov2 = &cub->fov2_deltas;
+	angle.angle = cub->player_angle;
+	update_player_angle(cub->player, &cub->p_deltas, &angle);
 	
 	cub->ambient_occlusion = 0.875;
 	cub->near_plane = 0.0f;

@@ -6,7 +6,7 @@
 /*   By: acaceres <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 15:36:18 by acaceres          #+#    #+#             */
-/*   Updated: 2025/05/17 15:37:12 by acaceres         ###   ########.fr       */
+/*   Updated: 2025/05/18 20:58:52 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,13 @@ int	key_press_editor(int key, t_cub *cub)
 
 void	k_e(t_cub *cub)
 {
+	t_angle	angle;
+
+	angle.fov1 = &cub->fov1_deltas;
+	angle.fov2 = &cub->fov2_deltas;
+	angle.angle = cub->player->camera->angle + 100.0 * cub->delta_time;
 	update_player_angle(cub->player,
-		&cub->p_deltas, &cub->fov1_deltas, &cub->fov2_deltas,
-		cub->player->camera->angle + 100.0 * cub->delta_time);
+		&cub->p_deltas, &angle);
 	cub->fov1_screen.px = cub->player->camera->pos.px
 		* cub->fov1_deltas.px * cub->fov1_screen.pz;
 	cub->fov1_screen.py = cub->player->camera->pos.py
@@ -44,9 +48,13 @@ void	k_e(t_cub *cub)
 
 void	k_q(t_cub *cub)
 {
+	t_angle	angle;
+
+	angle.fov1 = &cub->fov1_deltas;
+	angle.fov2 = &cub->fov2_deltas;
+	angle.angle = cub->player->camera->angle - 100.0 * cub->delta_time;
 	update_player_angle(cub->player, &cub->p_deltas,
-		&cub->fov1_deltas, &cub->fov2_deltas,
-		cub->player->camera->angle - 100.0 * cub->delta_time);
+		&angle);
 	cub->fov1_screen.px = cub->player->camera->pos.px
 		* cub->fov1_deltas.px * cub->fov1_screen.pz;
 	cub->fov1_screen.py = cub->player->camera->pos.py
@@ -59,19 +67,26 @@ void	k_q(t_cub *cub)
 
 void	k_0(t_cub *cub)
 {
+	t_angle	angle;
+
+	angle.fov1 = &cub->fov1_deltas;
+	angle.fov2 = &cub->fov2_deltas;
+	angle.angle = cub->player->camera->angle;
 	cub->player->camera->fov -= 1.0f;
 	cub->player->camera->pos.pz = cub->player->camera->fov
 		* cub->height_multiplier;
-	update_player_angle(cub->player, &cub->p_deltas, &cub->fov1_deltas,
-		&cub->fov2_deltas, cub->player->camera->angle);
+	update_player_angle(cub->player, &cub->p_deltas, &angle);
 }
 
 void	k_9(t_cub *cub)
 {
+	t_angle	angle;
+
+	angle.fov1 = &cub->fov1_deltas;
+	angle.fov2 = &cub->fov2_deltas;
+	angle.angle = cub->player->camera->angle;
 	cub->player->camera->fov += 1.0f;
 	cub->player->camera->pos.pz = cub->player->camera->fov
 		* cub->height_multiplier;
-	update_player_angle(cub->player, &cub->p_deltas,
-		&cub->fov1_deltas, &cub->fov2_deltas,
-		cub->player->camera->angle);
+	update_player_angle(cub->player, &cub->p_deltas, &angle);
 }
