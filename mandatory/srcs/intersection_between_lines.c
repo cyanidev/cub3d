@@ -6,7 +6,7 @@
 /*   By: Andie <Andie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 19:41:44 by Andie             #+#    #+#             */
-/*   Updated: 2025/05/20 19:20:34 by acaceres         ###   ########.fr       */
+/*   Updated: 2025/05/20 19:33:00 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,13 +47,13 @@ t_point	get_intersection_between_lines(t_line line1, t_line line2, int *error)
 	xdiff = point(line1.a.px - line1.b.px, line2.a.px - line2.b.px);
 	ydiff = point(line1.a.py - line1.b.py, line2.a.py - line2.b.py);
 	inter.div = det(xdiff, ydiff);
-	if (inter.div < EPS || div == 0)
+	if (inter.div < EPS || inter.div == 0)
 	{
 		*error = 1;
 		return (point(0, 0));
 	}
 	d = point(det(line1.a, line1.b), det(line2.a, line2.b));
-	inter.x = det(d, xdiff) / div;
-	inter.y = det(d, ydiff) / div;
-	return (point(x, y));
+	inter.x = det(d, xdiff) / inter.div;
+	inter.y = det(d, ydiff) / inter.div;
+	return (point(inter.x, inter.y));
 }
