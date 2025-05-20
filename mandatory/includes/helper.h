@@ -6,7 +6,7 @@
 /*   By: acaceres <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 11:16:43 by acaceres          #+#    #+#             */
-/*   Updated: 2025/05/20 16:46:28 by acaceres         ###   ########.fr       */
+/*   Updated: 2025/05/20 19:20:21 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,13 @@
 # define HELPER_H
 
 # include <stddef.h>
+
+typedef struct s_intersec
+{
+	float	div;
+	float	x;
+	float	y;
+}		t_intersec;
 
 typedef struct s_helper
 {

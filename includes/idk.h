@@ -128,7 +128,6 @@ t_player *new_player(t_camera *camera);
 
 //MATH
 int calculate_deltas(t_player *player, t_point *deltas, t_point *fov1, t_point *fov2);
-//int	update_player_angle(t_player *player, t_point *deltas, t_point *fov1, t_point *fov2, float angle);
 int	update_player_angle(t_player *player, t_point *deltas, t_angle *angle);
 
 int	update_player_angle_from_angle(t_cub *cub, float angle);//prolynot
