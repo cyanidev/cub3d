@@ -6,7 +6,7 @@
 /*   By: Andie <Andie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 19:40:30 by Andie             #+#    #+#             */
-/*   Updated: 2025/05/22 17:58:07 by acaceres         ###   ########.fr       */
+/*   Updated: 2025/05/22 18:11:01 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,21 @@ typedef struct s_rwall
 	float		wall_height;
 }		t_rwall;
 
+static void	set_rwall_color(t_point *pixel, t_rwall *rwall,
+			t_img *texture, t_drwall *dw)
+{
+	pixel->color = color(WHITE);
+	pixel->color = color_from_hex(get_pixel_img(texture,
+				dw->real_pos_x
+				* (float)texture->resolution.width,
+				((float)dw->real_pos / rwall->wall_height)
+				* (float)texture->resolution.height));
+	if (rwall->ray->side == 1 || rwall->ray->side == 3)
+		pixel->color = color_mix(pixel->color, color(BLACK), 0.75f);
+	pixel->color = color_mix(pixel->color,
+			color(BLACK), dw->color_mix_lerp);
+}
+
 static void
 	render_wall(t_rwall *rwall, t_drwall *dw, t_point *pixel)
 {
@@ -56,15 +71,7 @@ static void
 		dw->real_pos = dw->y - dw->min_top;
 		pixel->px = rwall->wall_n;
 		pixel->py = (float)dw->y;
-		pixel->color	= color(WHITE);
-		pixel->color = color_from_hex(get_pixel_img(texture,
-				dw->real_pos_x
-					* (float)texture->resolution.width,
-				((float)dw->real_pos / rwall->wall_height)
-					* (float)texture->resolution.height));
-		if (rwall->ray->side == 1 || rwall->ray->side == 3)
-			pixel->color = color_mix(pixel->color, color(BLACK), 0.75f);
-		pixel->color = color_mix(pixel->color, color(BLACK), dw->color_mix_lerp);
+		set_rwall_color(pixel, rwall, texture, dw);
 		rwall->tmp_color = pixel->color;
 		put_pixel(rwall->cub->game_img, *pixel);
 		dw->y++;
@@ -84,7 +91,7 @@ void	draw_wall(float max_dist, int wall_height, t_cub *cub, size_t wall_n, t_cub
 	dw.wall_bottom = dw.wall_top + wall_height;
 	if (dw.wall_top < 0)
 		dw.wall_top = 0;
-	if (dw.wall_bottom >= dw.res_height) 
+	if (dw.wall_bottom >= dw.res_height)
 		dw.wall_bottom = (int)(dw.res_height - 1.0f);
 	dw.color_mix_lerp *= 4;
 	if (dw.color_mix_lerp > 1)
