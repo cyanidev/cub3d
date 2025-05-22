@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 00:41:51 by samusanc          #+#    #+#             */
-/*   Updated: 2025/05/10 14:08:37 by acaceres         ###   ########.fr       */
+/*   Updated: 2025/05/22 19:41:56 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,19 +67,19 @@ int	fill_info(t_cubp *cubp, char **map)
 	return (1);
 }
 
-static void	fill_structure(t_cub *cub, t_cubp *cubp)
-{
-	cub->north_path = cubp->north_path;
-	cub->south_path = cubp->south_path;
-	cub->east_path = cubp->east_path;
-	cub->west_path = cubp->west_path;
-	cub->map = cubp->map;
-	cub->floor = color_from_rgb(cubp->floor[0],
-			cubp->floor[1], cubp->floor[2]);
-	cub->ceiling = color_from_rgb(cubp->ceiling[0],
-			cubp->ceiling[1], cubp->ceiling[2]);
-	free_parsing(cubp);
-}
+//static void	fill_structure(t_cub *cub, t_cubp *cubp)
+//{
+//	cub->north_path = cubp->north_path;
+//	cub->south_path = cubp->south_path;
+//	cub->east_path = cubp->east_path;
+//	cub->west_path = cubp->west_path;
+//	cub->map = cubp->map;
+//	cub->floor = color_from_rgb(cubp->floor[0],
+//			cubp->floor[1], cubp->floor[2]);
+//	cub->ceiling = color_from_rgb(cubp->ceiling[0],
+//			cubp->ceiling[1], cubp->ceiling[2]);
+//	free_parsing(cubp);
+//}
 
 /* TODO:
 	player_dir(cubp); -> at line 106: need to be fixed

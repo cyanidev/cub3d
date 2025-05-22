@@ -9,8 +9,6 @@
 
 #define EPS 1e-4
 
-extern clock_t	g_start_t;
-
 // player angle struct
 typedef struct s_angle
 {
@@ -79,7 +77,7 @@ int	i_g_s_error(t_cub *cub);
 //INIT
 int	open_wall_tex(t_cub *cub);
 //int	init_gen_struct(t_cub *cub, char *map_path, char **argv);
-t_cub	*ft_constructor(char *map_path, char **argv);
+t_cub	*ft_constructor(char **argv);
 t_img	*open_img(void *mlx, char *path);
 
 
@@ -165,7 +163,7 @@ float	get_real_pos_x(float x, float y, int side);
 //pixel
 int	get_pixel_img(t_img *img, int x, int y);
 int	clean_pixels(t_img *img);
-int	ray_casting(t_cub *cub, t_map_editor minimap);
+int	ray_casting(t_cub *cub);
 int	game_mode(t_cub *cub);
 
 //free
@@ -178,7 +176,7 @@ int	render_normal_mode(t_cub *cub);
 
 float	fix_angle(float angle);
 
-t_cub_ray	*cub_cast_ray(t_cub *cub, float angle, float distance, t_map_editor minimap);
+t_cub_ray	*cub_cast_ray(t_cub *cub, float angle, float distance);
 
 
 # endif

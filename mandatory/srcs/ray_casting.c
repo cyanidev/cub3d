@@ -6,7 +6,7 @@
 /*   By: Andie <Andie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 19:43:04 by Andie             #+#    #+#             */
-/*   Updated: 2025/05/22 18:51:55 by acaceres         ###   ########.fr       */
+/*   Updated: 2025/05/22 20:09:11 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,12 @@
 
 void	draw_walls_from_ray(t_rcast *r, t_cub *cub, t_cub_ray *ray)
 {
-	t_point			tmp;
 	t_dwall			dwall;
 	t_dwall_helper	dwl_helper;
 
 	if (!ray)
 		return ;
 	dwall.res_height = (float)cub->game_img->resolution.height;
-	tmp = cub->player->camera->pos;
 	dwall.dist = ray->real_dist;
 	dwall.dist = cub->player->camera->angle - r->start_angle;
 	dwall.dist = deg2_rad(dwall.dist);
@@ -42,7 +40,7 @@ void	draw_walls_from_ray(t_rcast *r, t_cub *cub, t_cub_ray *ray)
 	ray->del(ray);
 }
 
-int	ray_casting(t_cub *cub, t_map_editor minimap)
+int	ray_casting(t_cub *cub)
 {
 	t_rcast	r;
 
@@ -55,10 +53,9 @@ int	ray_casting(t_cub *cub, t_map_editor minimap)
 	while (r.iterator < r.number_of_rays)
 	{
 		draw_walls_from_ray(&r, cub,
-			cub_cast_ray(cub,
-				fix_angle(r.start_angle),
-				r.max_dist, minimap));
+			cub_cast_ray(cub, fix_angle(r.start_angle), r.max_dist));
 		r.start_angle += r.multiplier;
 		r.iterator++;
 	}
+	return (1);
 }

@@ -6,7 +6,7 @@
 #    By: acaceres <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/08 10:52:32 by acaceres          #+#    #+#              #
-#    Updated: 2025/05/18 21:01:50 by acaceres         ###   ########.fr        #
+#    Updated: 2025/05/22 19:40:13 by acaceres         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,7 @@ SUBMODLIB	+= ./mlx_utils/libmlx_utils.a
 #================================= GCC ==================================#
 
 # GCC WITH LIBS AND INCLUDES
-CFLAGS		= -Wextra -fsanitize=address -g3
+CFLAGS		= -Wall -Werror -Wextra -fsanitize=address -g3
 CFLAGS		+= -mavx
 CC			= gcc $(CFLAGS) $(INC)
 

@@ -6,7 +6,7 @@
 /*   By: Andie <Andie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 19:42:32 by Andie             #+#    #+#             */
-/*   Updated: 2025/05/17 15:41:57 by acaceres         ###   ########.fr       */
+/*   Updated: 2025/05/22 20:00:10 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include "engine_obj.h"
 
 //srry implement latter or maybe never :p
-t_engine_obj	*get_component(t_engine_obj *parent, char *name)
+t_engine_obj	*get_component(void)
 {
 	return (NULL);
 }
@@ -56,5 +56,5 @@ t_engine_obj	*new_obj_engine_obj(void *engine)
 
 t_node	*add_component(t_engine_obj *obj)
 {
-	return (node(obj, obj->del));
+	return (node(obj, (void *)obj->del));
 }

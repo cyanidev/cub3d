@@ -6,7 +6,7 @@
 /*   By: Andie <Andie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 19:42:18 by Andie             #+#    #+#             */
-/*   Updated: 2025/03/08 22:01:23 by Andie            ###   ########.fr       */
+/*   Updated: 2025/05/22 19:57:09 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,6 @@ t_cub_ray	*new_cub_ray_obj(void)
 	if (!result)
 		return (NULL);
 	ft_bzero(result, sizeof(t_cub_ray));
-	result->del = del_cub_ray_obj;
+	result->del = (void *)del_cub_ray_obj;
 	return (result);
 }

@@ -6,7 +6,7 @@
 /*   By: Andie <Andie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 21:15:29 by afelicia          #+#    #+#             */
-/*   Updated: 2025/05/18 21:00:32 by acaceres         ###   ########.fr       */
+/*   Updated: 2025/05/22 20:05:32 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,13 +42,15 @@ int	main(int argc, char **argv)
 
 	if (argc != 2)
 	{
-		write(2, "Error: wrong number of arguments\n", 34);
+		if (write(2, "Error: wrong number of arguments\n", 34) == -1)
+			exit (-1);
 		exit (-1);
 	}
-	cub = ft_constructor(argv[1], argv);
+	cub = ft_constructor(argv);
 	if (!cub)
 	{
-		write(2, "Error: cannot initialize the general struct\n", 45);
+		if (write(2, "Error: cannot initialize the general struct\n", 45) == -1)
+			return (-1);
 		return (-1);
 	}
 

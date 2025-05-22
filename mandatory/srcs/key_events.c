@@ -6,7 +6,7 @@
 /*   By: Andie <Andie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 19:41:50 by Andie             #+#    #+#             */
-/*   Updated: 2025/05/17 15:37:16 by acaceres         ###   ########.fr       */
+/*   Updated: 2025/05/22 19:54:57 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@
 
 int	key_press_game(int key, t_cub *cub)
 {
+	if (key && cub)
+		return (1);
+	return (1);
 }
 
 void	select_key_w_s_a_d_e_q(t_cub *cub, int key)
@@ -82,4 +85,5 @@ int	key_press(int key, void *param)
 		key_press_game(key, cub);
 	if (cub->game_mode == EDITOR)
 		key_press_editor(key, cub);
+	return (1);
 }

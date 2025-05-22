@@ -6,7 +6,7 @@
 /*   By: Andie <Andie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 19:39:56 by Andie             #+#    #+#             */
-/*   Updated: 2025/05/11 14:55:45 by acaceres         ###   ########.fr       */
+/*   Updated: 2025/05/22 19:47:25 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,4 +61,5 @@ int	draw_grid(t_map_editor editor, t_img *img, t_color color)
 		}
 		j++;
 	}
+	return (1);
 }

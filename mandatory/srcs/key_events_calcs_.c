@@ -6,7 +6,7 @@
 /*   By: acaceres <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 15:36:18 by acaceres          #+#    #+#             */
-/*   Updated: 2025/05/18 20:58:52 by acaceres         ###   ########.fr       */
+/*   Updated: 2025/05/22 19:55:20 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int	key_press_editor(int key, t_cub *cub)
 		cub->map_editor.screen_center.py -= 100 * cub->delta_time;
 	if (key == 65361)
 		cub->map_editor.screen_center.px += 100 * cub->delta_time;
+	return (1);
 }
 
 void	k_e(t_cub *cub)

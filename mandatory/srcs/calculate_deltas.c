@@ -6,7 +6,7 @@
 /*   By: Andie <Andie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 18:27:34 by Andie             #+#    #+#             */
-/*   Updated: 2025/03/08 19:22:53 by Andie            ###   ########.fr       */
+/*   Updated: 2025/05/22 19:42:24 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,5 @@ int	calculate_deltas(t_player *plyr, t_point *dts, t_point *fov1, t_point *fov2)
 		fov2->px = cos(deg2_rad(angle + fov));
 		fov2->py = sin(deg2_rad(angle + fov));
 	}
+	return (1);
 }

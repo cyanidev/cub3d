@@ -6,7 +6,7 @@
 /*   By: Andie <Andie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 19:40:24 by Andie             #+#    #+#             */
-/*   Updated: 2025/03/08 21:20:25 by Andie            ###   ########.fr       */
+/*   Updated: 2025/05/22 19:48:37 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ int	draw_square(size_t length, t_img *img, t_point start)
 	size_t	i;
 	size_t	j;
 	size_t	start_x;
-	size_t	start_y;
 
 	i = 0;
 	j = 0;

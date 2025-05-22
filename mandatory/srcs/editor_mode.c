@@ -6,7 +6,7 @@
 /*   By: Andie <Andie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 21:21:13 by Andie             #+#    #+#             */
-/*   Updated: 2025/05/17 13:28:34 by acaceres         ###   ########.fr       */
+/*   Updated: 2025/05/22 20:08:20 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,10 @@ int	editor_mode(t_cub *cub)
 	draw_grid(cub->map_editor, cub->editor_img,
 		color_from_rgb(100, 100, 100));
 	draw_map_walls(cub, cub->map_editor, cub->editor_img);
-	ray_casting(cub, cub->map_editor);
+	ray_casting(cub);
 	draw_player(cub, cub->map_editor, color_from_rgb(255, 255, 0),
 		cub->editor_img);
 	mlx_put_image_to_window(cub->mlx, cub->main_window->mlx_win,
 		cub->editor_img->img, 0, 0);
+	return (1);
 }

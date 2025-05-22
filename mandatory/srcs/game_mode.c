@@ -6,7 +6,7 @@
 /*   By: Andie <Andie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 19:41:16 by Andie             #+#    #+#             */
-/*   Updated: 2025/03/08 21:28:28 by Andie            ###   ########.fr       */
+/*   Updated: 2025/05/22 20:08:56 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ int	game_mode(t_cub *cub)
 			cub->player->camera->pos.px * minimap.screen_zoom,
 			cub->player->camera->pos.py * minimap.screen_zoom);
 	clean_pixels(cub->minimap_img);
-	ray_casting(cub, minimap);
+	ray_casting(cub);
 	render_normal_mode(cub);
+	return (1);
 }

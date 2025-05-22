@@ -6,7 +6,7 @@
 /*   By: Andie <Andie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 21:15:48 by afelicia          #+#    #+#             */
-/*   Updated: 2025/04/23 23:25:30 by Andie            ###   ########.fr       */
+/*   Updated: 2025/05/22 19:51:11 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	open_wall_tex(t_cub *cub)
 }
 
 	// CHANGE THIS RESOLUTION AFTER!!!!
-int	init_gen_struct(t_cub *cub, char *map_path, char **argv)
+int	init_gen_struct(t_cub *cub, char **argv)
 {
 	cub->mlx = mlx_init();
 	if (!cub->mlx)
@@ -55,7 +55,7 @@ int	init_gen_struct(t_cub *cub, char *map_path, char **argv)
 	After bzero every error in funtion have to use the ft_freeGenStruct
 	or error handling and return NULL after that
 */
-t_cub	*ft_constructor(char *map_path, char **argv)
+t_cub	*ft_constructor(char **argv)
 {
 	t_cub	*result;
 
@@ -63,7 +63,7 @@ t_cub	*ft_constructor(char *map_path, char **argv)
 	if (!result)
 		return (NULL);
 	ft_bzero(result, sizeof(t_cub));
-	if (!init_gen_struct(result, map_path, argv))
+	if (!init_gen_struct(result, argv))
 		return (NULL);
 	return (result);
 }

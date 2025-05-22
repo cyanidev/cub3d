@@ -6,7 +6,7 @@
 /*   By: Andie <Andie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 19:40:06 by Andie             #+#    #+#             */
-/*   Updated: 2025/05/17 12:51:23 by acaceres         ###   ########.fr       */
+/*   Updated: 2025/05/22 19:47:50 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,5 @@ int	draw_player(t_cub *cub, t_map_editor map_editor, t_color col, t_img *img)
 	fov2.color = col;
 	draw_line(pos, fov1, img);
 	draw_line(pos, fov2, img);
+	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: acaceres <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/10 17:59:52 by acaceres          #+#    #+#             */
-/*   Updated: 2025/05/11 12:52:57 by acaceres         ###   ########.fr       */
+/*   Updated: 2025/05/22 19:46:12 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static void	set_limits(t_cub *cub, t_ccr *ccr)
 	ccr->ray = cmp_dists(ccr->player, &(ccr->tmp_ray1), &(ccr->ray), NULL);
 }
 
-static void	set_rays(t_cub *cub, t_ccr *ccr, float angle, float distance)
+static void	set_rays(t_cub *cub, t_ccr *ccr, float angle)
 {
 	if (ccr->limits)
 		set_limits(cub, ccr);
@@ -58,7 +58,7 @@ static void	set_rays(t_cub *cub, t_ccr *ccr, float angle, float distance)
 		ray_angle_onehundred_twohundred_seventh(cub, ccr);
 }
 
-static void	set_result(t_cub *cub, t_ccr *ccr, float angle, float distance)
+static void	set_result(t_ccr *ccr)
 {
 	ccr->hypo = distance_between_points(ccr->player, ccr->ray);
 	ccr->result->x = (int)ccr->ray.px;
@@ -71,14 +71,13 @@ static void	set_result(t_cub *cub, t_ccr *ccr, float angle, float distance)
 	ccr->result->real_dist = distance_between_points(ccr->ray, ccr->player);
 }
 
-t_cub_ray	*cub_cast_ray(t_cub *cub, float angle, float distance,
-	t_map_editor minimap)
+t_cub_ray	*cub_cast_ray(t_cub *cub, float angle, float distance)
 {
 	t_ccr	ccr;
 
 	ccr = init_ccr(cub, angle, distance);
-	set_rays(cub, &ccr, angle, distance);
-	set_result(cub, &ccr, angle, distance);
+	set_rays(cub, &ccr, angle);
+	set_result(&ccr);
 	if (ccr.ray.pz > -1.0f)
 	{
 		ccr.result->side = (int)ccr.ray.pz;

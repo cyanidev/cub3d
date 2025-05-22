@@ -6,7 +6,7 @@
 /*   By: Andie <Andie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 19:23:21 by Andie             #+#    #+#             */
-/*   Updated: 2025/03/08 19:35:31 by Andie            ###   ########.fr       */
+/*   Updated: 2025/05/22 19:42:41 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,6 @@ t_point	dda_calculate_x_left(t_cub *cub, float delta_x, float delta_y)
 	t_point	player;
 	int		map_check;
 	float	dist;
-	t_point	tmp;
 
 	result.pz = 3.0f;
 	player = cub->player->camera->pos;
