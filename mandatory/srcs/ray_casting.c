@@ -6,7 +6,7 @@
 /*   By: Andie <Andie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 19:43:04 by Andie             #+#    #+#             */
-/*   Updated: 2025/05/20 16:45:30 by acaceres         ###   ########.fr       */
+/*   Updated: 2025/05/22 18:51:55 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,9 @@
 
 void	draw_walls_from_ray(t_rcast *r, t_cub *cub, t_cub_ray *ray)
 {
-	t_point	tmp;
-	t_dwall	dwall;
+	t_point			tmp;
+	t_dwall			dwall;
+	t_dwall_helper	dwl_helper;
 
 	if (!ray)
 		return ;
@@ -32,9 +33,12 @@ void	draw_walls_from_ray(t_rcast *r, t_cub *cub, t_cub_ray *ray)
 	dwall.dist = dwall.dist / dwall.tmp2;
 	dwall.dist = dwall.res_height / dwall.dist;
 	dwall.wall_height = (int)dwall.dist;
+	dwl_helper.max_dist = r->max_dist;
+	dwl_helper.wall_height = dwall.wall_height;
+	dwl_helper.wall_n = r->iterator;
+	dwl_helper.angle = r->start_angle;
 	if (cub->game_mode == GAME)
-		draw_wall(r->max_dist, dwall.wall_height,
-			cub, r->iterator, ray, r->start_angle);
+		draw_wall(cub, ray, &dwl_helper);
 	ray->del(ray);
 }
 

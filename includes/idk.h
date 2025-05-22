@@ -62,6 +62,17 @@ typedef struct s_dcircle
 }		t_dcircle;
 
 
+
+typedef struct s_dwall_helper
+{
+	float	max_dist;
+	int	wall_height;
+	size_t	wall_n;
+	float	angle;
+}		t_dwall_helper;
+
+
+
 //ERRORS
 int	i_g_s_error(t_cub *cub);
 
@@ -85,7 +96,8 @@ void	draw_sky_and_ground(t_cub *cub, int wall_top, size_t wall_n, int wall_botto
 int	draw_grid(t_map_editor editor, t_img *img, t_color color);
 int	draw_map_walls(t_cub *cub, t_map_editor editor, t_img *img);
 int	draw_square(size_t length, t_img *img, t_point start);
-void draw_wall(float max_dist, int wall_height, t_cub *cub, size_t wall_n, t_cub_ray *ray, float angle);
+//void draw_wall(float max_dist, int wall_height, t_cub *cub, size_t wall_n, t_cub_ray *ray, float angle);
+void draw_wall(t_cub *cub, t_cub_ray *ray, t_dwall_helper *dh);
 
 
 // REMAP

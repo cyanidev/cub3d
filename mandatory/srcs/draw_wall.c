@@ -6,36 +6,14 @@
 /*   By: Andie <Andie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 19:40:30 by Andie             #+#    #+#             */
-/*   Updated: 2025/05/22 18:11:01 by acaceres         ###   ########.fr       */
+/*   Updated: 2025/05/22 18:48:42 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mlx.h"
 #include "cub.h"
 #include "idk.h"
-
-typedef struct s_drwall
-{
-	int		wall_top;
-	int		min_top;
-	int		wall_bottom;
-	int		y;
-	int		real_pos;
-	int		mirror_y;
-	int		mirror_helper;
-	float	color_mix_lerp;
-	float	real_pos_x;
-	float	res_height;
-}		t_drwall;
-
-typedef struct s_rwall
-{
-	t_cub		*cub;
-	t_cub_ray	*ray;
-	t_color		tmp_color;
-	float		wall_n;
-	float		wall_height;
-}		t_rwall;
+#include "helper.h"
 
 static void	set_rwall_color(t_point *pixel, t_rwall *rwall,
 			t_img *texture, t_drwall *dw)
@@ -79,16 +57,16 @@ static void
 	}
 }
 
-void	draw_wall(float max_dist, int wall_height, t_cub *cub, size_t wall_n, t_cub_ray *ray, float angle)
+void	draw_wall(t_cub *cub, t_cub_ray *ray, t_dwall_helper *dh)
 {
 	t_point		pixel;
 	t_drwall	dw;
 	t_rwall		rwall;
 
 	dw.res_height = cub->game_img->resolution.height;
-	dw.wall_top = (int)(dw.res_height - (float)wall_height) / 2;
+	dw.wall_top = (int)(dw.res_height - (float)dh->wall_height) / 2;
 	dw.min_top = dw.wall_top;
-	dw.wall_bottom = dw.wall_top + wall_height;
+	dw.wall_bottom = dw.wall_top + dh->wall_height;
 	if (dw.wall_top < 0)
 		dw.wall_top = 0;
 	if (dw.wall_bottom >= dw.res_height)
@@ -96,13 +74,13 @@ void	draw_wall(float max_dist, int wall_height, t_cub *cub, size_t wall_n, t_cub
 	dw.color_mix_lerp *= 4;
 	if (dw.color_mix_lerp > 1)
 		dw.color_mix_lerp = 1;
-	draw_sky_and_ground(cub, dw.wall_top, wall_n, dw.wall_bottom);
+	draw_sky_and_ground(cub, dw.wall_top, dh->wall_n, dw.wall_bottom);
 	dw.y = dw.wall_top;
 	dw.real_pos_x = get_real_pos_x(ray->real_x, ray->real_y, ray->side);
 	dw.mirror_helper = 0;
 	rwall.cub = cub;
 	rwall.ray = ray;
-	rwall.wall_n = wall_n;
-	rwall.wall_height = (float)wall_height;
+	rwall.wall_n = dh->wall_n;
+	rwall.wall_height = (float)dh->wall_height;
 	render_wall(&rwall, &dw, &pixel);
 }
