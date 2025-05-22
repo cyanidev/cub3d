@@ -4,3 +4,4 @@
 .submod
 cub3d
 objects/
+.clean/
