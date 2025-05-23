@@ -6,7 +6,7 @@
 /*   By: Andie <Andie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 19:39:56 by Andie             #+#    #+#             */
-/*   Updated: 2025/05/22 19:47:25 by acaceres         ###   ########.fr       */
+/*   Updated: 2025/05/23 18:49:05 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,7 @@ int	draw_grid(t_map_editor editor, t_img *img, t_color color)
 	j -= 1;
 	while (j < (int)end.py + 1)
 	{
-		i = (int)start.px;
-		i -= 1;
+		i = (int)start.px - 1;
 		while (i < (int)end.px + 1)
 		{
 			tmp = point((float)i, (float)j);
