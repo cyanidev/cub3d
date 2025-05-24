@@ -3,7 +3,7 @@
 # include "libft.h"
 # include "T_Engine.h"
 # include "mlx_utils.h"
-# include "engine.h"
+//# include "engine.h"
 # include "cub.h"
 
 typedef	struct s_cub_ray
@@ -18,7 +18,7 @@ typedef	struct s_cub_ray
 	float	real_dist;
 	float	deltx;
 	float	delty;
-	int		(*del)();
+	void    (*del)(struct s_cub_ray *); //int		(*del)();
 }				t_cub_ray;
 
 # endif

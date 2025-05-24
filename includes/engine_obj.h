@@ -1,4 +1,4 @@
-#ifndef ENGINE_OBJ_H
+/*#ifndef ENGINE_OBJ_H
 # define ENGINE_OBJ_H
 # include "libft.h"
 # include "T_Engine.h"
@@ -29,4 +29,4 @@ typedef struct s_engine_obj
 	void			(*del)();
 }				t_engine_obj;
 
-# endif
+# endif*/

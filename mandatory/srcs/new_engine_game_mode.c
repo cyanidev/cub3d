@@ -6,7 +6,7 @@
 /*   By: Andie <Andie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 19:42:23 by Andie             #+#    #+#             */
-/*   Updated: 2025/03/08 22:01:50 by Andie            ###   ########.fr       */
+/*   Updated: 2025/05/24 03:53:26 by Andie            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include "cub_ray.h"
 #include "engine_obj.h"
 
-void	*del_engine_game_mode(t_engine_game_mode *obj)
+void	del_engine_game_mode(t_engine_game_mode *obj)
 {
 	if (obj)
 	{
@@ -38,7 +38,7 @@ t_engine_game_mode	*new_engine_game_mode(char *name)
 	ft_bzero(result, sizeof(t_engine_game_mode));
 	result->del = del_engine_game_mode;
 	name_tmp = ft_strdup(name);
-	if (!name)
+	if (!name_tmp)
 	{
 		result->del(result);
 		return (NULL);

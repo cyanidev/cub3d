@@ -6,14 +6,15 @@
 /*   By: Andie <Andie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 19:40:49 by Andie             #+#    #+#             */
-/*   Updated: 2025/03/08 21:24:20 by Andie            ###   ########.fr       */
+/*   Updated: 2025/05/23 12:22:57 by Andie            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
 #include "mlx.h"
 #include "cub.h"
 #include "idk.h"
-#include "engine.h"
+//#include "engine.h"
 #include <time.h>
 
 void	del_engine_obj(t_engine *obj)
@@ -39,3 +40,4 @@ t_engine	*new_engine_obj(void)
 	result->del = del_engine_obj;
 	return (result);
 }
+*/

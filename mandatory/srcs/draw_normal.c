@@ -34,7 +34,7 @@ t_point	ft_normalize(t_point point)
 	return (result);
 }
 
-void	draw_normal(t_line line, t_img *img)
+/*void	draw_normal(t_line line, t_img *img)
 {
 	t_point	p10;
 	t_point	p0;
@@ -53,3 +53,4 @@ void	draw_normal(t_line line, t_img *img)
 	p1.py = p0.py + normal.py * 12.0f;
 	draw_line(p0, p1, img);
 }
+*/

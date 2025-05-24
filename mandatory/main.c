@@ -6,7 +6,7 @@
 /*   By: Andie <Andie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 21:15:29 by afelicia          #+#    #+#             */
-/*   Updated: 2025/04/28 22:13:34 by afelicia         ###   ########.fr       */
+/*   Updated: 2025/05/24 13:29:56 by Andie            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,7 @@
 #include "engine.h"
 #include <time.h>
 
-//============================================= s_map in t_engine
-/*
-typedef struct s_map_editor
-{
 
-}				t_map_editor;
-*/
-// the map editor type comes with the engine
 
 
 t_map_editor	map_editor()

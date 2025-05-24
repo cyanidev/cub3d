@@ -6,7 +6,7 @@
 /*   By: Andie <Andie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 19:43:20 by Andie             #+#    #+#             */
-/*   Updated: 2025/03/08 22:08:47 by Andie            ###   ########.fr       */
+/*   Updated: 2025/05/24 04:59:45 by Andie            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 
 void	put_img_to_render(t_img *img, t_img *render)
 {
-	int	x;
-	int	y;
+	unsigned int	x;
+	unsigned int	y;
 	float	x_prop;
 	float	y_prop;
 	float	aspect_ratio;
@@ -42,15 +42,16 @@ void	put_img_to_render(t_img *img, t_img *render)
 		}
 		y++;
 	}
-
 }
 int	render_normal_mode(t_cub *cub)
 {
 	mlx_put_image_to_window(cub->mlx, cub->main_window->mlx_win, cub->game_img->img, 0, 0);
+	return (0);
 }
 
 int	render_bonus_mode(t_cub *cub)
 {
 	mlx_put_image_to_window(cub->mlx, cub->main_window->mlx_win, cub->game_img->img, 0, 0);
 	mlx_put_image_to_window(cub->mlx, cub->main_window->mlx_win, cub->minimap_img->img, 0, 0);
+	return (0);
 }

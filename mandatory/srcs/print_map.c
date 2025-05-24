@@ -6,7 +6,7 @@
 /*   By: Andie <Andie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 19:42:57 by Andie             #+#    #+#             */
-/*   Updated: 2025/03/08 22:06:24 by Andie            ###   ########.fr       */
+/*   Updated: 2025/05/24 02:26:50 by Andie            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "cub.h"
 #include "idk.h"
 
-int	print_map_cub(t_cub *cub)
+void	print_map_cub(t_cub *cub)
 {
 	char	c;
 	int		x;
@@ -22,7 +22,6 @@ int	print_map_cub(t_cub *cub)
 
 	x = 0;
 	y = 0;
-	printf("map start...%d\n");
 	while (cub->map[y])
 	{
 		x = 0;

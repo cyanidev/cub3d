@@ -67,7 +67,7 @@ int	fill_info(t_cubp *cubp, char **map)
 	return (1);
 }
 
-static void	fill_structure(t_cub *cub, t_cubp *cubp)
+/*static void	fill_structure(t_cub *cub, t_cubp *cubp)
 {
 	cub->north_path = cubp->north_path;
 	cub->south_path = cubp->south_path;
@@ -77,7 +77,7 @@ static void	fill_structure(t_cub *cub, t_cubp *cubp)
 	cub->floor = color_from_rgb(cubp->floor[0], cubp->floor[1], cubp->floor[2]);
 	cub->ceiling = color_from_rgb(cubp->ceiling[0], cubp->ceiling[1], cubp->ceiling[2]);
 	free_parsing(cubp);
-}
+}*/
 
 int	parsing(t_cubp *cubp, char **argv)
 {
@@ -99,8 +99,6 @@ int	parsing(t_cubp *cubp, char **argv)
 		free_parsing(cubp);
 		return (0);
 	}
-	//needs to be fixed
 	player_dir(cubp);
-
 	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: Andie <Andie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 19:40:30 by Andie             #+#    #+#             */
-/*   Updated: 2025/03/08 19:40:31 by Andie            ###   ########.fr       */
+/*   Updated: 2025/05/24 13:23:12 by Andie            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "cub.h"
 #include "idk.h"
 
-void draw_wall(float max_dist, int wall_height, t_cub *cub, size_t wall_n, t_cub_ray *ray, float angle)
+void draw_wall(int wall_height, t_cub *cub, size_t wall_n, t_cub_ray *ray)
 {
 	float	res_height;
     int		wall_top;
@@ -25,7 +25,7 @@ void draw_wall(float max_dist, int wall_height, t_cub *cub, size_t wall_n, t_cub
 	int		y;
 	int		real_pos;
 	float	real_pos_x;
-	int		mirror_y;
+	//int		mirror_y;
 	int		mirror_helper;
 	t_img	*texture;
 
@@ -37,10 +37,10 @@ void draw_wall(float max_dist, int wall_height, t_cub *cub, size_t wall_n, t_cub
 		wall_top = 0;
     if (wall_bottom >= res_height) 
 		wall_bottom = (int)(res_height - 1.0f);
-	color_mix_lerp *= 4;
+	color_mix_lerp = 4;
 	if (color_mix_lerp > 1)
 		color_mix_lerp = 1;
-	draw_sky_and_ground(wall_top, wall_bottom, cub, wall_n, color_mix_lerp, wall_height, ray, angle, max_dist);
+	draw_sky_and_ground(wall_top, wall_bottom, cub, wall_n);
 	y = wall_top;
 	real_pos_x = get_real_pos_x(ray->real_x, ray->real_y, ray->side);
 	mirror_helper = 0;
@@ -66,12 +66,12 @@ void draw_wall(float max_dist, int wall_height, t_cub *cub, size_t wall_n, t_cub
 			pixel.color = color_mix(pixel.color, color(BLACK), 0.75f);
 		pixel.color = color_mix(pixel.color, color(BLACK), color_mix_lerp);
 
-		t_color	tmp_color;
-		t_color	tmp_color2;
+		//t_color	tmp_color;
+		//t_color	tmp_color2;
 		//tmp_color = color_from_hex(get_pixel_img(cub->test_tex, real_pos_x * (float)cub->test_tex->resolution.width, ((float)real_pos / (float)wall_height) * (float)cub->test_tex->resolution.height));
 	//	pixel.color = color_mix(pixel.color, tmp_color, 0.5f);
 
-		tmp_color = pixel.color;
+		//tmp_color = pixel.color;
 
 
 	//	tmp_color2 = color_from_hex(get_pixel_img(cub->test_tex, real_pos_x * (float)cub->test_tex->resolution.width, ((float)real_pos / (float)wall_height) * (float)cub->test_tex->resolution.height));

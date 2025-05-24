@@ -6,7 +6,7 @@
 /*   By: Andie <Andie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 19:42:03 by Andie             #+#    #+#             */
-/*   Updated: 2025/03/08 21:59:40 by Andie            ###   ########.fr       */
+/*   Updated: 2025/05/24 02:33:36 by Andie            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ int	mouse_press(int key, int x, int y, void *param)
 			cub->map_editor.screen_zoom = 150;
 		printf("zoom:%d\n", cub->map_editor.screen_zoom);
 	}
+	return (0);
 }
 
 int	mouse_release(int key, int x, int y, void *param)
@@ -49,6 +50,7 @@ int	mouse_release(int key, int x, int y, void *param)
 		cub->mouse_press = 0;
 		cub->last_mouse_grab = point(x, y);
 	}
+	return (0);
 }
 
 int	focus_in(void *param)
@@ -57,6 +59,7 @@ int	focus_in(void *param)
 
 	cub = (t_cub *)param;
 	cub->focus = 1;
+	return (0);
 }
 
 int	focus_out(void *param)
@@ -65,4 +68,5 @@ int	focus_out(void *param)
 
 	cub = (t_cub *)param;
 	cub->focus = 0;
+	return (0);
 }

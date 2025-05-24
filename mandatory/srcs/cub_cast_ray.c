@@ -3,21 +3,21 @@
 #include "idk.h"
 #include "cub_ray.h"
 
-t_cub_ray	*cub_cast_ray(t_cub *cub, float angle, float distance, t_map_editor minimap)
+t_cub_ray	*cub_cast_ray(t_cub *cub, float angle, float distance)
 {
 	t_cub_ray	*result;
 	t_point		player;
 	t_point		tmp_ray1;
 	t_point		tmp_ray2;
 	t_point		ray;
-	float		hypo;
+	//float		hypo;
 	float		screen_dist;
 	float		delta_x;
 	float		delta_y;
 	int			limits;
 
 	result = new_cub_ray_obj();
-
+	screen_dist = 0.0f;
 	player = cub->player->camera->pos;
 	ray = player;
 	delta_x = cos(deg2_rad(angle));
@@ -64,7 +64,7 @@ t_cub_ray	*cub_cast_ray(t_cub *cub, float angle, float distance, t_map_editor mi
 		tmp_ray2 = dda_calculate_y_up(cub, delta_x, delta_y);
 		ray = cmp_dists(player, &tmp_ray1, &tmp_ray2, &ray);
 	}
-	hypo = distance_between_points(player, ray);
+	//hypo = distance_between_points(player, ray);
 	result->x = (int)ray.px;
 	result->real_x = ray.px;
 	result->real_y = ray.py;

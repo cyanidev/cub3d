@@ -51,12 +51,12 @@ void	start_hooks_in_window (t_win *win, t_win_hooks win_hooks, void *data);
 
 //DRAW STUFF
 void	draw_circle(int radius, t_img *img, t_point center);
-int	draw_player(t_cub *cub, t_map_editor map_editor, t_color col, t_img *img);
-void draw_sky_and_ground(int wall_top, int wall_bottom, t_cub *cub, size_t wall_n, float lerp, int wall_height, t_cub_ray *ray, float angle, float max_dist);
-int	draw_grid(t_map_editor editor, t_img *img, t_color color);
-int	draw_map_walls(t_cub *cub, t_map_editor editor, t_img *img);
-int	draw_square(size_t length, t_img *img, t_point start);
-void draw_wall(float max_dist, int wall_height, t_cub *cub, size_t wall_n, t_cub_ray *ray, float angle);
+int		draw_player(t_cub *cub, t_map_editor map_editor, t_color col, t_img *img);
+void	draw_sky_and_ground(unsigned int wall_top, int wall_bottom, t_cub *cub, size_t wall_n);
+int		draw_grid(t_map_editor editor, t_img *img, t_color color);
+int		draw_map_walls(t_cub *cub, t_map_editor editor, t_img *img);
+int		draw_square(size_t length, t_img *img, t_point start);
+void	draw_wall(float max_dist, int wall_height, t_cub *cub, size_t wall_n, t_cub_ray *ray, float angle);
 
 
 // REMAP
@@ -85,12 +85,12 @@ t_img	*init_img(void *mlx, t_resolution res);
 t_player *new_player(t_camera *camera);
 
 //MATH
-int calculate_deltas(t_player *player, t_point *deltas, t_point *fov1, t_point *fov2);
-int	update_player_angle(t_player *player, t_point *deltas, t_point *fov1, t_point *fov2, float angle);
-int	update_player_angle_from_angle(t_cub *cub, float angle);//prolynot
+void	calculate_deltas(t_player *player, t_point *deltas, t_point *fov1, t_point *fov2);
+int		update_player_angle(t_player *player, t_point *deltas, t_point *fov1, t_point *fov2, float angle);
+int		update_player_angle_from_angle(t_cub *cub, float angle);//prolynot
 float	deg2_rad(float angle);
 float	get_dist_delt(float delta_y, float y, float start_y);
-int	dda_check_map(t_cub *cub, t_point pt);
+int		dda_check_map(t_cub *cub, t_point pt);
 t_point	dda_calculate_x_right(t_cub *cub, float delta_x, float delta_y);
 t_point	dda_calculate_x_left(t_cub *cub, float delta_x, float delta_y);
 t_point	dda_calculate_y_down(t_cub *cub, float delta_x, float delta_y);
@@ -123,7 +123,7 @@ int	render_normal_mode(t_cub *cub);
 
 float	fix_angle(float angle);
 
-t_cub_ray	*cub_cast_ray(t_cub *cub, float angle, float distance, t_map_editor minimap);
+t_cub_ray	*cub_cast_ray(t_cub *cub, float angle, float distance);
 
 
 # endif

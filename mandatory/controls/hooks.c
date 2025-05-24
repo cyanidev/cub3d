@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   hooks.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: afelicia <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: Andie <Andie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 22:01:19 by afelicia          #+#    #+#             */
-/*   Updated: 2024/10/13 22:01:22 by afelicia         ###   ########.fr       */
+/*   Updated: 2025/05/24 13:30:09 by Andie            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,3 +68,16 @@ void	start_hooks_in_window (t_win *win, t_win_hooks win_hooks, void *data)
 	if (win_hooks.focus.option2)
 		mlx_hook(win->mlx_win, 10, (1L<<21), win_hooks.focus.option2, data);
 }
+
+
+//here maybe add mlx_hook(cub->mlx_win, 17, 0, close_window, cub); to close with x
+
+/*int	close_window(void *param)
+{
+	t_cub *cub;
+
+	cub = (t_cub *)param;
+	free_gen_struct(cub);
+	exit(0);
+	return (0);
+}*/

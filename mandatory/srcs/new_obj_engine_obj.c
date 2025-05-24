@@ -6,10 +6,11 @@
 /*   By: Andie <Andie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 19:42:32 by Andie             #+#    #+#             */
-/*   Updated: 2025/03/08 22:03:10 by Andie            ###   ########.fr       */
+/*   Updated: 2025/05/23 12:14:14 by Andie            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
 #include "mlx.h"
 #include "cub.h"
 #include "idk.h"
@@ -58,4 +59,4 @@ t_engine_obj	*new_obj_engine_obj(void *engine)
 t_node	*add_component(t_engine_obj *obj)
 {
 	return (node(obj, obj->del));
-}
+}*/

@@ -3,146 +3,113 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: samusanc <samusanc@student.42madrid.com>   +#+  +:+       +#+         #
+#    By: Andie <Andie@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/05 01:22:18 by samusanc          #+#    #+#              #
-#    Updated: 2024/08/10 23:02:21 by samusanc         ###   ########.fr        #
+#    Updated: 2025/05/24 16:08:15 by Andie            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= cub3d
-COMMIT_D	:= $(shell date)
-COMMIT_U	:= ${USER}
 
-#=============================== INCLUDES ===============================#
+#Program Name
+NAME = cub3D
 
-INC			= -I./includes/ 
-INC			+= -I./libft/ 
-INC			+= -I./mlx_utils/ 
-INC			+= -I./mlx_utils/includes/ 
-INC			+= -I./T-Engine/ 
-INC			+= -I./T-Engine/includes/ 
-INC			+= -I./ft_math/
-INC			+= -I./ft_math/includes/
-INC			+= -I/usr/include -O3 -I./minilibx-linux/ 
+#libft
+LIB_PATH = libft/
+LIB_NAME = libft.a
+LIB = $(LIB_PATH)$(LIB_NAME)
 
-#============================== LIBRARIES ===============================#
+#headers
+HEADERS = -I ./includes/ -I ./libft/ -I./mlx_utils/includes/ -I./minilibx-linux/ -I./T-Engine/includes/ -I./ft_math/includes/	
 
-SUBMODLIB	= ./libft/libft.a
-SUBMODLIB	+= ./T-Engine/libT_Engine.a
-SUBMODLIB	+= ./ft_math/libft_math.a
-SUBMODLIB	+= ./mlx_utils/libmlx_utils.a
+#sources (command find to locate all source files in folders)
+SRCS = $(shell find mandatory mlx_utils T-Engine ft_math -type f -name "*.c")
 
-#================================= GCC ==================================#
+#create object files
+OBJS = $(SRCS:%.c=build/%.o)
 
-# GCC WITH LIBS AND INCLUDES
-CFLAGS		= -Wextra -fsanitize=address
-CFLAGS		+= -mavx
-CC			= gcc $(CFLAGS) $(INC)
+build/%.o: %.c
+	@mkdir -p $(dir $@)
+	$(CC) $(CFLAGS) -c $< -o $@ $(HEADERS)
 
-#================================= SCRS =================================#
+CFLAGS = -Wall -Werror -Wextra #-mavx #-ggbd3 #-fsanitize=address
+LDFLAGS = -lm -lz -lbsd -lXext -lX11
+LDFLAGS += -L./minilibx-linux -lmlx
 
-SRC_DIRS = ./mandatory ./mandatory/parsing ./mandatory/srcs ./mandatory/controls
+#compiler
+CC = gcc
 
-# Use wildcard to find all .c files in those directories
-SRCS = $(foreach dir,$(SRC_DIRS),$(wildcard $(dir)/*.c))
+#force remove
+RM = rm -f
 
-#================================= OBJS =================================#
+#########################COLORS####################################
 
-O_DIR		= ./objects/
-OBJS		= $(addprefix $(O_DIR)/, $(SRCS:.c=.o))
+BLACK =	\033[0;30m
+RED	=	\033[0;31m
+GREEN =	\033[0;32m
+YELLOW =	\033[0;33m
+BLUE  =	\033[0;34m
+MAGENTA =	\033[0;35m
+CYAN =	\033[0;36m
+LGRAY = \033[0;37m
+DGRAY = \033[1;30m
+LBLUE = \033[1;34m
+LGREEN = \033[1;32m
+LCYAN = \033[1;36m
+LRED = \033[1;31m
+LMAGENTA =\033[1;35m
+LYELLOW = \033[1;33m
+WHITE = \033[1;37m
+RESET = \033[0m
 
-#========================================================================#
+###################################################################
 
-$(O_DIR)/%.o: %.c
-	@mkdir -p $(@D)
-	$(CC) -D BONUS=1 $(INC) -g -c $< -o $(O_DIR)/$(<:.c=.o)
-	@echo ""
+title: 
+	@echo " ----------------------------------------------- "
+	@echo "  ______   __    __  _______    ______   _______  "
+	@echo " /      \ /  |  /  |/       \  /      \ /       \ "
+	@echo "/000000  |00 |  00 |0000000  |/000000  |0000000  |"
+	@echo "00 |  00/ 00 |  00 |00 |__00 |00 ___00 |00 |  00 |"
+	@echo "00 |      00 |  00 |00    00<   /   00< 00 |  00 |"
+	@echo "00 |   __ 00 |  00 |0000000  | _00000  |00 |  00 |"
+	@echo "00 \__/  |00 \__00 |00 |__00 |/  \__00 |00 |__00 |"
+	@echo "00    00/ 00    00/ 00    00/ 00    00/ 00    00 "
+	@echo " 000000/   000000/  0000000/   000000/  0000000/  "
+	@echo "                                                  "
+	@echo " ----------------------------------------------- "
 
-all: title submodules $(NAME)
-	@echo "===================================="
-	@echo ""
+#compiles both the lib and the program
+all: $(LIB) $(NAME)
+
+$(LIB): 
+	@$(MAKE) -C $(LIB_PATH)
+
+#compiles the program by linking the object files with the libraries and outputting an ex file
+$(NAME): $(OBJS)
+
+	@mkdir -p build
+	@echo "${LCYAN}Making.....$@${RESET}"
+	$(CC) $(CFLAGS) -o $@ $(OBJS) $(LIB) $(LDFLAGS) $(HEADERS)
+	@printf "${GREEN}Done!${RESET}\n"
 	@echo "usage: $$./cub3d map.cub"
 
-$(NAME): .mandatory
-	@echo "mandatory done..."
 
-title:
-	@echo "===================================="
-	@echo " _____ _   _______  ___________ "
-	@echo "/  __ \\ | | | ___ \\|____ |  _  \\"
-	@echo "| /  \\/ | | | |_/ /    / / | | |"
-	@echo "| |   | | | | ___ \    \\ \\ | | |"
-	@echo "| \\__/\\ |_| | |_/ /.___/ / |/ / "
-	@echo " \\____/\\___/\\____/ \\____/|___/  "
-	@echo ""
-	@echo "===================================="
-	@echo "Graphics:samusanc, Parsing:afelicia"
-	@echo ""
+#removes all objects files
+clean:
+	@$(RM) -rf build
+	@$(MAKE) clean -C ${LIB_PATH}
+	@echo "${LGREEN}Objects cleaned from ${WHITE}${CURDIR}${RESET}"
 
-#============================= GIT RULES ==============================#
+#calls the clean rule also removes executable file
+fclean: clean
+	${RM} $(NAME)
+	${RM} $(LIB_PATH)$(LIB_NAME)
+	@echo "${LRED}Binary ${LYELLOW}${NAME} ${LRED}has been deleted....${RESET}"
 
-add: fclean 
-	@-git pull
-	@git add .
-
-commit: add
-	@echo "" >> .TODO
-	@cp .TODO .TODO.tmp
-	sed -i '1s/^/$(COMMIT_D) by $(COMMIT_U)\n/' .TODO.tmp
-	echo "======================= end of git description" >> .TODO.tmp
-	git commit -F .TODO.tmp 
-	@rm -rf .TODO.tmp
-
-push: commit
-	git push
-
-
-#======================= MANDATORY AND BONUS =========================#
-
-.mandatory: .mlx submodules $(OBJS)
-	@make -sC ./minilibx-linux/ all
-	$(CC) -o $(NAME) $(OBJS) $(SUBMODLIB) -L./minilibx-linux/ -lmlx -L/usr/include/../lib -lXext -lX11 -lm -lbsd
-	@touch .mandatory
-
-.mlx:
-	@make -sC ./minilibx-linux/ all
-	@touch .mlx
-
+#removes all and compiles program
 re: fclean all
 
-.submod:
-	@make -sC ./mlx_utils/ all
-	@make -sC ./libft/ all
-	@make -sC ./T-Engine/ all
-	@make -sC ./ft_math/ all
-	@touch .submod
-
-
-submodules: .submod
-	@echo all submodules done
-
-fclean: clean
-	@echo "cleaning binaries..."
-	@rm -f $(NAME)
-	@rm -f $(NAME)_bonus
-	@rm -rf .bonus
-	@rm -rf .mandatory
-	@rm -rf .clean
-	@rm -rf .mlx
-	@rm -rf .submod
-
-
-clean: .clean
-	@echo "objects removed!"
-
-.clean: .mlx 
-	@echo "cleaning objects..."
-	@make -sC ./minilibx-linux/ clean
-	@rm -f $(OBJS)
-	@rm -f $(B_OBJS)
-	@rm -rf $(O_DIR)
-	@rm -rf $(B_O_DIR)
-	@touch .clean
-
-.PHONY: all clean fclean re title  add commit push
+#Defines a list of targets that do not correspond to files(make will always 
+#execute the recipes for these targets, even if there are files or directories
+#with the same names)
+.PHONY: all clean fclean re title

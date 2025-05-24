@@ -6,14 +6,14 @@
 /*   By: Andie <Andie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 19:39:28 by Andie             #+#    #+#             */
-/*   Updated: 2025/03/08 21:16:03 by Andie            ###   ########.fr       */
+/*   Updated: 2025/05/24 02:22:15 by Andie            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mlx.h"
 #include "cub.h"
 #include "idk.h"
-#include "engine.h"
+//#include "engine.h"
 #include "engine_obj.h"
 #include <time.h>
 
@@ -26,7 +26,7 @@ float	distance_between_points(t_point a, t_point b)
 	return (result);
 }
 
-int	draw_line_remap(t_line line, t_map_editor map_edtr, t_img *img, t_color col)
+/*void	draw_line_remap(t_line line, t_map_editor map_edtr, t_img *img, t_color col)
 {
 	t_point	a;
 	t_point	b;
@@ -38,7 +38,7 @@ int	draw_line_remap(t_line line, t_map_editor map_edtr, t_img *img, t_color col)
 	a.color = col;
 	b.color = col;
 	draw_line(a, b, img);
-}
+}*/
 
 float	get_min_dist(t_line line, t_point p)
 {

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   screen.c                                           :+:      :+:    :+:   */
+/*   normalize.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: samusanc <samusanc@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: Andie <Andie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/07 13:16:55 by samusanc          #+#    #+#             */
-/*   Updated: 2024/08/07 13:19:08 by samusanc         ###   ########.fr       */
+/*   Updated: 2025/05/23 12:53:57 by Andie            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ t_point	normalize(t_point point)
 	float	inv_sqr;
 
 	result = point;
-	inv_sqr = q_rsqrt((point.px * point.px) + (point.py * point.py) + (point.pz * point.pz));
+	inv_sqr = q_rsqrt((point.px * point.px)
+			+ (point.py * point.py) + (point.pz * point.pz));
 	result.px = point.px * inv_sqr;
 	result.py = point.py * inv_sqr;
 	result.pz = point.pz * inv_sqr;

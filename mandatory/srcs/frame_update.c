@@ -6,14 +6,14 @@
 /*   By: Andie <Andie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 19:41:00 by Andie             #+#    #+#             */
-/*   Updated: 2025/03/08 21:25:54 by Andie            ###   ########.fr       */
+/*   Updated: 2025/05/23 12:15:06 by Andie            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mlx.h"
 #include "cub.h"
 #include "idk.h"
-#include "engine.h"
+//#include "engine.h"
 #include <time.h>
 
 clock_t	g_start_t;

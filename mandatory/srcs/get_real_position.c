@@ -6,7 +6,7 @@
 /*   By: Andie <Andie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 19:41:35 by Andie             #+#    #+#             */
-/*   Updated: 2025/03/08 21:31:37 by Andie            ###   ########.fr       */
+/*   Updated: 2025/05/24 13:11:48 by Andie            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 float	get_real_pos_x(float x, float y, int side)
 {
 	float	tmp;
-	float	result;
 
 	if (side == 0 || side == 2)
 	{

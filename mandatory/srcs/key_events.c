@@ -6,7 +6,7 @@
 /*   By: Andie <Andie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 19:41:50 by Andie             #+#    #+#             */
-/*   Updated: 2025/03/08 21:49:46 by Andie            ###   ########.fr       */
+/*   Updated: 2025/05/24 04:47:23 by Andie            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include "idk.h"
 #include <time.h>
 
-static int key_press_editor(int key, t_cub *cub)
+/*static void key_press_editor(int key, t_cub *cub)
 {
 	if (key == 65362)
 		cub->map_editor.screen_center.py += 100 * cub->delta_time;
@@ -25,13 +25,7 @@ static int key_press_editor(int key, t_cub *cub)
 		cub->map_editor.screen_center.py -= 100 * cub->delta_time;
 	if (key == 65361)
 		cub->map_editor.screen_center.px += 100 * cub->delta_time;
-
-}
-
-int key_press_game(int key, t_cub *cub)
-{
-
-}
+}*/
 
 int	key_press(int key, void *param)
 {
@@ -39,16 +33,9 @@ int	key_press(int key, void *param)
 
 	cub = (t_cub *)param;
 	printf("super gofy key:%d\n", key);
-	if (key == XK_m)
-	{
-		if (cub->game_mode == GAME)
-			return (editor_mode(cub));
-		else
-			return (game_mode(cub));
-	}
 	if (key == XK_Escape)
 	{
-		free_gen_struct(cub);
+		free_gen_struct(cub); //fix this
 		exit(0);
 	}
 	if (key == XK_w)
@@ -108,61 +95,5 @@ int	key_press(int key, void *param)
 		cub->player->camera->pos.pz = cub->player->camera->fov * cub->height_multiplier;//0.0576f;
 		update_player_angle(cub->player, &cub->p_deltas, &cub->fov1_deltas, &cub->fov2_deltas, cub->player->camera->angle);
 	}
-	if (key == XK_1)
-	{
-		cub->height_multiplier -= 0.0001f;
-		printf("nearrrrr=====================!!%f\n", cub->near_plane);
-		printf("nearrrrr=====================!!%f\n", cub->near_plane);
-		printf("nearrrrr=====================!!%f\n", cub->near_plane);
-		printf("height!!%f\n", cub->height_multiplier);
-		printf("fov!!%f\n", cub->player->camera->fov);
-		printf("nearrrrr=====================!!%f\n", cub->near_plane);
-	}
-	if (key == XK_2)
-	{
-		cub->height_multiplier += 0.001f;
-		printf("nearrrrr=====================!!%f\n", cub->near_plane);
-		printf("nearrrrr=====================!!%f\n", cub->near_plane);
-		printf("nearrrrr=====================!!%f\n", cub->near_plane);
-		printf("height!!%f\n", cub->height_multiplier);
-		printf("fov!!%f\n", cub->player->camera->fov);
-		printf("nearrrrr=====================!!%f\n", cub->near_plane);
-	}
-	if (key == XK_3)
-	{
-		cub->wall_height -= 0.001f;
-		printf("-s-ssssssss=======================\n");
-		printf("height!!%f\n", cub->wall_height);
-	}
-	if (key == XK_4)
-	{
-		cub->wall_height += 0.001f;
-		printf("-s-ssssssss=======================\n");
-		printf("height!!%f\n", cub->wall_height);
-	}
-	if (key == XK_5)
-	{
-		cub->max_dist -= 0.01f;
-		printf("max_dist !!!!!!!!%f\n", cub->max_dist);
-	}
-	if (key == XK_6)
-	{
-		cub->max_dist += 0.01f;
-		printf("max_dist !!!!!!!!%f\n", cub->max_dist);
-	}
-	if (key == XK_7)
-	{
-		cub->ambient_occlusion += 0.01f;
-		printf("ao !!!!!!!!%f\n", cub->ambient_occlusion);
-	}
-	if (key == XK_8)
-	{
-		cub->ambient_occlusion -= 0.01f;
-		printf("ao !!!!!!!!%f\n", cub->ambient_occlusion);
-	}
-
-	if (cub->game_mode == GAME)
-		key_press_game(key, cub);
-	if (cub->game_mode == EDITOR)
-		key_press_editor(key, cub);
+	return (0);
 }

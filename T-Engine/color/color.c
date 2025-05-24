@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   color.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: samusanc <samusanc@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: Andie <Andie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/07 13:16:55 by samusanc          #+#    #+#             */
-/*   Updated: 2024/08/14 15:09:24 by samusanc         ###   ########.fr       */
+/*   Updated: 2025/05/23 12:45:45 by Andie            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,9 @@ t_color	color_mix(t_color a, t_color b, float lerp)
 	t_color	result;
 
 	result = color_from_rgb(
-	linear_mix(a.r, b.r, lerp), 
-	linear_mix(a.g, b.g, lerp), 
-	linear_mix(a.b, b.b, lerp));
+			linear_mix(a.r, b.r, lerp),
+			linear_mix(a.g, b.g, lerp),
+			linear_mix(a.b, b.b, lerp));
 	return (result);
 }
 
