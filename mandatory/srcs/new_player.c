@@ -12,7 +12,7 @@
 
 #include "mlx.h"
 #include "cub.h"
-#include "idk.h"
+#include "cub_render.h"
 #include "cub_ray.h"
 
 t_player	*new_player(t_camera *camera)

@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   idk.h                                              :+:      :+:    :+:   */
+/*   cub_render.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acaceres <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 15:38:05 by acaceres          #+#    #+#             */
-/*   Updated: 2025/05/24 15:50:09 by acaceres         ###   ########.fr       */
+/*   Updated: 2025/05/24 17:39:59 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef IDK_H
-# define IDK_H
+#ifndef CUB_RENDER_H
+# define CUB_RENDER_H
 # include "libft.h"
 # include "T_Engine.h"
 # include "mlx_utils.h"

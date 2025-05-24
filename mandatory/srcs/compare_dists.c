@@ -12,7 +12,7 @@
 
 #include "mlx.h"
 #include "cub.h"
-#include "idk.h"
+#include "cub_render.h"
 
 t_point	cmp_dists(t_point start, t_point *dist1, t_point *dist2, t_point *dist3)
 {

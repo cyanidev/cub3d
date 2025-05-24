@@ -14,7 +14,7 @@
 # define ENGINE_H
 # include "mlx.h"
 # include "cub.h"
-# include "idk.h"
+# include "cub_render.h"
 # include <time.h>
 
 typedef struct s_input_mapping

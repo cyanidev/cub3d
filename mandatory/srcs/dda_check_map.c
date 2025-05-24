@@ -12,7 +12,7 @@
 
 #include "mlx.h"
 #include "cub.h"
-#include "idk.h"
+#include "cub_render.h"
 
 int	dda_check_map(t_cub *cub, t_point pt)
 {

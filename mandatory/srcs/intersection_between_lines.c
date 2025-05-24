@@ -12,7 +12,7 @@
 
 #include "mlx.h"
 #include "cub.h"
-#include "idk.h"
+#include "cub_render.h"
 #include "helper.h"
 
 float	point_to_angle(t_point pos, t_point pt)

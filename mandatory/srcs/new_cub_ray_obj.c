@@ -12,7 +12,7 @@
 
 #include "mlx.h"
 #include "cub.h"
-#include "idk.h"
+#include "cub_render.h"
 #include "cub_ray.h"
 
 t_cub_ray	*new_cub_ray_obj(void)

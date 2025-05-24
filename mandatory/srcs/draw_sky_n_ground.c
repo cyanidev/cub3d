@@ -12,7 +12,7 @@
 
 #include "mlx.h"
 #include "cub.h"
-#include "idk.h"
+#include "cub_render.h"
 
 void	draw_sky_and_ground(t_cub *cub, int wall_top,
 		size_t wall_n, int wall_bottom)

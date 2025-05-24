@@ -12,7 +12,7 @@
 
 #include "mlx.h"
 #include "cub.h"
-#include "idk.h"
+#include "cub_render.h"
 
 int	check_wall_in_map(int x, int y, char **map)
 {

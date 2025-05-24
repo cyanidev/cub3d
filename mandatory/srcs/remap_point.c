@@ -12,7 +12,7 @@
 
 #include "mlx.h"
 #include "cub.h"
-#include "idk.h"
+#include "cub_render.h"
 
 t_point	remap_point(t_point pt, int zoom, t_point center, t_resolution res)
 {

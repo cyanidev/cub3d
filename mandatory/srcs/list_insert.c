@@ -12,7 +12,7 @@
 
 #include "mlx.h"
 #include "cub.h"
-#include "idk.h"
+#include "cub_render.h"
 
 void	list_insrt_back(t_list *list, t_node *node_to_insrt, t_node *ref_node)
 {

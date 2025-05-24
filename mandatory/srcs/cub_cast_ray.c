@@ -12,7 +12,7 @@
 
 #include "mlx.h"
 #include "cub.h"
-#include "idk.h"
+#include "cub_render.h"
 #include "cub_ray.h"
 
 static t_ccr	init_ccr(t_cub *cub, float angle, float distance)

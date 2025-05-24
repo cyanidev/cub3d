@@ -12,7 +12,7 @@
 
 #include "mlx.h"
 #include "cub.h"
-#include "idk.h"
+#include "cub_render.h"
 
 static t_point	set_end(t_img *img, t_map_editor editor)
 {

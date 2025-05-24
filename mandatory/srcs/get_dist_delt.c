@@ -12,7 +12,7 @@
 
 #include "mlx.h"
 #include "cub.h"
-#include "idk.h"
+#include "cub_render.h"
 #include "cub_ray.h"
 
 float	get_dist_delt(float delta_y, float y, float start_y)

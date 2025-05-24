@@ -13,7 +13,7 @@
 #include "helper.h"
 #include "mlx.h"
 #include "cub.h"
-#include "idk.h"
+#include "cub_render.h"
 
 static void	set_pixel_color(t_point *pixel, t_img *img, t_helper *h)
 {

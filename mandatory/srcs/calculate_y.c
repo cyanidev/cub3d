@@ -12,7 +12,7 @@
 
 #include "mlx.h"
 #include "cub.h"
-#include "idk.h"
+#include "cub_render.h"
 
 t_point	dda_calculate_y_down(t_cub *cub, float delta_x, float delta_y)
 {

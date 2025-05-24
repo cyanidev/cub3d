@@ -12,7 +12,7 @@
 
 #include "mlx.h"
 #include "cub.h"
-#include "idk.h"
+#include "cub_render.h"
 #include "helper.h"
 
 static void	set_rwall_color(t_point *pixel, t_rwall *rwall,

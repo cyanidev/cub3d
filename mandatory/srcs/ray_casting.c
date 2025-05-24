@@ -12,7 +12,7 @@
 
 #include "mlx.h"
 #include "cub.h"
-#include "idk.h"
+#include "cub_render.h"
 #include "helper.h"
 
 void	draw_walls_from_ray(t_rcast *r, t_cub *cub, t_cub_ray *ray)

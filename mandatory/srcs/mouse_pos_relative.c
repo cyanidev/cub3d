@@ -12,7 +12,7 @@
 
 #include "mlx.h"
 #include "cub.h"
-#include "idk.h"
+#include "cub_render.h"
 
 t_point	mouse_pos_relative(t_cub *cub, t_win *win)
 {

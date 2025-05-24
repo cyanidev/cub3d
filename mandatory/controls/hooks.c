@@ -6,13 +6,13 @@
 /*   By: afelicia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 22:01:19 by afelicia          #+#    #+#             */
-/*   Updated: 2024/10/13 22:01:22 by afelicia         ###   ########.fr       */
+/*   Updated: 2025/05/24 17:45:31 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mlx.h"
 #include "cub.h"
-#include "idk.h"
+#include "cub_render.h"
 #include <time.h>
 
 t_hooks	hooks(int (*option1)(), int (*option2)())

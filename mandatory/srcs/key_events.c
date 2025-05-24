@@ -12,7 +12,7 @@
 
 #include "mlx.h"
 #include "cub.h"
-#include "idk.h"
+#include "cub_render.h"
 #include <time.h>
 
 int	key_press_game(int key, t_cub *cub)

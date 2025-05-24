@@ -12,7 +12,7 @@
 
 #include "mlx.h"
 #include "cub.h"
-#include "idk.h"
+#include "cub_render.h"
 #include <time.h>
 
 int	calculate_deltas(t_player *plyr, t_point *dts, t_point *fov1, t_point *fov2)

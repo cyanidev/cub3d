@@ -12,7 +12,7 @@
 
 #include "mlx.h"
 #include "cub.h"
-#include "idk.h"
+#include "cub_render.h"
 
 static void	horizontal_line(t_hline *hline, t_img *img, t_color color)
 {

@@ -12,7 +12,7 @@
 
 #include "mlx.h"
 #include "cub.h"
-#include "idk.h"
+#include "cub_render.h"
 #include "cub_ray.h"
 
 void	ray_angle_zero_to_nineth(t_cub *cub, t_ccr *ccr)

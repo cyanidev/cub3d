@@ -12,7 +12,7 @@
 
 #include "mlx.h"
 #include "cub.h"
-#include "idk.h"
+#include "cub_render.h"
 
 int	draw_player(t_cub *cub, t_map_editor map_editor, t_color col, t_img *img)
 {

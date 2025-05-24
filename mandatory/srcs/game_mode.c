@@ -12,7 +12,7 @@
 
 #include "mlx.h"
 #include "cub.h"
-#include "idk.h"
+#include "cub_render.h"
 
 //cub->player->camera->pos;
 int	game_mode(t_cub *cub)

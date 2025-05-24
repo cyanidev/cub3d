@@ -12,7 +12,7 @@
 
 #include "mlx.h"
 #include "cub.h"
-#include "idk.h"
+#include "cub_render.h"
 #include <time.h>
 
 int	i_g_s_error(t_cub *cub)
