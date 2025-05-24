@@ -6,7 +6,7 @@
 /*   By: Andie <Andie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 19:40:30 by Andie             #+#    #+#             */
-/*   Updated: 2025/05/22 18:48:42 by acaceres         ###   ########.fr       */
+/*   Updated: 2025/05/24 17:33:49 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ void	draw_wall(t_cub *cub, t_cub_ray *ray, t_dwall_helper *dh)
 	t_drwall	dw;
 	t_rwall		rwall;
 
+	dw.color_mix_lerp = 0;
 	dw.res_height = cub->game_img->resolution.height;
 	dw.wall_top = (int)(dw.res_height - (float)dh->wall_height) / 2;
 	dw.min_top = dw.wall_top;
@@ -71,9 +72,6 @@ void	draw_wall(t_cub *cub, t_cub_ray *ray, t_dwall_helper *dh)
 		dw.wall_top = 0;
 	if (dw.wall_bottom >= dw.res_height)
 		dw.wall_bottom = (int)(dw.res_height - 1.0f);
-	dw.color_mix_lerp = 4;
-	if (dw.color_mix_lerp > 1)
-		dw.color_mix_lerp = 1;
 	draw_sky_and_ground(cub, dw.wall_top, dh->wall_n, dw.wall_bottom);
 	dw.y = dw.wall_top;
 	dw.real_pos_x = get_real_pos_x(ray->real_x, ray->real_y, ray->side);
