@@ -3,7 +3,7 @@ SO ./textures/grey.xpm
 WE ./textures/blue.xpm
 EA ./textures/moss.xpm
 
-F 200,150,255
+F 255,0,0
 C 225,150,200
 
         1111111111111111111111111
