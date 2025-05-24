@@ -1,4 +1,16 @@
-/*#ifndef ENGINE_OBJ_H
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   engine_obj.h                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: acaceres <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/24 15:37:35 by acaceres          #+#    #+#             */
+/*   Updated: 2025/05/24 15:42:44 by acaceres         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef ENGINE_OBJ_H
 # define ENGINE_OBJ_H
 # include "libft.h"
 # include "T_Engine.h"
@@ -6,7 +18,7 @@
 # include "engine.h"
 # include "cub.h"
 
-typedef struct s_engine_obj t_engine_obj;
+typedef struct s_engine_obj	t_engine_obj;
 
 typedef struct t_transform
 {
@@ -26,7 +38,7 @@ typedef struct s_engine_obj
 	int			(*start)();
 	int			(*update)();
 	int			(*on_exit)();
-	void			(*del)();
+	void		(*del)();
 }				t_engine_obj;
 
-# endif*/
+#endif

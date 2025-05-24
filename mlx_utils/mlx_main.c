@@ -12,7 +12,8 @@
 
 #include "mlx_utils.h"
 
-int	main()
+int	mlx_main(void)
 {
 	open_img(NULL, NULL);
+	return (0);
 }

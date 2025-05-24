@@ -6,7 +6,7 @@
 /*   By: Andie <Andie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 19:42:13 by Andie             #+#    #+#             */
-/*   Updated: 2025/05/24 02:23:34 by Andie            ###   ########.fr       */
+/*   Updated: 2025/05/22 19:56:25 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	del_action_obj(t_action *obj)
 	}
 }
 
-/*t_action	*new_action_obj(t_event event)
+t_action	*new_action_obj(void)
 {
 	t_action	*result;
 
@@ -37,4 +37,4 @@ void	del_action_obj(t_action *obj)
 	result->triggered = NULL;
 	result->ongoing = NULL;
 	return (result);
-}*/
+}

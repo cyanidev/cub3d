@@ -6,7 +6,7 @@
 /*   By: Andie <Andie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 19:39:51 by Andie             #+#    #+#             */
-/*   Updated: 2025/03/08 19:39:51 by Andie            ###   ########.fr       */
+/*   Updated: 2025/05/11 14:39:31 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,56 +14,61 @@
 #include "cub.h"
 #include "idk.h"
 
-static void	horizontal_line(int x0, int y0, int x1, t_img *img, t_color color) //--> needs to be 4
+static void	horizontal_line(t_hline *hline, t_img *img, t_color color)
 {
-	int x;
+	int	x;
 
-	x = x0;
-	while (x <= x1)
+	x = hline->x0;
+	while (x <= hline->x1)
 	{
 		++x;
-		put_pixel(img, color_point(point(x, y0), color)); // find put_pixel
+		put_pixel(img,
+			color_point(point(x, hline->y0), color));
 	}
-
 }
 
-static void	plot4points(int cx, int cy, int x, int y, t_img *img, t_color color) //--> needs to be 4
+static void
+	plot4points(t_dcircle *dcircle, int x, int y)
 {
-	horizontal_line(cx - x, cy + y, cx +x, img, color);
+	t_hline	hline;
+
+	hline.x0 = dcircle->cx - x;
+	hline.y0 = dcircle->cy + y;
+	hline.x1 = dcircle->cx + x;
+	horizontal_line(&hline, dcircle->img, dcircle->color);
 	if (y != 0)
-		horizontal_line(cx - x, cy - y, cx +x, img, color);
+	{
+		hline.x0 = dcircle->cx - x;
+		hline.y0 = dcircle->cy - y;
+		hline.x1 = dcircle->cx + x;
+		horizontal_line(&hline, dcircle->img, dcircle->color);
+	}
 }
 
 void	draw_circle(int radius, t_img *img, t_point center)
 {
+	t_dcircle	dcircle;
 
-	int	cx;
-	int	cy;
-
-	cx = center.px;
-	cy = center.py;
-
-	int error;
-	int	x;
-	int y;
-	int	lasty;
-
-	error = -radius;
-	x = radius;
-	y = 0;
-	while (x >= y)
+	dcircle.cx = center.px;
+	dcircle.cy = center.py;
+	dcircle.error = -radius;
+	dcircle.x = radius;
+	dcircle.y = 0;
+	dcircle.img = img;
+	dcircle.color = center.color;
+	while (dcircle.x >= dcircle.y)
 	{
-			lasty = y;
-			error += y++;
-			error += y;
-			plot4points(cx, cy, x, lasty, img, center.color);
-			if (error >= 0)	
-			{
-				if (x != lasty)
-					plot4points(cx, cy, lasty, x, img, center.color);
-				error -= x--;
-				error -= x;
-			}
+		dcircle.lasty = dcircle.y;
+		dcircle.error += dcircle.y++;
+		dcircle.error += dcircle.y;
+		plot4points(&dcircle, dcircle.x, dcircle.lasty);
+		if (dcircle.error >= 0)
+		{
+			if (dcircle.x != dcircle.lasty)
+				plot4points(&dcircle, dcircle.lasty,
+					dcircle.x);
+			dcircle.error -= dcircle.x--;
+			dcircle.error -= dcircle.x;
+		}
 	}
-
 }

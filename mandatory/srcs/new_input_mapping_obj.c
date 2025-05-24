@@ -6,11 +6,10 @@
 /*   By: Andie <Andie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 19:42:27 by Andie             #+#    #+#             */
-/*   Updated: 2025/05/23 12:38:12 by Andie            ###   ########.fr       */
+/*   Updated: 2025/03/08 22:02:27 by Andie            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
 #include "mlx.h"
 #include "cub.h"
 #include "idk.h"
@@ -38,4 +37,3 @@ t_input_mapping	*new_input_mapping_obj(void)
 	result->del = del_input_mapping_obj;
 	return (result);
 }
-*/

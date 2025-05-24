@@ -6,20 +6,19 @@
 /*   By: Andie <Andie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 19:42:32 by Andie             #+#    #+#             */
-/*   Updated: 2025/05/23 12:14:14 by Andie            ###   ########.fr       */
+/*   Updated: 2025/05/22 20:00:10 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
 #include "mlx.h"
 #include "cub.h"
 #include "idk.h"
 #include "cub_ray.h"
 #include "engine_obj.h"
 
-t_engine_obj	*get_component(t_engine_obj *parent, char *name)
+//srry implement latter or maybe never :p
+t_engine_obj	*get_component(void)
 {
-	//srry implement latter or maybe never :p
 	return (NULL);
 }
 
@@ -32,7 +31,7 @@ t_transform	transform(void)
 	return (result);
 }
 
-void			del_obj_engine_obj(t_engine_obj *obj)
+void	del_obj_engine_obj(t_engine_obj *obj)
 {
 	if (obj)
 		list_clear(&obj->transform.components);
@@ -48,7 +47,6 @@ t_engine_obj	*new_obj_engine_obj(void *engine)
 	if (!result)
 		return (NULL);
 	ft_bzero(result, sizeof(t_engine_obj));
-
 	result->engine = engine;
 	result->transform = transform();
 	result->transform.parent = engine;
@@ -58,5 +56,5 @@ t_engine_obj	*new_obj_engine_obj(void *engine)
 
 t_node	*add_component(t_engine_obj *obj)
 {
-	return (node(obj, obj->del));
-}*/
+	return (node(obj, (void *)obj->del));
+}

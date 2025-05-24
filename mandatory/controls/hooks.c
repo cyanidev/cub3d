@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   hooks.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Andie <Andie@student.42.fr>                +#+  +:+       +#+        */
+/*   By: afelicia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 22:01:19 by afelicia          #+#    #+#             */
-/*   Updated: 2025/05/24 13:30:09 by Andie            ###   ########.fr       */
+/*   Updated: 2024/10/13 22:01:22 by afelicia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,31 +53,18 @@ t_win	*new_window(void *mlx, t_resolution res, char *title)
 	return (result);
 }
 
-void	start_hooks_in_window (t_win *win, t_win_hooks win_hooks, void *data)
+void	start_hooks_in_window(t_win *win, t_win_hooks win_hooks, void *data)
 {
 	if (!win)
 		return ;
 	if (win_hooks.mouse.option1)
-		mlx_hook(win->mlx_win, 4, (1L<<2), win_hooks.mouse.option1, data);
+		mlx_hook(win->mlx_win, 4, (1L << 2), win_hooks.mouse.option1, data);
 	if (win_hooks.mouse.option2)
-		mlx_hook(win->mlx_win, 5, (1L<<3), win_hooks.mouse.option2, data);
+		mlx_hook(win->mlx_win, 5, (1L << 3), win_hooks.mouse.option2, data);
 	if (win_hooks.key.option1)
-		mlx_hook(win->mlx_win, 2, (1L<<0), win_hooks.key.option1, data);
+		mlx_hook(win->mlx_win, 2, (1L << 0), win_hooks.key.option1, data);
 	if (win_hooks.focus.option1)
-		mlx_hook(win->mlx_win, 9, (1L<<21), win_hooks.focus.option1, data);
+		mlx_hook(win->mlx_win, 9, (1L << 21), win_hooks.focus.option1, data);
 	if (win_hooks.focus.option2)
-		mlx_hook(win->mlx_win, 10, (1L<<21), win_hooks.focus.option2, data);
+		mlx_hook(win->mlx_win, 10, (1L << 21), win_hooks.focus.option2, data);
 }
-
-
-//here maybe add mlx_hook(cub->mlx_win, 17, 0, close_window, cub); to close with x
-
-/*int	close_window(void *param)
-{
-	t_cub *cub;
-
-	cub = (t_cub *)param;
-	free_gen_struct(cub);
-	exit(0);
-	return (0);
-}*/

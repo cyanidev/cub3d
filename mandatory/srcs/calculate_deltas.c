@@ -6,7 +6,7 @@
 /*   By: Andie <Andie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 18:27:34 by Andie             #+#    #+#             */
-/*   Updated: 2025/05/24 02:34:30 by Andie            ###   ########.fr       */
+/*   Updated: 2025/05/22 19:42:24 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include "idk.h"
 #include <time.h>
 
-void	calculate_deltas(t_player *plyr, t_point *dts, t_point *fov1, t_point *fov2)
+int	calculate_deltas(t_player *plyr, t_point *dts, t_point *fov1, t_point *fov2)
 {
 	float	angle;
 	float	fov;
@@ -32,4 +32,5 @@ void	calculate_deltas(t_player *plyr, t_point *dts, t_point *fov1, t_point *fov2
 		fov2->px = cos(deg2_rad(angle + fov));
 		fov2->py = sin(deg2_rad(angle + fov));
 	}
+	return (1);
 }
