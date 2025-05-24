@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: afelicia <afelicia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 02:02:49 by samusanc          #+#    #+#             */
-/*   Updated: 2025/05/24 15:37:54 by acaceres         ###   ########.fr       */
+/*   Updated: 2025/05/24 21:58:45 by afelicia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ int		ft_isspace(char c);
 int		ft_isspace_no_nl(char c);
 int		fill_map(t_cubp *cubp, char **file, int i);
 int		check_map(t_cubp *cubp, char **map);
-void	free_parsing(t_cubp *cubp, int exit_code);
+void	free_parsing(t_cubp *cubp);
 void	free_tab(void **tab);
 int		fill_textures(t_cubp *cubp, char *line, int i);
 int		fill_color(t_cubp *cubp, char *line, int i);

@@ -29,10 +29,10 @@ void	free_tab(void **tab)
 		free(tab);
 }
 
-void	free_parsing(t_cubp *cubp, int exit_code)
+void	free_parsing(t_cubp *cubp)
 {
 	if (!cubp)
-		exit(1);
+		return ;
 	if (cubp->map_info.fd > 0)
 		close(cubp->map_info.fd);
 	if (cubp->map_info.file)
@@ -41,6 +41,5 @@ void	free_parsing(t_cubp *cubp, int exit_code)
 		free_tab((void **)cubp->map);
 	free_textures(cubp);
 	free_floor_n_ceiling(cubp);
-	exit(exit_code);
 }
 

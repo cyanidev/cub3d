@@ -53,18 +53,21 @@ int	init_parsing_info(t_cubp *cubp)
 int	parsingmap(char **argv, t_cub *cub)
 {
 	t_cubp	cubp;
+	int a;
 
 	init_parsing_info(&cubp);
 	if (parsing(&cubp, argv) == 0)
 	{
-		//aqui el free de todo pero null
+		free_parsing(&cubp);
 		return (0);
 	}
+	a = fill_structure(cub, &cubp);
+	printf("fill es %i", a);
 	if (fill_structure(cub, &cubp) == 0)
 	{
-		// liberar cubpp
+		free_parsing(&cubp);
 		return (0);
 	}
-	// liberar cubpp
+	free_parsing(&cubp);
 	return (1);
 }

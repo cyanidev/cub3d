@@ -6,7 +6,7 @@
 #    By: Andie <Andie@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/05 01:22:18 by samusanc          #+#    #+#              #
-#    Updated: 2025/05/24 21:38:21 by afelicia         ###   ########.fr        #
+#    Updated: 2025/05/24 22:27:19 by afelicia         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -120,7 +120,7 @@ build/%.o: %.c
 	@mkdir -p $(dir $@)
 	$(CC) $(CFLAGS) -c $< -o $@ $(HEADERS)
 
-CFLAGS = -Wall -Werror -Wextra #-mavx #-ggbd3 #-fsanitize=address
+CFLAGS = -Wall -Werror -Wextra -g3 #-fsanitize=address #-mavx #-ggbd3
 LDFLAGS = -L./minilibx-linux -lmlx -lXext -lX11 -lXcursor -lXrender -lXfixes -lm -lz -lbsd
 
 
