@@ -178,5 +178,9 @@ float	fix_angle(float angle);
 
 t_cub_ray	*cub_cast_ray(t_cub *cub, float angle, float distance);
 
+// MAIN UTILS
+void	check_program_args(int argc);
+void	set_img_and_hooks(t_cub *cub);
+
 
 # endif
