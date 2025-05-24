@@ -12,12 +12,6 @@
 
 #include "parsing.h"
 
-static void	print_player_at_map_position(t_cubp *cubp, int x, int y)
-{
-	printf("found player %c\n", cubp->player_pos.dir);
-	printf("at map position y=%d x=%d\n", y, x);
-}
-
 int	check_player(t_cubp *cubp, char **map)
 {
 	int	y;
@@ -37,10 +31,7 @@ int	check_player(t_cubp *cubp, char **map)
 			if (ft_strchr("NSEW", map[y][x]) && cubp->player_pos.dir != '0')
 				return (print_msg("More than one player.", 0));
 			if (ft_strchr("NSWE", map[y][x]) && cubp->player_pos.dir == '0')
-			{
 				cubp->player_pos.dir = map[y][x];
-				print_player_at_map_position(cubp, x, y);
-			}
 			x++;
 		}
 	}
@@ -62,14 +53,6 @@ int	valid_pos(t_cubp *cubp, char **map)
 	return (1);
 }
 
-static void	replace_player_with_floor_log_msg(t_cubp *cubp)
-{
-	printf("replacing player with floor pos.plane_y=%f \n",
-		cubp->player_pos.plane_y);
-	printf("replacing player with floor pos.plane_x=%f \n",
-		cubp->player_pos.plane_x);
-}
-
 int	replace_player_with_floor(t_cubp *cubp, char **map)
 {
 	int	y;
@@ -88,7 +71,6 @@ int	replace_player_with_floor(t_cubp *cubp, char **map)
 				cubp->player_pos.plane_y = (double)y + 0.5;
 				cubp->player_pos.plane_x = (double)x + 0.5;
 				map[y][x] = '0';
-				replace_player_with_floor_log_msg(cubp);
 			}
 			x++;
 		}

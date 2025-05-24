@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 14:03:11 by andie             #+#    #+#             */
-/*   Updated: 2025/05/10 17:51:14 by acaceres         ###   ########.fr       */
+/*   Updated: 2025/05/24 21:19:38 by afelicia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,23 +50,6 @@ int	init_parsing_info(t_cubp *cubp)
 	return (1);
 }
 
-static void	fill_structure(t_cub *cub, t_cubp *cubp)
-{
-	cub->north_path = cubp->north_path;
-	cub->south_path = cubp->south_path;
-	cub->east_path = cubp->east_path;
-	cub->west_path = cubp->west_path;
-	cub->map = cubp->map;
-	cub->floor = color_from_rgb(cubp->floor[0],
-			cubp->floor[1], cubp->floor[2]);
-	cub->ceiling = color_from_rgb(cubp->ceiling[0],
-			cubp->ceiling[1], cubp->ceiling[2]);
-	cub->parsing_px = cubp->player_pos.plane_x;
-	cub->parsing_py = cubp->player_pos.plane_y;
-	cub->player_angle = cubp->player_pos.angle;
-	//free cubp
-}
-
 int	parsingmap(char **argv, t_cub *cub)
 {
 	t_cubp	cubp;
@@ -77,6 +60,11 @@ int	parsingmap(char **argv, t_cub *cub)
 		//aqui el free de todo pero null
 		return (0);
 	}
-	fill_structure(cub, &cubp);
+	if (fill_structure(cub, &cubp) == 0)
+	{
+		// liberar cubpp
+		return (0);
+	}
+	// liberar cubpp
 	return (1);
 }

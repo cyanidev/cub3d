@@ -44,7 +44,7 @@ int	check_texture(t_cubp *cubp)
 {
 	if (cubp->north_path == NULL || cubp->south_path == NULL
 		|| cubp->west_path == NULL || cubp->east_path == NULL)
-		return (print_msg("North texture is missing.", 0));
+		return (print_msg("A texture is missing.", 0));
 	if (!cubp->ceiling || !cubp->floor)
 		return (print_msg("Ceiling or floor color is missing.", 0));
 	if (check_path(cubp->north_path) == 0

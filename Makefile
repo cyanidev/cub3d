@@ -6,7 +6,7 @@
 #    By: Andie <Andie@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/05 01:22:18 by samusanc          #+#    #+#              #
-#    Updated: 2025/05/24 20:27:35 by afelicia         ###   ########.fr        #
+#    Updated: 2025/05/24 21:38:21 by afelicia         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,6 +42,7 @@ SRCS = 		./T-Engine/color/color.c \
 			./mandatory/parsing/clean_close.c \
 			./mandatory/parsing/fill_map.c \
 			./mandatory/parsing/fill_textures.c \
+			./mandatory/parsing/fill_structure.c \
 			./mandatory/parsing/ft_is_space.c \
 			./mandatory/parsing/init_parsing.c \
 			./mandatory/parsing/map.c \

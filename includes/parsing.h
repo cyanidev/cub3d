@@ -93,5 +93,6 @@ int		ft_isprint_no_ws(int c);
 int		parsingmap(char **argv, t_cub *cub);
 void	free_textures(t_cubp *cubp);
 void    free_floor_n_ceiling(t_cubp *cubp);
+int		fill_structure(t_cub *cub, t_cubp *cubp);
 
 #endif

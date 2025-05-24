@@ -85,12 +85,8 @@ int	check_map(t_cubp *cubp, char **map)
 		return (print_msg("Map is too small.", 0));
 	if (check_player(cubp, map) == 0)
 		return (print_msg("Player not found or more than one.", 0));
-	printf("player positionnn: %f %f\n",
-		cubp->player_pos.plane_x, cubp->player_pos.plane_y);
 	if (replace_player_with_floor(cubp, map) == 0)
 		return (print_msg("Player not found or more than one.", 0));
-	printf("player positionnn after replacing it with floor: %f %f\n",
-		cubp->player_pos.plane_x, cubp->player_pos.plane_y);
 	if (map_end(cubp) == 0)
 		return (print_msg("Invalid map.", 0));
 	return (1);
