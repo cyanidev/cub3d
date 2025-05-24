@@ -33,14 +33,17 @@ int	open_wall_tex(t_cub *cub)
 	return (1);
 }
 
-	// CHANGE THIS RESOLUTION AFTER!!!!
+
 int	init_gen_struct(t_cub *cub, char **argv)
 {
 	cub->mlx = mlx_init();
 	if (!cub->mlx)
-		return (i_g_s_error(cub));
-	if (!parsingmap(argv, cub))
-		return (i_g_s_error(cub));
+		return (i_g_s_error(cub)); //liberar malloc de cub y salir clean 
+	if (parsingmap(argv, cub) == 0) //---> 
+	{
+		//liberar cub mlx
+		return (i_g_s_error(cub)); //free mlx free cub
+	}
 	if (!open_wall_tex(cub))
 	{
 		return (i_g_s_error(cub));

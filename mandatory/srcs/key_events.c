@@ -76,8 +76,7 @@ int	key_press(int key, void *param)
 	}
 	if (key == XK_Escape)
 	{
-		free_gen_struct(cub);
-		exit(0);
+		//free_parsing(cub, 0);
 	}
 	select_key_w_s_a_d_e_q(cub, key);
 	select_key_0_to_9(cub, key);

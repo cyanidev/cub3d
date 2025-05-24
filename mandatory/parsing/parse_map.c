@@ -34,7 +34,7 @@ static int	file_lines(char *path)
 	return (count);
 }
 
-static void	fill_tab(int row, int column, int i, t_cubp *cubp)
+static int	fill_tab(int row, int column, int i, t_cubp *cubp)
 {
 	char	*line;
 
@@ -44,11 +44,7 @@ static void	fill_tab(int row, int column, int i, t_cubp *cubp)
 		cubp->map_info.file[row] = ft_calloc((ft_strlen(line) + 1),
 				sizeof(char));
 		if (cubp->map_info.file[row] == NULL)
-		{
-			print_msg("Malloc failed.", 1);
-			free_tab((void **)cubp->map_info.file);
-			return ;
-		}
+			return (print_msg("Malloc failed.", 0));
 		while (line[i] != '\0')
 		{
 			cubp->map_info.file[row][column] = line[i++];
@@ -61,9 +57,10 @@ static void	fill_tab(int row, int column, int i, t_cubp *cubp)
 		line = get_next_line(cubp->map_info.fd);
 	}
 	cubp->map_info.file[row] = NULL;
+	return (1);
 }
 
-void	parse_map(char *path, t_cubp *cubp)
+int	parse_map(char *path, t_cubp *cubp)
 {
 	int	i;
 	int	row;
@@ -74,18 +71,14 @@ void	parse_map(char *path, t_cubp *cubp)
 	column = 0;
 	cubp->map_info.lines = file_lines(path);
 	cubp->map_info.path = path;
-	cubp->map_info.file = ft_calloc(cubp->map_info.lines + 1, sizeof(char *));
+	cubp->map_info.file = ft_calloc(cubp->map_info.lines + 1, sizeof(char *)); //1 malloc
 	if (cubp->map_info.file == NULL)
-	{
-		print_msg("Malloc failed.", 1);
-		return ;
-	}
+		return (print_msg("Malloc failed.", 0));
 	cubp->map_info.fd = open(path, O_RDONLY);
 	if (cubp->map_info.fd == -1)
-	{
-		print_msg("fd = -1", 1);
-		return ;
-	}
-	fill_tab(row, column, i, cubp);
+		return (print_msg("fd = -1", 0));
+	if (fill_tab(row, column, i, cubp) == 0)
+		return (0);
 	close(cubp->map_info.fd);
+	return (1);
 }

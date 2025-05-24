@@ -69,14 +69,14 @@ typedef struct s_cubp
 
 
 int		parsing(t_cubp *cubp, char **argv);
-void	parse_map(char *path, t_cubp *cubp);
+int		parse_map(char *path, t_cubp *cubp);
 int		check_file(char *arg);
 int		print_msg(char *msg, int ret);
 int		ft_isspace(char c);
 int		ft_isspace_no_nl(char c);
 int		fill_map(t_cubp *cubp, char **file, int i);
 int		check_map(t_cubp *cubp, char **map);
-void	free_parsing(t_cubp *cubp);
+void	free_parsing(t_cubp *cubp, int exit_code);
 void	free_tab(void **tab);
 int		fill_textures(t_cubp *cubp, char *line, int i);
 int		fill_color(t_cubp *cubp, char *line, int i);
@@ -90,9 +90,8 @@ int		replace_player_with_floor(t_cubp *cubp, char **map);
 int		valid_pos(t_cubp *cubp, char **map);
 int		check_player(t_cubp *cubp, char **map);
 int		ft_isprint_no_ws(int c);
-//char	*ft_strdup_gnl(const char *s);
-//char	*ft_strchr_gnl(char *str, int c);
-//void	ft_free_gnl(char **str, char **str2, char **str3);
 int		parsingmap(char **argv, t_cub *cub);
+void	free_textures(t_cubp *cubp);
+void    free_floor_n_ceiling(t_cubp *cubp);
 
 #endif

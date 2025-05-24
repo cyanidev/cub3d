@@ -64,16 +64,19 @@ static void	fill_structure(t_cub *cub, t_cubp *cubp)
 	cub->parsing_px = cubp->player_pos.plane_x;
 	cub->parsing_py = cubp->player_pos.plane_y;
 	cub->player_angle = cubp->player_pos.angle;
+	//free cubp
 }
 
 int	parsingmap(char **argv, t_cub *cub)
 {
 	t_cubp	cubp;
 
-	printf("nombre del mapa:%s\n", argv[1]);
 	init_parsing_info(&cubp);
 	if (parsing(&cubp, argv) == 0)
+	{
+		//aqui el free de todo pero null
 		return (0);
+	}
 	fill_structure(cub, &cubp);
 	return (1);
 }
