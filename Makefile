@@ -33,8 +33,8 @@ build/%.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@ $(HEADERS)
 
 CFLAGS = -Wall -Werror -Wextra #-mavx #-ggbd3 #-fsanitize=address
-LDFLAGS = -lm -lz -lbsd -lXext -lX11
-LDFLAGS += -L./minilibx-linux -lmlx
+LDFLAGS = -L./minilibx-linux -lmlx -lXext -lX11 -lXcursor -lXrender -lXfixes -lm -lz -lbsd
+
 
 #compiler
 CC = gcc
