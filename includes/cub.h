@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: samusanc <samusanc@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: acaceres <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/05 02:02:49 by samusanc          #+#    #+#             */
-/*   Updated: 2024/09/02 18:07:57 by samusanc         ###   ########.fr       */
+/*   Created: 2025/05/24 15:36:39 by acaceres          #+#    #+#             */
+/*   Updated: 2025/05/24 15:41:23 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 # include "mlx_utils.h"
 # include <X11/keysym.h>
 
+typedef structs_bsp	t_bsp;
 
-typedef struct s_bsp t_bsp;
 typedef struct s_map_editor
 {
 	t_point			screen_center;
@@ -32,7 +32,7 @@ typedef enum e_game_mode
 	EDITOR
 }				t_game_mode;
 
-typedef	struct s_hooks
+typedef struct s_hooks
 {
 	int	(*option1)();
 	int	(*option2)();
@@ -62,43 +62,28 @@ typedef struct s_triple_buff_img
 
 typedef struct s_cub
 {
-
 	t_map_editor		map_editor;
 
 	void				*mlx;
 	t_win				*main_window;
-
 	unsigned int		frame;
 	double				delta_time;
 	t_game_mode			game_mode;
 	int					focus;
 	int					mouse_press;
 	t_point				last_mouse_grab;
-
 	t_img				*editor_img;
 	t_img				*game_img;
 	t_img				*minimap_img;
 	t_img				*test_tex;
-
 	float				parsing_px;
 	float				parsing_py;
 	float				player_angle;
-
-
 	float				ambient_occlusion;
-
 	float				max_dist;
-
 	float				wall_height;
-
 	float				near_plane;
-
-
 	float				height_multiplier;
-
-
-
-
 	char				*north_path;
 	char				*south_path;
 	char				*east_path;
@@ -106,22 +91,17 @@ typedef struct s_cub
 	t_color				floor;
 	t_color				ceiling;
 	char				**map;
-
-	// PLAYER
 	t_player			*player;
 	t_point				p_deltas;
 	t_point				fov1_deltas;
 	t_point				fov2_deltas;
 	t_point				fov1_screen;
 	t_point				fov2_screen;
-
-
-
 	t_img				*north;
 	t_img				*south;
 	t_img				*east;
 	t_img				*west;
-	void			(*del)();
-}               t_cub;
+	void				(*del)();
+}					t_cub;
 
 #endif
