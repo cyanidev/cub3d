@@ -1,22 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   line.c                                             :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: samusanc <samusanc@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: acaceres <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/07 13:16:55 by samusanc          #+#    #+#             */
-/*   Updated: 2025/05/25 22:51:50 by acaceres         ###   ########.fr       */
+/*   Created: 2023/03/27 00:08:12 by acaceres          #+#    #+#             */
+/*   Updated: 2023/09/30 11:09:08 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "line.h"
+#include "libft.h"
 
-t_line	line(t_point a, t_point b)
+t_list	*ft_lstnew(void *content)
 {
-	t_line	result;
+	t_list	*head;
 
-	result.a = a;
-	result.b = b;
-	return (result);
+	head = (t_list *)malloc(sizeof(t_list));
+	if (!head)
+		return (NULL);
+	head->content = content;
+	head->next = NULL;
+	return (head);
 }

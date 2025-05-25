@@ -6,7 +6,7 @@
 /*   By: Andie <Andie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/07 13:16:55 by samusanc          #+#    #+#             */
-/*   Updated: 2025/05/24 04:45:37 by Andie            ###   ########.fr       */
+/*   Updated: 2025/05/25 22:49:53 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,5 @@
 # include "screen.h"
 # include "camera.h"
 # include "player.h"
-# include "npc.h"
 
 #endif

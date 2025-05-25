@@ -1,22 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   line.c                                             :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: samusanc <samusanc@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: acaceres <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/07 13:16:55 by samusanc          #+#    #+#             */
-/*   Updated: 2025/05/25 22:51:50 by acaceres         ###   ########.fr       */
+/*   Created: 2023/03/09 20:33:03 by acaceres          #+#    #+#             */
+/*   Updated: 2023/03/13 17:07:24 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "line.h"
-
-t_line	line(t_point a, t_point b)
+int	ft_tolower(int c)
 {
-	t_line	result;
-
-	result.a = a;
-	result.b = b;
-	return (result);
+	if ((c >= 'A' && c <= 'Z'))
+		return (c + 32);
+	return (c);
 }

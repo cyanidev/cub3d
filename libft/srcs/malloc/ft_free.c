@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   line.c                                             :+:      :+:    :+:   */
+/*   ft_free.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: samusanc <samusanc@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: acaceres <acaceres@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/07 13:16:55 by samusanc          #+#    #+#             */
-/*   Updated: 2025/05/25 22:51:50 by acaceres         ###   ########.fr       */
+/*   Created: 2023/10/29 09:28:24 by acaceres          #+#    #+#             */
+/*   Updated: 2023/10/29 09:29:12 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "line.h"
+#include "libft.h"
 
-t_line	line(t_point a, t_point b)
+void	ft_free(void **ptr)
 {
-	t_line	result;
-
-	result.a = a;
-	result.b = b;
-	return (result);
+	if (*ptr)
+	{
+		free(*ptr);
+		*ptr = NULL;
+	}
 }

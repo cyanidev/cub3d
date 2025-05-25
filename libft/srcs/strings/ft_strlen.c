@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   line.c                                             :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: samusanc <samusanc@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: acaceres <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/07 13:16:55 by samusanc          #+#    #+#             */
-/*   Updated: 2025/05/25 22:51:50 by acaceres         ###   ########.fr       */
+/*   Created: 2023/03/07 16:24:12 by acaceres          #+#    #+#             */
+/*   Updated: 2023/03/09 00:51:38 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "line.h"
+#include "libft.h"
 
-t_line	line(t_point a, t_point b)
+size_t	ft_strlen(const char *str)
 {
-	t_line	result;
+	int	i;
 
-	result.a = a;
-	result.b = b;
-	return (result);
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
 }

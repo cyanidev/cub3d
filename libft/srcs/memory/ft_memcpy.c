@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   line.c                                             :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: samusanc <samusanc@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: acaceres <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/07 13:16:55 by samusanc          #+#    #+#             */
-/*   Updated: 2025/05/25 22:51:50 by acaceres         ###   ########.fr       */
+/*   Created: 2023/03/07 21:22:57 by acaceres          #+#    #+#             */
+/*   Updated: 2023/03/10 15:59:15 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "line.h"
+#include "libft.h"
 
-t_line	line(t_point a, t_point b)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	t_line	result;
+	size_t	i;
 
-	result.a = a;
-	result.b = b;
-	return (result);
+	i = 0;
+	if (!(char *)dst && !(char *)src)
+		return (dst);
+	while (i < n)
+	{
+		((char *)dst)[i] = ((char *)src)[i];
+		i++;
+	}
+	return (dst);
 }

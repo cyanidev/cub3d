@@ -6,14 +6,13 @@
 /*   By: acaceres <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 15:32:03 by acaceres          #+#    #+#             */
-/*   Updated: 2025/05/25 21:18:01 by acaceres         ###   ########.fr       */
+/*   Updated: 2025/05/25 22:40:20 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mlx.h"
 #include "cub.h"
 #include "cub_render.h"
-#include "engine.h"
 #include <time.h>
 
 void	check_program_args(int argc)

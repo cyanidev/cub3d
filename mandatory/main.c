@@ -6,14 +6,13 @@
 /*   By: Andie <Andie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 21:15:29 by afelicia          #+#    #+#             */
-/*   Updated: 2025/05/25 21:46:25 by acaceres         ###   ########.fr       */
+/*   Updated: 2025/05/25 22:40:09 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mlx.h"
 #include "cub.h"
 #include "cub_render.h"
-#include "engine.h"
 #include <time.h>
 
 t_map_editor	map_editor(void)

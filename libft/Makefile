@@ -3,126 +3,104 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: samusanc <samusanc@student.42madrid>       +#+  +:+       +#+         #
+#    By: acaceres <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/01/19 13:35:22 by samusanc          #+#    #+#              #
-#    Updated: 2024/08/14 11:29:31 by samusanc         ###   ########.fr        #
+#    Created: 2023/04/01 07:08:03 by acaceres          #+#    #+#              #
+#    Updated: 2024/07/10 12:36:46 by acaceres         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-OMAIN	=	./main/main.c
-MAIN	= 	main.c
-HFILES	= 	libft.h
-NAME 	= 	libft.a
+### MAIN FILES ###
+SRCS =	srcs/chars/ft_isalnum.c \
+	srcs/chars/ft_isalpha.c \
+	srcs/chars/ft_isascii.c \
+	srcs/chars/ft_isdigit.c \
+	srcs/chars/ft_isprint.c \
+	srcs/chars/ft_tolower.c \
+	srcs/chars/ft_toupper.c \
+	srcs/malloc/ft_bzero.c \
+	srcs/malloc/ft_calloc.c \
+	srcs/malloc/ft_free_2d_arr.c \
+	srcs/malloc/ft_free_3d_arr.c \
+	srcs/malloc/ft_free_args.c \
+	srcs/malloc/ft_free.c \
+	srcs/memory/ft_memchr.c \
+	srcs/memory/ft_memcmp.c \
+	srcs/memory/ft_memcpy.c \
+	srcs/memory/ft_memmove.c \
+	srcs/memory/ft_memset.c \
+	srcs/prints/ft_putchar_fd.c \
+	srcs/prints/ft_putendl_fd.c \
+	srcs/prints/ft_putnbr_fd.c \
+	srcs/prints/ft_putstr_fd.c \
+	srcs/std/ft_atoi.c \
+	srcs/std/ft_atol.c \
+	srcs/std/ft_itoa.c \
+	srcs/strings/ft_split.c \
+	srcs/strings/ft_strchr.c \
+	srcs/strings/ft_strdup.c \
+	srcs/strings/ft_striteri.c \
+	srcs/strings/ft_strjoin.c \
+	srcs/strings/ft_strlcat.c \
+	srcs/strings/ft_strlcpy.c \
+	srcs/strings/ft_strlen.c \
+	srcs/strings/ft_strmapi.c \
+	srcs/strings/ft_strncmp.c \
+	srcs/strings/ft_strnstr.c \
+	srcs/strings/ft_strrchr.c \
+	srcs/strings/ft_strtrim.c \
+	srcs/strings/ft_substr.c \
+	srcs/get_next_line/get_next_line.c \
+	srcs/ft_printf/ft_printf_utils.c \
+	srcs/ft_printf/ft_printf.c \
 
-CC		= 	gcc
-CC		+=	-I./
-OUT		= 	adeu
-AR		=	ar rcs 
+### BONUS FILES ###
+SRCSB =	srcs/linked_list/ft_lstnew_bonus.c \
+	srcs/linked_list/ft_lstadd_front_bonus.c \
+	srcs/linked_list/ft_lstnew_bonus.c \
+	srcs/linked_list/ft_lstsize_bonus.c \
+	srcs/linked_list/ft_lstlast_bonus.c \
+	srcs/linked_list/ft_lstadd_back_bonus.c \
+	srcs/linked_list/ft_lstdelone_bonus.c \
+	srcs/linked_list/ft_lstclear_bonus.c \
+	srcs/linked_list/ft_lstiter_bonus.c \
+	srcs/linked_list/ft_lstmap_bonus.c \
 
-OF		=	*.c Makefile libft.h
+#####################################################################################
 
-GA		=	git add
-GC		=	git commit -m "subiendo prueba"
+NAME = libft.a
 
-CFLAGS	= 	-Wextra -Werror -Wall
-SRC		= \
-			ft_isalpha.c \
-			ft_isdigit.c \
-			ft_isalnum.c \
-			ft_isascii.c \
-			ft_isprint.c \
-			\
-			ft_free.c \
-			\
-			ft_atoi.c \
-			ft_bzero.c \
-			ft_toupper.c \
-			ft_tolower.c \
-			ft_calloc.c \
-			ft_substr.c \
-			ft_split.c \
-			ft_itoa.c \
-			\
-			ft_memset.c \
-			ft_memcpy.c \
-			ft_memmove.c \
-			ft_memchr.c \
-			ft_memcmp.c \
-			\
-			ft_strlen.c \
-			ft_strlcat.c \
-			ft_strlcpy.c \
-			ft_strchr.c \
-			ft_strrchr.c \
-			ft_strncmp.c \
-			ft_strnstr.c \
-			ft_strdup.c \
-			ft_strjoin.c \
-			ft_strtrim.c \
-			ft_strmapi.c \
-			ft_striteri.c \
-			\
-			ft_putchar_fd.c \
-			ft_putnbr_fd.c \
-			ft_putstr_fd.c \
-			ft_putendl_fd.c \
-			\
-			GNL/get_next_line.c \
-			GNL/get_next_line_utils.c \
-			\
-			printf/src/ft_format_char.c \
-			printf/src/ft_format_hex.c \
-			printf/src/ft_format_numbers.c \
-			printf/src/ft_format_string.c \
-			printf/ft_printf.c \
-			./list/listSwap.c \
-			./list/listPush.c \
-			./list/listClear.c \
-			./list/list.c \
-			./list/listRmv.c \
-			./list/listFind.c \
-			./list/node.c \
+TARGET = all
 
-OBJ		= 	$(SRC:.c=.o)
+OBJS = $(SRCS:.c=.o)
+OBJSB = $(SRCSB:.c=.o)
 
-# COLORS
+CC = gcc
+C_FLAGS = -Wall -Wextra -Werror
+INC = -I ./includes
+AR = ar
+AR_FLAGS = -rcs
+RM = rm -rf
 
-BLACK	=	\033[0;30m
-RED		=	\033[0;31m
-GREEN	=	\033[0;32m
-YELLOW	=	\033[0;33m
-BLUE	=	\033[0;34m
-MAGENTA	=	\033[0;35m
-CYAN	=	\033[0;36m
-RESET	=	\033[0m
+%.o: %.c
+	$(CC) $(INC) $(C_FLAGS) -c $< -o $@
 
-#ALL
-all		: 	$(NAME)
+$(NAME): $(OBJS)
+	$(AR) $(AR_FLAGS) $(NAME) $(OBJS)
 
-$(MAIN)	:	$(OMAIN)
-			cp $(OMAIN) ./
+bonus: $(OBJS) $(OBJSB)
+	$(AR) $(AR_FLAGS) $(NAME) $(OBJS) $(OBJSB)
 
-MAINO	=	$(MAIN:.c=.o)
-L		=	main.o -L. -lft
+all: $(OBJS) $(NAME)
 
-$(NAME)	: 	$(OBJ)
-			$(AR) $@ $^
-$(OUT)	: 	$(NAME) $(MAINO)
-			@$(CC) $(CFLAGS) -o $(OUT) $(L)
+re: fclean
+	$(MAKE) $(TARGET)
 
-#CLEAN
-clean	:
-			@rm -f $(OBJ)
-fclean	:
-			@rm -f $(OBJ) $(NAME) $(OUT) main.o $(MAIN)
+clean:
+	$(RM) $(OBJS)
+	$(RM) $(OBJSB)
 
-#GIT
-add		:
-			@$(GA) $(OF)
-commit	:
-			@$(GC)
+fclean: clean
+	$(RM) $(NAME)
 
-re		:	fclean all
-
-.PHONY:		all clean fclean re bonus
+.PHONY: all clean fclean re bonus

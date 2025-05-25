@@ -6,7 +6,7 @@
 /*   By: acaceres <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 15:37:04 by acaceres          #+#    #+#             */
-/*   Updated: 2025/05/24 15:39:55 by acaceres         ###   ########.fr       */
+/*   Updated: 2025/05/25 22:39:59 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 # include "libft.h"
 # include "T_Engine.h"
 # include "mlx_utils.h"
-# include "engine.h"
 # include "cub.h"
 
 typedef struct s_cub_ray

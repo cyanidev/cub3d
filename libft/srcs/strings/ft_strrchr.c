@@ -1,22 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   line.c                                             :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: samusanc <samusanc@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: acaceres <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/07 13:16:55 by samusanc          #+#    #+#             */
-/*   Updated: 2025/05/25 22:51:50 by acaceres         ###   ########.fr       */
+/*   Created: 2023/03/13 14:07:00 by acaceres          #+#    #+#             */
+/*   Updated: 2023/03/13 17:06:37 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "line.h"
+#include "libft.h"
 
-t_line	line(t_point a, t_point b)
+char	*ft_strrchr(const char *s, int c)
 {
-	t_line	result;
+	int		i;
+	int		ic;
+	char	*cy;
 
-	result.a = a;
-	result.b = b;
-	return (result);
+	i = ft_strlen(s);
+	ic = (char)c;
+	cy = (char *)s;
+	while (i >= 0)
+	{
+		if (cy[i] == ic)
+			return (&cy[i]);
+		i--;
+	}
+	return (0);
 }

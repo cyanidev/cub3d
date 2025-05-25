@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   line.c                                             :+:      :+:    :+:   */
+/*   ft_free_3d_arr.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: samusanc <samusanc@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: acaceres <acaceres@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/07 13:16:55 by samusanc          #+#    #+#             */
-/*   Updated: 2025/05/25 22:51:50 by acaceres         ###   ########.fr       */
+/*   Created: 2023/11/13 07:30:30 by acaceres          #+#    #+#             */
+/*   Updated: 2023/11/17 01:09:09 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "line.h"
+#include "libft.h"
 
-t_line	line(t_point a, t_point b)
+void	ft_free_3d_arr(void ****ptr)
 {
-	t_line	result;
+	int	i;
 
-	result.a = a;
-	result.b = b;
-	return (result);
+	i = 0;
+	if (!*ptr)
+		return ;
+	while ((*ptr)[i])
+		ft_free_2d_arr(&(*ptr)[i++]);
+	ft_free((void *)ptr);
+	*ptr = NULL;
 }

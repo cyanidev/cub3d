@@ -1,22 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   line.c                                             :+:      :+:    :+:   */
+/*   ft_free_args.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: samusanc <samusanc@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: acaceres <acaceres@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/07 13:16:55 by samusanc          #+#    #+#             */
-/*   Updated: 2025/05/25 22:51:50 by acaceres         ###   ########.fr       */
+/*   Created: 2023/06/28 22:00:16 by acaceres          #+#    #+#             */
+/*   Updated: 2023/10/29 05:44:52 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "line.h"
+#include "libft.h"
 
-t_line	line(t_point a, t_point b)
+void	ft_free_args(size_t argc, ...)
 {
-	t_line	result;
+	va_list	args;
+	size_t	i;
 
-	result.a = a;
-	result.b = b;
-	return (result);
+	va_start(args, argc);
+	i = 0;
+	while (i++ < argc)
+		free(va_arg(args, void *));
+	va_end(args);
 }

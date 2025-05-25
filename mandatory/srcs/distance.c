@@ -6,15 +6,13 @@
 /*   By: Andie <Andie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 19:39:28 by Andie             #+#    #+#             */
-/*   Updated: 2025/05/22 19:47:01 by acaceres         ###   ########.fr       */
+/*   Updated: 2025/05/25 22:41:25 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mlx.h"
 #include "cub.h"
 #include "cub_render.h"
-#include "engine.h"
-#include "engine_obj.h"
 #include <time.h>
 
 float	distance_between_points(t_point a, t_point b)

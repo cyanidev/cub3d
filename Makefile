@@ -6,7 +6,7 @@
 #    By: Andie <Andie@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/05 01:22:18 by samusanc          #+#    #+#              #
-#    Updated: 2025/05/25 17:13:06 by acaceres         ###   ########.fr        #
+#    Updated: 2025/05/25 22:44:06 by acaceres         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,14 +20,13 @@ LIB_NAME = libft.a
 LIB = $(LIB_PATH)$(LIB_NAME)
 
 #headers
-HEADERS = -I ./includes/ -I ./libft/ -I./mlx_utils/includes/ -I./minilibx-linux/ -I./T-Engine/includes/ -I./ft_math/includes/	
+HEADERS = -I ./includes/ -I ./libft/includes/ -I./mlx_utils/includes/ -I./minilibx-linux/ -I./T-Engine/includes/ -I./ft_math/includes/	
 
 #sources (command find to locate all source files in folders)
 SRCS = 		./T-Engine/color/color.c \
 			./T-Engine/geometry/line.c \
 			./T-Engine/geometry/point.c \
 			./T-Engine/geometry/normalize.c \
-			./T-Engine/screen/screen.c \
 			./T-Engine/screen/resolution.c \
 			./ft_math/ft_abs.c \
 			./ft_math/Q_rsqrt.c \
@@ -65,7 +64,6 @@ SRCS = 		./T-Engine/color/color.c \
 			./mandatory/srcs/cub_cast_ray_angles.c \
 			./mandatory/srcs/cub_cast_ray_utils.c \
 			./mandatory/srcs/dda_check_map.c \
-			./mandatory/srcs/default_node_free.c \
 			./mandatory/srcs/del_cub_ray_obj.c \
 			./mandatory/srcs/distance.c \
 			./mandatory/srcs/draw_circle.c \
@@ -75,7 +73,6 @@ SRCS = 		./T-Engine/color/color.c \
 			./mandatory/srcs/draw_sky_n_ground.c \
 			./mandatory/srcs/draw_square.c \
 			./mandatory/srcs/editor_mode.c \
-			./mandatory/srcs/engine.c \
 			./mandatory/srcs/error_handling.c \
 			./mandatory/srcs/frame_update.c \
 			./mandatory/srcs/free_gen_struct.c \
@@ -89,14 +86,10 @@ SRCS = 		./T-Engine/color/color.c \
 			./mandatory/srcs/key_events.c \
 			./mandatory/srcs/key_events_calcs_.c \
 			./mandatory/srcs/key_events_utils.c \
-			./mandatory/srcs/list_insert.c \
 			./mandatory/srcs/mouse_events.c \
 			./mandatory/srcs/mouse_pos_relative.c \
 			./mandatory/srcs/new_action_obj.c \
 			./mandatory/srcs/new_cub_ray_obj.c \
-			./mandatory/srcs/new_engine_game_mode.c \
-			./mandatory/srcs/new_input_mapping_obj.c \
-			./mandatory/srcs/new_obj_engine_obj.c \
 			./mandatory/srcs/new_player.c \
 			./mandatory/srcs/player_angle.c \
 			./mandatory/srcs/print_map.c \

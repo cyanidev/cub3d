@@ -6,7 +6,7 @@
 /*   By: Andie <Andie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 19:42:13 by Andie             #+#    #+#             */
-/*   Updated: 2025/05/22 19:56:25 by acaceres         ###   ########.fr       */
+/*   Updated: 2025/05/25 22:41:53 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #include "cub.h"
 #include "cub_render.h"
 #include "cub_ray.h"
-#include "engine_obj.h"
 
 void	del_action_obj(t_action *obj)
 {

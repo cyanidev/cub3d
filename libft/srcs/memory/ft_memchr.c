@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   line.c                                             :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: samusanc <samusanc@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: acaceres <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/07 13:16:55 by samusanc          #+#    #+#             */
-/*   Updated: 2025/05/25 22:51:50 by acaceres         ###   ########.fr       */
+/*   Created: 2023/03/13 18:13:28 by acaceres          #+#    #+#             */
+/*   Updated: 2023/09/30 11:16:37 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "line.h"
+#include "libft.h"
 
-t_line	line(t_point a, t_point b)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	t_line	result;
+	size_t	i;
 
-	result.a = a;
-	result.b = b;
-	return (result);
+	i = 0;
+	while (i < n)
+	{
+		if (((char *)s)[i] == (char)c)
+			return (&((char *)s)[i]);
+		i++;
+	}
+	return (NULL);
 }
