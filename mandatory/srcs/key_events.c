@@ -6,7 +6,7 @@
 /*   By: Andie <Andie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 19:41:50 by Andie             #+#    #+#             */
-/*   Updated: 2025/05/22 19:54:57 by acaceres         ###   ########.fr       */
+/*   Updated: 2025/05/25 21:22:25 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,8 @@ int	key_press(int key, void *param)
 	}
 	if (key == XK_Escape)
 	{
-		//free_parsing(cub, 0);
+		free_cub(&cub);
+		exit(1);
 	}
 	select_key_w_s_a_d_e_q(cub, key);
 	select_key_0_to_9(cub, key);

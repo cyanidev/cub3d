@@ -6,7 +6,7 @@
 /*   By: afelicia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 22:01:19 by afelicia          #+#    #+#             */
-/*   Updated: 2025/05/25 20:16:50 by acaceres         ###   ########.fr       */
+/*   Updated: 2025/05/25 21:26:00 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ t_win	*new_window(void *mlx, t_resolution res, char *title)
 	result = malloc(sizeof(t_win));
 	if (!result)
 		return (NULL);
+	ft_bzero(result, sizeof(t_win));
 	result->mlx_win = mlx_new_window(mlx, res.width, res.height, title);
 	if (!result->mlx_win)
 		return (NULL);

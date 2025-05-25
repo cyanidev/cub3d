@@ -6,7 +6,7 @@
 /*   By: Andie <Andie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 21:15:29 by afelicia          #+#    #+#             */
-/*   Updated: 2025/05/25 20:56:57 by acaceres         ###   ########.fr       */
+/*   Updated: 2025/05/25 21:46:25 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,11 @@ void	set_cub_screen(t_cub *cub)
 	cub->map_editor = map_editor();
 	cub->game_mode = GAME;
 	cub->player = new_player(NULL);
+	if (cub->player == NULL)
+	{
+		free_cub(&cub);
+		exit(1);
+	}
 	calculate_deltas(cub->player,
 		&cub->p_deltas, &cub->fov1_deltas, &cub->fov2_deltas);
 	cub->fov1_screen.pz = (float)(((float)(cub->main_window->res.width + 2)
@@ -103,5 +108,6 @@ int	main(int argc, char **argv)
 	cub->game_mode = GAME;
 	mlx_loop_hook(cub->mlx, frame, cub);
 	mlx_loop(cub->mlx);
+	free_cub(&cub);
 	return (0);
 }

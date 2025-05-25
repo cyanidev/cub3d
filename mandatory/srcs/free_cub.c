@@ -6,7 +6,7 @@
 /*   By: acaceres <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 16:51:38 by acaceres          #+#    #+#             */
-/*   Updated: 2025/05/25 20:52:23 by acaceres         ###   ########.fr       */
+/*   Updated: 2025/05/25 21:54:39 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 static void	ft_pfree(void **p)
 {
+	if (p == NULL)
+		return ;
 	if (*p == NULL)
 		return ;
 	free(*p);
@@ -25,9 +27,14 @@ void	free_player(t_player *player)
 {
 	if (player == NULL)
 		return ;
-	ft_pfree((void **)&player->camera->screen->pixels);
-	ft_pfree((void **)&player->camera->screen);
-	ft_pfree((void **)&player);
+	if (player->camera && player->camera->screen && player->camera->screen->pixels)
+		ft_pfree((void **)&player->camera->screen->pixels);
+	if (player->camera && player->camera->screen)
+		ft_pfree((void **)&player->camera->screen);
+	if (player->camera)
+		ft_pfree((void **)&player->camera);
+	if (player)
+		ft_pfree((void **)&player);
 }
 
 void	free_cub(t_cub **cub)

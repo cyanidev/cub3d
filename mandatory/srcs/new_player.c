@@ -6,7 +6,7 @@
 /*   By: Andie <Andie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 19:42:39 by Andie             #+#    #+#             */
-/*   Updated: 2025/03/08 22:04:10 by Andie            ###   ########.fr       */
+/*   Updated: 2025/05/25 21:49:08 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,13 @@ t_player	*new_player(t_camera *camera)
 	if (!result)
 		return (NULL);
 	if (!camera)
+	{
 		result->camera = new_camera(point(0, 0), 90, 90, NULL);
+		if (result->camera == NULL)
+			return (NULL);
+	}
 	result->update = NULL;
 	result->start = NULL;
-	if (!result->camera)
-	{
-		free(result);
-		return (NULL);
-	}
 	return (result);
 }
 
