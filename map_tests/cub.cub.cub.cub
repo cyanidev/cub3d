@@ -1,0 +1,21 @@
+   WE                            textures/broken-brick.xpm 
+NO      textures/broken-brick.xpm 
+
+
+
+SO textures/broken-brick.xpm 
+
+F 0, 102, 51
+
+EA textures/broken-brick.xpm 
+
+
+
+C      102,    51,     0
+
+1111111111111111111111111
+10S0110000100000000000001
+1000110000000000111111001
+1000110000000000110001001
+1000000000100000000001001
+1111111111111111111111111
