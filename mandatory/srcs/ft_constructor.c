@@ -6,7 +6,7 @@
 /*   By: Andie <Andie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 21:15:48 by afelicia          #+#    #+#             */
-/*   Updated: 2025/05/22 19:51:11 by acaceres         ###   ########.fr       */
+/*   Updated: 2025/05/25 19:11:49 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,15 +38,14 @@ int	init_gen_struct(t_cub *cub, char **argv)
 {
 	cub->mlx = mlx_init();
 	if (!cub->mlx)
-		return (i_g_s_error(cub)); //liberar malloc de cub y salir clean 
+		return (free_cub(&cub), 0/*i_g_s_error(cub)*/); //liberar malloc de cub y salir clean 
 	if (parsingmap(argv, cub) == 0) //---> 
 	{
-		//liberar cub mlx
-		return (i_g_s_error(cub)); //free mlx free cub
+		return (0);
 	}
 	if (!open_wall_tex(cub))
 	{
-		return (i_g_s_error(cub));
+		return (0);
 	}
 	return (1);
 }
@@ -58,15 +57,13 @@ int	init_gen_struct(t_cub *cub, char **argv)
 	After bzero every error in funtion have to use the ft_freeGenStruct
 	or error handling and return NULL after that
 */
-t_cub	*ft_constructor(char **argv)
+int	ft_constructor(char **argv, t_cub **result)
 {
-	t_cub	*result;
-
-	result = malloc(sizeof(t_cub));
-	if (!result)
-		return (NULL);
-	ft_bzero(result, sizeof(t_cub));
-	if (!init_gen_struct(result, argv))
-		return (NULL);
-	return (result);
+	*result = malloc(sizeof(t_cub));
+	if (!*result)
+		return (0);
+	ft_bzero(*result, sizeof(t_cub));
+	if (!init_gen_struct(*result, argv))
+		return (0);
+	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: acaceres <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 15:36:39 by acaceres          #+#    #+#             */
-/*   Updated: 2025/05/24 15:41:23 by acaceres         ###   ########.fr       */
+/*   Updated: 2025/05/25 17:32:36 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,6 @@ typedef struct s_win_hooks
 typedef struct s_win
 {
 	void			*mlx_win;
-	void			*data;
 	t_resolution	res;
 	unsigned int	id;
 }				t_win;

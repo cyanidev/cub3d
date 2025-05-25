@@ -6,7 +6,7 @@
 /*   By: Andie <Andie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 21:15:39 by afelicia          #+#    #+#             */
-/*   Updated: 2025/03/08 21:24:36 by Andie            ###   ########.fr       */
+/*   Updated: 2025/05/25 18:13:42 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 #include "cub_render.h"
 #include <time.h>
 
-int	i_g_s_error(t_cub *cub)
-{
-	free_gen_struct(cub);
-	return (0);
-}
+//int	i_g_s_error(t_cub *cub)
+//{
+//	//free_gen_struct(cub);
+//	return (0);
+//}

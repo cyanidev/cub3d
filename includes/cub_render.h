@@ -6,7 +6,7 @@
 /*   By: acaceres <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 15:38:05 by acaceres          #+#    #+#             */
-/*   Updated: 2025/05/24 17:39:59 by acaceres         ###   ########.fr       */
+/*   Updated: 2025/05/25 18:40:56 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ int	i_g_s_error(t_cub *cub);
 
 //INIT
 int		open_wall_tex(t_cub *cub);
-t_cub		*ft_constructor(char **argv);
+int		ft_constructor(char **argv, t_cub **result);
 t_img		*open_img(void *mlx, char *path);
 
 //HOOKS
@@ -186,6 +186,9 @@ t_cub_ray	*cub_cast_ray(t_cub *cub, float angle, float distance);
 // MAIN UTILS
 void		check_program_args(int argc);
 void		set_img_and_hooks(t_cub *cub);
+
+// FREE CUB
+void		free_cub(t_cub **cub);
 
 
 # endif

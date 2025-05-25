@@ -6,7 +6,7 @@
 /*   By: Andie <Andie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 21:15:29 by afelicia          #+#    #+#             */
-/*   Updated: 2025/05/24 15:34:19 by acaceres         ###   ########.fr       */
+/*   Updated: 2025/05/25 19:11:12 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,9 +50,12 @@ void	set_cub_screen(t_cub *cub)
 
 void	set_cub_data(t_cub **cub, char **argv)
 {
-	*cub = ft_constructor(argv);
-	if (!(*cub))
+	int	n;
+
+	n = ft_constructor(argv, cub);
+	if (n == 0)
 	{
+		free_cub(cub);
 		if (write(2, "Error: cannot initialize the general struct\n", 45) == -1)
 			exit(1);
 		exit(1);
@@ -61,7 +64,7 @@ void	set_cub_data(t_cub **cub, char **argv)
 			resolution(1000, 1000), "main_window");
 	if (!(*cub)->main_window)
 	{
-		free_gen_struct(*cub);
+		//free_gen_struct(*cub);
 		exit(-1);
 	}
 }

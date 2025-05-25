@@ -6,7 +6,7 @@
 #    By: Andie <Andie@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/05 01:22:18 by samusanc          #+#    #+#              #
-#    Updated: 2025/05/24 22:27:19 by afelicia         ###   ########.fr        #
+#    Updated: 2025/05/25 17:13:06 by acaceres         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -79,6 +79,7 @@ SRCS = 		./T-Engine/color/color.c \
 			./mandatory/srcs/error_handling.c \
 			./mandatory/srcs/frame_update.c \
 			./mandatory/srcs/free_gen_struct.c \
+			./mandatory/srcs/free_cub.c \
 			./mandatory/srcs/ft_constructor.c \
 			./mandatory/srcs/game_mode.c \
 			./mandatory/srcs/get_dist_delt.c \
@@ -120,12 +121,12 @@ build/%.o: %.c
 	@mkdir -p $(dir $@)
 	$(CC) $(CFLAGS) -c $< -o $@ $(HEADERS)
 
-CFLAGS = -Wall -Werror -Wextra -g3 #-fsanitize=address #-mavx #-ggbd3
+CFLAGS = -Wall -Werror -Wextra -g3 #-fsanitize=address
 LDFLAGS = -L./minilibx-linux -lmlx -lXext -lX11 -lXcursor -lXrender -lXfixes -lm -lz -lbsd
 
 
 #compiler
-CC = gcc
+CC = cc
 
 #force remove
 RM = rm -f

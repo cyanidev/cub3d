@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 14:03:11 by andie             #+#    #+#             */
-/*   Updated: 2025/05/24 21:19:38 by afelicia         ###   ########.fr       */
+/*   Updated: 2025/05/25 18:55:03 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ int	parsingmap(char **argv, t_cub *cub)
 	}
 	a = fill_structure(cub, &cubp);
 	printf("fill es %i", a);
-	if (fill_structure(cub, &cubp) == 0)
+	if (a == 0)
 	{
 		free_parsing(&cubp);
 		return (0);

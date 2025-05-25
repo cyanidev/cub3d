@@ -1,0 +1,10 @@
+F 220,100,0
+C 225,30,0
+NO ./textures/front.xpm
+SO ./textures/grey.xpm
+WE ./textures/blue.xpm
+EA ./textures/moss.xpm
+
+11111111
+100000S1
+11111111
