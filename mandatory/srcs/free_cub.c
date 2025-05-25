@@ -6,7 +6,7 @@
 /*   By: acaceres <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 16:51:38 by acaceres          #+#    #+#             */
-/*   Updated: 2025/05/25 19:10:38 by acaceres         ###   ########.fr       */
+/*   Updated: 2025/05/25 20:52:23 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,21 +21,13 @@ static void	ft_pfree(void **p)
 	*p = NULL;
 }
 
-void	free_cub_img(t_img *img)
-{
-	if (img == NULL)
-		return ;
-	if (img->path != NULL)
-		printf("img->path: %s\n", img->path);
-}
-
 void	free_player(t_player *player)
 {
 	if (player == NULL)
 		return ;
-	//ft_pfree((void **)&player->camera->screen->pixels);
-	//ft_pfree((void **)&player->camera->screen);
-	//ft_pfree((void **)&player);
+	ft_pfree((void **)&player->camera->screen->pixels);
+	ft_pfree((void **)&player->camera->screen);
+	ft_pfree((void **)&player);
 }
 
 void	free_cub(t_cub **cub)
@@ -47,12 +39,21 @@ void	free_cub(t_cub **cub)
 		return ;
 	if (tmp->mlx && tmp->main_window && tmp->main_window->mlx_win)
 		mlx_destroy_window(tmp->mlx, tmp->main_window->mlx_win);
-	ft_pfree((void **)&tmp->editor_img);
-	ft_pfree((void **)&tmp->game_img);
-	ft_pfree((void **)&tmp->minimap_img);
-	ft_pfree((void **)&tmp->test_tex);
+	ft_pfree((void **)&tmp->main_window);
+	free_tab((void **)tmp->map);
+	free_img(tmp->editor_img, tmp->mlx);
+	free_img(tmp->game_img, tmp->mlx);
+	free_img(tmp->minimap_img, tmp->mlx);
+	free_img(tmp->test_tex, tmp->mlx);
+	free_img(tmp->north, tmp->mlx);
+	free_img(tmp->south, tmp->mlx);
+	free_img(tmp->east, tmp->mlx);
+	free_img(tmp->west, tmp->mlx);
+	ft_pfree((void **)&tmp->north_path);
+	ft_pfree((void **)&tmp->south_path);
+	ft_pfree((void **)&tmp->east_path);
+	ft_pfree((void **)&tmp->west_path);
 	free_player(tmp->player);
-	free_cub_img(tmp->north);
 	mlx_destroy_display(tmp->mlx);
 	ft_pfree((void **)&tmp->mlx);
 	ft_pfree((void **)&tmp);

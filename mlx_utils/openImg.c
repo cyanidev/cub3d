@@ -1,42 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putPixel.c                                      :+:      :+:    :+:   */
+/*   openImg.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: samusanc <samusanc@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/09 16:56:01 by samusanc          #+#    #+#             */
-/*   Updated: 2024/08/09 18:55:05 by samusanc         ###   ########.fr       */
+/*   Updated: 2025/05/25 20:33:29 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mlx_utils.h"
 
-static t_img	*free_open_img(t_img *img)
+static t_img	*free_open_img(t_img *img, void *mlx)
 {
-	free_img(img);
+	free_img(img, mlx);
 	return (NULL);
 }
 
 static t_img	*open_img_utils(t_img *img, void *mlx, char *path)
 {
-	char	*tmp;
 
-	tmp = NULL;
 	img->img = mlx_xpm_file_to_image(mlx, path, (int *)&img->resolution.width, (int *)&img->resolution.height);
 	if (!img->img)
-		return (free_open_img(img));
+		return (free_open_img(img, mlx));
 	img->data_addr = mlx_get_data_addr(img->img, &(img->bits_per_pixel),
 			&(img->line_size), &(img->endian));
 	if (!img->data_addr)
-		return (free_open_img(img));
+		return (free_open_img(img, mlx));
 	img->pixel_addr = (int *)mlx_get_data_addr(img->img, &(img->bits_per_pixel),
 			&(img->line_size), &(img->endian));
 	if (!img->pixel_addr)
-		return (free_open_img(img));
-	tmp = ft_strdup(path);
-	if (!tmp)
-		return (free_open_img(img));
+		return (free_open_img(img, mlx));
 	return (img);
 }
 

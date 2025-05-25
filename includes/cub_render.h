@@ -6,7 +6,7 @@
 /*   By: acaceres <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 15:38:05 by acaceres          #+#    #+#             */
-/*   Updated: 2025/05/25 18:40:56 by acaceres         ###   ########.fr       */
+/*   Updated: 2025/05/25 20:25:06 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -189,6 +189,9 @@ void		set_img_and_hooks(t_cub *cub);
 
 // FREE CUB
 void		free_cub(t_cub **cub);
+
+// CLEAN CLOSE
+void	free_tab(void **tab);
 
 
 # endif

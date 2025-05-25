@@ -1,31 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putPixel.c                                      :+:      :+:    :+:   */
+/*   freeImg.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: samusanc <samusanc@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/09 16:56:01 by samusanc          #+#    #+#             */
-/*   Updated: 2024/08/09 18:55:05 by samusanc         ###   ########.fr       */
+/*   Updated: 2025/05/25 20:54:21 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mlx_utils.h"
 
-void	free_img(t_img *img)
+void	free_img(t_img *img, void *mlx)
 {
-	if (img)
-	{
-		if (img->img)
-			free(img->img);
-		if (img->path)
-			free(img->path);
-		if (img->data_addr)
-			free(img->data_addr);
-		if (img->pixel_addr)
-			free(img->pixel_addr);
-		ft_bzero(img, sizeof(t_img));
-		free(img);
-	}
+	if (!img)
+		return ;
+	if (img->path)
+		free(img->path);
+	if (img->img)
+		mlx_destroy_image(mlx, img->img);
+	ft_bzero(img, sizeof(t_img));
+	free(img);
 }
-

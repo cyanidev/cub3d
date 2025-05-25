@@ -6,7 +6,7 @@
 /*   By: samusanc <samusanc@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 13:22:04 by samusanc          #+#    #+#             */
-/*   Updated: 2024/08/11 13:22:07 by samusanc         ###   ########.fr       */
+/*   Updated: 2025/05/25 20:34:43 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ typedef struct s_img{
 	float			alpha;
 }				t_img;
 
-void	free_img(t_img *img);
+void	free_img(t_img *img, void *mlx);
 void	fill_img(t_img *img, t_color color);
 t_img	*init_img(void *mlx, t_resolution res);
 t_img	*open_img(void *mlx, char *path);

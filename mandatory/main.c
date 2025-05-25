@@ -6,7 +6,7 @@
 /*   By: Andie <Andie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 21:15:29 by afelicia          #+#    #+#             */
-/*   Updated: 2025/05/25 19:11:12 by acaceres         ###   ########.fr       */
+/*   Updated: 2025/05/25 20:56:57 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,8 @@ void	set_cub_data(t_cub **cub, char **argv)
 			resolution(1000, 1000), "main_window");
 	if (!(*cub)->main_window)
 	{
-		//free_gen_struct(*cub);
+		free_cub(cub);
+		printf("At exit on the cub main window fails\n");
 		exit(-1);
 	}
 }
