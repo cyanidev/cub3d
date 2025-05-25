@@ -6,7 +6,7 @@
 /*   By: Andie <Andie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 19:42:13 by Andie             #+#    #+#             */
-/*   Updated: 2025/05/25 22:41:53 by acaceres         ###   ########.fr       */
+/*   Updated: 2025/05/25 23:13:25 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ t_action	*new_action_obj(void)
 	if (!result)
 		return (NULL);
 	ft_bzero(result, sizeof(t_action));
-	result->del = del_action_obj;
+	result->del = (void *)del_action_obj;
 	result->triggered = NULL;
 	result->ongoing = NULL;
 	return (result);

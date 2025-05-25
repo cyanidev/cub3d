@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_math.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: samusanc <samusanc@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: acaceres <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/14 15:23:14 by samusanc          #+#    #+#             */
-/*   Updated: 2024/08/14 15:56:31 by samusanc         ###   ########.fr       */
+/*   Created: 2025/05/25 22:57:08 by acaceres          #+#    #+#             */
+/*   Updated: 2025/05/25 23:01:54 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@
 # include <math.h>
 # include <limits.h>
 # include "Q_rsqrt.h"
-
 
 long double	ft_abs(long double n);
 

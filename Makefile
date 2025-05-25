@@ -3,26 +3,21 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: Andie <Andie@student.42.fr>                +#+  +:+       +#+         #
+#    By: acaceres <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/08/05 01:22:18 by samusanc          #+#    #+#              #
-#    Updated: 2025/05/25 22:44:06 by acaceres         ###   ########.fr        #
+#    Created: 2025/05/25 23:00:43 by acaceres          #+#    #+#              #
+#    Updated: 2025/05/25 23:01:15 by acaceres         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-
-#Program Name
 NAME = cub3D
 
-#libft
 LIB_PATH = libft/
 LIB_NAME = libft.a
 LIB = $(LIB_PATH)$(LIB_NAME)
 
-#headers
 HEADERS = -I ./includes/ -I ./libft/includes/ -I./mlx_utils/includes/ -I./minilibx-linux/ -I./T-Engine/includes/ -I./ft_math/includes/	
 
-#sources (command find to locate all source files in folders)
 SRCS = 		./T-Engine/color/color.c \
 			./T-Engine/geometry/line.c \
 			./T-Engine/geometry/point.c \
@@ -107,7 +102,6 @@ SRCS = 		./T-Engine/color/color.c \
 			./mlx_utils/putPixel.c 
 
 
-#create object files
 OBJS = $(SRCS:%.c=build/%.o)
 
 build/%.o: %.c
@@ -146,13 +140,11 @@ RESET = \033[0m
 
 ###################################################################
 
-#compiles both the lib and the program
 all: $(LIB) $(NAME) 
 
 $(LIB): 
 	@$(MAKE) -C $(LIB_PATH)
 
-#compiles the program by linking the object files with the libraries and outputting an ex file
 $(NAME): $(OBJS)
 
 	@mkdir -p build
@@ -174,24 +166,16 @@ $(NAME): $(OBJS)
 	@echo "${RED}  👉 usage: $$./cub3D map.cub${RESET}\n"
 
 
-#removes all objects files
 clean:
 	@$(RM) -rf build
 	@$(MAKE) clean -C ${LIB_PATH}
 	@echo "${LGREEN}Objects cleaned from ${WHITE}${CURDIR}${RESET}"
 
-#calls the clean rule also removes executable file
 fclean: clean
 	${RM} $(NAME)
 	${RM} $(LIB_PATH)$(LIB_NAME)
 	@echo "${LRED}Binary ${LYELLOW}${NAME} ${LRED}has been deleted....${RESET}"
 
-#removes all and compiles program
 re: fclean all
 
-
-
-#Defines a list of targets that do not correspond to files(make will always 
-#execute the recipes for these targets, even if there are files or directories
-#with the same names)
 .PHONY: all clean fclean re title

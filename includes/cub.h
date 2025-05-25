@@ -103,4 +103,7 @@ typedef struct s_cub
 	void				(*del)();
 }					t_cub;
 
+t_map_editor	map_editor(void);
+t_resolution	resolution(unsigned int width, unsigned int height);
+
 #endif

@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 00:59:44 by andie             #+#    #+#             */
-/*   Updated: 2025/05/10 17:49:30 by acaceres         ###   ########.fr       */
+/*   Updated: 2025/05/25 23:40:23 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,5 @@ int	fill_textures(t_cubp *cubp, char *line, int i)
 		if (!cubp->east_path)
 			return (0);
 	}
-	else
-		return (0);
 	return (1);
 }

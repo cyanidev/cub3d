@@ -6,7 +6,7 @@
 /*   By: afelicia <afelicia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 21:45:22 by afelicia          #+#    #+#             */
-/*   Updated: 2025/05/24 22:25:55 by afelicia         ###   ########.fr       */
+/*   Updated: 2025/05/25 23:32:37 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static ssize_t	arr_len(char **arr)
 
 static char	**copy_arr(char **arr)
 {
-	char **narr;
+	char	**narr;
 	ssize_t	len;
 	int		i;
 
