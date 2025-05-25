@@ -6,7 +6,7 @@
 /*   By: acaceres <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 22:58:53 by acaceres          #+#    #+#             */
-/*   Updated: 2025/05/25 22:58:54 by acaceres         ###   ########.fr       */
+/*   Updated: 2025/05/25 23:56:42 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 # define IMAGE_H
 # include "libft.h"
 
-
-typedef struct s_img{
+typedef struct s_img
+{
 	char			*path;
 	char			*data_addr;
 	void			*img;

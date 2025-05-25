@@ -6,7 +6,7 @@
 /*   By: acaceres <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 22:59:40 by acaceres          #+#    #+#             */
-/*   Updated: 2025/05/25 22:59:40 by acaceres         ###   ########.fr       */
+/*   Updated: 2025/05/25 23:54:45 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 void	put_pixel(t_img *img, t_point pixel)
 {
 	unsigned int	*dst;
-	float		pixel_i;
+	float			pixel_i;
 
 	if (pixel.px >= 0 && pixel.py >= 0 && pixel.px < img->resolution.width && \
 	pixel.py < img->resolution.height && pixel.py)

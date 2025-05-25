@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 14:03:11 by andie             #+#    #+#             */
-/*   Updated: 2025/05/25 18:55:03 by acaceres         ###   ########.fr       */
+/*   Updated: 2025/05/25 23:48:10 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int	init_parsing_info(t_cubp *cubp)
 int	parsingmap(char **argv, t_cub *cub)
 {
 	t_cubp	cubp;
-	int a;
+	int		a;
 
 	init_parsing_info(&cubp);
 	if (parsing(&cubp, argv) == 0)

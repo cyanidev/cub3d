@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 00:35:37 by andie             #+#    #+#             */
-/*   Updated: 2025/05/10 13:56:40 by acaceres         ###   ########.fr       */
+/*   Updated: 2025/05/25 23:47:47 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,8 @@ int	parse_map(char *path, t_cubp *cubp)
 	column = 0;
 	cubp->map_info.lines = file_lines(path);
 	cubp->map_info.path = path;
-	cubp->map_info.file = ft_calloc(cubp->map_info.lines + 1, sizeof(char *)); //1 malloc
+	cubp->map_info.file = ft_calloc(cubp->map_info.lines + 1,
+			sizeof(char *));
 	if (cubp->map_info.file == NULL)
 		return (print_msg("Malloc failed.", 0));
 	cubp->map_info.fd = open(path, O_RDONLY);

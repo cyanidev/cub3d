@@ -6,7 +6,7 @@
 /*   By: acaceres <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 22:58:00 by acaceres          #+#    #+#             */
-/*   Updated: 2025/05/25 22:58:01 by acaceres         ###   ########.fr       */
+/*   Updated: 2025/05/25 23:54:09 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,11 +63,6 @@ static void	bb_init(t_bb *bb, t_point f, t_point s)
 	bb->line.b = s;
 }
 
-void	ft_draw_pixel(t_point pt, t_img *img)
-{
-	put_pixel(img, pt);
-}
-
 void	draw_line(t_point f, t_point s, t_img *map_display)
 {
 	t_bb		bb;
@@ -78,7 +73,7 @@ void	draw_line(t_point f, t_point s, t_img *map_display)
 	while (1)
 	{
 		ft_clone(&tmp, bb.line, bb.x0, bb.y0);
-		ft_draw_pixel(tmp, map_display);
+		put_pixel(map_display, tmp);
 		if (bb.x0 == bb.x1 && bb.y0 == bb.y1)
 			break ;
 		e2 = 2 * bb.err;

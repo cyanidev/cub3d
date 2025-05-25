@@ -6,7 +6,7 @@
 /*   By: acaceres <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 22:57:38 by acaceres          #+#    #+#             */
-/*   Updated: 2025/05/25 22:57:39 by acaceres         ###   ########.fr       */
+/*   Updated: 2025/05/25 23:41:46 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,14 +70,14 @@ int	fill_info(t_cubp *cubp, char **map)
 int	parsing(t_cubp *cubp, char **argv)
 {
 	if (check_file(argv[1]) == 0)
-		return (print_msg("Invalid file", 0));//--hasta aqui retorna 0 y se libera cub, aqui cubp no tiene malloc
-	if (parse_map(argv[1], cubp) == 0)//ok
+		return (print_msg("Invalid file", 0));
+	if (parse_map(argv[1], cubp) == 0)
 		return (0);
-	if (fill_info(cubp, cubp->map_info.file) == 0)//ok
+	if (fill_info(cubp, cubp->map_info.file) == 0)
 		return (0);
-	if (check_map(cubp, cubp->map) == 0)//ok
+	if (check_map(cubp, cubp->map) == 0)
 		return (0);
-	if (check_texture(cubp) == 0)//ok
+	if (check_texture(cubp) == 0)
 		return (0);
 	player_dir(cubp);
 	return (1);

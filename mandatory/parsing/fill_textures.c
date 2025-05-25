@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 00:59:44 by andie             #+#    #+#             */
-/*   Updated: 2025/05/25 23:40:23 by acaceres         ###   ########.fr       */
+/*   Updated: 2025/05/25 23:45:02 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,8 @@ int	ft_isprint_no_ws(int c)
 	return (0);
 }
 
-int	fill_textures(t_cubp *cubp, char *line, int i)
+int	fill_north_and_south(t_cubp *cubp, char *line, int i)
 {
-	if (line[i + 2] && ft_isprint_no_ws(line[i + 2]))
-		return (0);
 	if (line[i] == 'N' && line[i + 1] == 'O' && !cubp->north_path)
 	{
 		cubp->north_path = texture_path(line, i + 2);
@@ -64,7 +62,12 @@ int	fill_textures(t_cubp *cubp, char *line, int i)
 		if (!cubp->south_path)
 			return (0);
 	}
-	else if (line[i] == 'W' && line[i + 1] == 'E' && !cubp->west_path)
+	return (1);
+}
+
+int	fill_east_and_west(t_cubp *cubp, char *line, int i)
+{
+	if (line[i] == 'W' && line[i + 1] == 'E' && !cubp->west_path)
 	{
 		cubp->west_path = texture_path(line, i + 2);
 		if (!cubp->west_path)
@@ -76,5 +79,16 @@ int	fill_textures(t_cubp *cubp, char *line, int i)
 		if (!cubp->east_path)
 			return (0);
 	}
+	return (1);
+}
+
+int	fill_textures(t_cubp *cubp, char *line, int i)
+{
+	if (line[i + 2] && ft_isprint_no_ws(line[i + 2]))
+		return (0);
+	if (fill_north_and_south(cubp, line, i) == 0)
+		return (0);
+	if (fill_east_and_west(cubp, line, i) == 0)
+		return (0);
 	return (1);
 }

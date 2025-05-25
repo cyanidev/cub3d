@@ -6,7 +6,7 @@
 /*   By: acaceres <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 22:59:59 by acaceres          #+#    #+#             */
-/*   Updated: 2025/05/25 22:59:59 by acaceres         ###   ########.fr       */
+/*   Updated: 2025/05/25 23:55:17 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ static t_img	*free_open_img(t_img *img, void *mlx)
 
 static t_img	*open_img_utils(t_img *img, void *mlx, char *path)
 {
-
-	img->img = mlx_xpm_file_to_image(mlx, path, (int *)&img->resolution.width, (int *)&img->resolution.height);
+	img->img = mlx_xpm_file_to_image(mlx, path,
+			(int *)&img->resolution.width, (int *)&img->resolution.height);
 	if (!img->img)
 		return (free_open_img(img, mlx));
 	img->data_addr = mlx_get_data_addr(img->img, &(img->bits_per_pixel),

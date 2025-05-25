@@ -6,7 +6,7 @@
 /*   By: acaceres <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 16:51:38 by acaceres          #+#    #+#             */
-/*   Updated: 2025/05/25 21:54:39 by acaceres         ###   ########.fr       */
+/*   Updated: 2025/05/25 23:49:29 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ void	free_player(t_player *player)
 {
 	if (player == NULL)
 		return ;
-	if (player->camera && player->camera->screen && player->camera->screen->pixels)
+	if (player->camera && player->camera->screen
+		&& player->camera->screen->pixels)
 		ft_pfree((void **)&player->camera->screen->pixels);
 	if (player->camera && player->camera->screen)
 		ft_pfree((void **)&player->camera->screen);

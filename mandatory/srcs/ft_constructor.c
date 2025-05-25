@@ -6,7 +6,7 @@
 /*   By: Andie <Andie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 21:15:48 by afelicia          #+#    #+#             */
-/*   Updated: 2025/05/25 20:39:36 by acaceres         ###   ########.fr       */
+/*   Updated: 2025/05/25 23:48:53 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,20 +33,15 @@ int	open_wall_tex(t_cub *cub)
 	return (1);
 }
 
-
 int	init_gen_struct(t_cub *cub, char **argv)
 {
 	cub->mlx = mlx_init();
 	if (!cub->mlx)
-		return (free_cub(&cub), 0/*i_g_s_error(cub)*/); //liberar malloc de cub y salir clean 
-	if (parsingmap(argv, cub) == 0) //---> 
-	{
+		return (free_cub(&cub), 0);
+	if (parsingmap(argv, cub) == 0)
 		return (0);
-	}
 	if (!open_wall_tex(cub))
-	{
 		return (0);
-	}
 	return (1);
 }
 
