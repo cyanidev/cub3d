@@ -6,7 +6,7 @@
 #    By: acaceres <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/25 23:00:43 by acaceres          #+#    #+#              #
-#    Updated: 2025/05/25 23:01:15 by acaceres         ###   ########.fr        #
+#    Updated: 2025/05/26 00:36:48 by acaceres         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -108,7 +108,7 @@ build/%.o: %.c
 	@mkdir -p $(dir $@)
 	$(CC) $(CFLAGS) -c $< -o $@ $(HEADERS)
 
-CFLAGS = -Wall -Werror -Wextra -g3 #-fsanitize=address
+CFLAGS = -Wall -Werror -Wextra -g3# -fsanitize=address
 LDFLAGS = -L./minilibx-linux -lmlx -lXext -lX11 -lXcursor -lXrender -lXfixes -lm -lz -lbsd
 
 

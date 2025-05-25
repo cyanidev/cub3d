@@ -6,7 +6,7 @@
 /*   By: acaceres <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 15:32:03 by acaceres          #+#    #+#             */
-/*   Updated: 2025/05/25 22:40:20 by acaceres         ###   ########.fr       */
+/*   Updated: 2025/05/26 00:40:48 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,13 @@ void	set_img_and_hooks(t_cub *cub)
 	cub->minimap_img = init_img(cub->mlx, resolution(
 				cub->main_window->res.height * 0.1,
 				cub->main_window->res.height * 0.1));
+}
+
+int	window_close_hook(void *arg)
+{
+	t_cub	*cub;
+
+	cub = (t_cub *)arg;
+	free_cub(&cub);
+	exit (1);
 }

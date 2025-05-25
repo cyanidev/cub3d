@@ -6,12 +6,13 @@
 /*   By: Andie <Andie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 21:15:29 by afelicia          #+#    #+#             */
-/*   Updated: 2025/05/25 22:40:09 by acaceres         ###   ########.fr       */
+/*   Updated: 2025/05/26 00:40:45 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mlx.h"
 #include "cub.h"
+#include "helper.h"
 #include "cub_render.h"
 #include <time.h>
 
@@ -105,6 +106,7 @@ int	main(int argc, char **argv)
 	cub->near_plane = 0.0f;
 	cub->max_dist = 1.684f;
 	cub->game_mode = GAME;
+	mlx_hook(cub->main_window->mlx_win, 17, 0, &window_close_hook, (void *)cub);
 	mlx_loop_hook(cub->mlx, frame, cub);
 	mlx_loop(cub->mlx);
 	free_cub(&cub);

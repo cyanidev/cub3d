@@ -32,26 +32,6 @@ typedef struct s_helper
 	float	y_prop;
 	float	aspect_ratio;
 }		t_helper;
-/*
-typedef struct s_rcast
-{
-	size_t	number_of_rays;
-	size_t	iterator;
-	float	start_angle;
-	float	multiplier;
-	float	max_dist;
-}		t_rcast;
-*/
-/*
-typedef struct s_dwall
-{
-	int		wall_height;
-	float	dist;
-	float	tmp2;
-	float	res_height;
-	double	last_time;
-}		t_dwall;
-*/
 
 typedef struct s_drwall
 {
@@ -93,5 +73,7 @@ typedef struct s_rwall
 	float		wall_n;
 	float		wall_height;
 }		t_rwall;
+
+int	window_close_hook(void *arg);
 
 #endif
