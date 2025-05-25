@@ -6,7 +6,7 @@
 /*   By: acaceres <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/10 17:59:52 by acaceres          #+#    #+#             */
-/*   Updated: 2025/05/25 20:58:51 by acaceres         ###   ########.fr       */
+/*   Updated: 2025/05/25 21:12:29 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ static void	set_rays(t_cub *cub, t_ccr *ccr, float angle)
 
 static void	set_result(t_ccr *ccr)
 {
+	ccr->screen_dist = 0;
 	ccr->hypo = distance_between_points(ccr->player, ccr->ray);
 	ccr->result->x = (int)ccr->ray.px;
 	ccr->result->real_x = ccr->ray.px;
