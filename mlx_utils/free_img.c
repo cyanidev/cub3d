@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   resolution.h                                       :+:      :+:    :+:   */
+/*   free_img.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acaceres <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/25 22:54:32 by acaceres          #+#    #+#             */
-/*   Updated: 2025/05/25 22:54:32 by acaceres         ###   ########.fr       */
+/*   Created: 2025/05/25 23:00:09 by acaceres          #+#    #+#             */
+/*   Updated: 2025/05/25 23:00:09 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef RESOLUTION_H
-# define RESOLUTION_H
+#include "mlx_utils.h"
 
-typedef struct s_resolution
+void	free_img(t_img *img, void *mlx)
 {
-	unsigned int	width;
-	unsigned int	height;
-}		t_resolution;
-
-// set resolution by hand
-t_resolution	resolution(unsigned int width, unsigned int height);
-
-// set the resolution by aspect ratio
-t_resolution	set_res_by_a_r(char *aspect_ratio);
-
-#endif
+	if (!img)
+		return ;
+	if (img->path)
+		free(img->path);
+	if (img->img)
+		mlx_destroy_image(mlx, img->img);
+	ft_bzero(img, sizeof(t_img));
+	free(img);
+}

@@ -6,13 +6,13 @@
 /*   By: acaceres <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 22:58:28 by acaceres          #+#    #+#             */
-/*   Updated: 2025/05/25 22:58:29 by acaceres         ###   ########.fr       */
+/*   Updated: 2025/05/26 16:53:15 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PIXEL_H
 # define PIXEL_H
-# include "T_Engine.h"
+# include "engine.h"
 # include "mlx.h"
 # include "libft.h"
 # include "image.h"

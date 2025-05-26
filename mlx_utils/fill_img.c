@@ -1,22 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   resolution.c                                       :+:      :+:    :+:   */
+/*   fill_img.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acaceres <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/25 22:56:10 by acaceres          #+#    #+#             */
-/*   Updated: 2025/05/25 22:56:11 by acaceres         ###   ########.fr       */
+/*   Created: 2025/05/25 22:58:13 by acaceres          #+#    #+#             */
+/*   Updated: 2025/05/25 22:58:13 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "resolution.h"
+#include "mlx_utils.h"
 
-t_resolution	resolution(unsigned int width, unsigned int height)
+void	fill_img(t_img *img, t_color color)
 {
-	t_resolution	result;
+	unsigned int	i;
+	unsigned int	j;
 
-	result.width = width;
-	result.height = height;
-	return (result);
+	i = 0;
+	j = 0;
+	while (i != img->resolution.height)
+	{
+		j = 0;
+		while (j != img->resolution.width)
+		{
+			put_pixel(img, color_point(point(j, i), color));
+			++j;
+		}
+		i++;
+	}
 }

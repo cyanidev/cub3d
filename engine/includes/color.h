@@ -6,7 +6,7 @@
 /*   By: acaceres <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 22:53:52 by acaceres          #+#    #+#             */
-/*   Updated: 2025/05/25 22:53:52 by acaceres         ###   ########.fr       */
+/*   Updated: 2025/05/26 16:40:23 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,6 @@ typedef enum e_colors
 	BLUE
 }			t_colors;
 
-/*
-  The alpha value goes from 0 to 1 
-  where 0 is completely transparent and 1 not transparent at all.
-*/
 typedef struct s_color
 {
 	unsigned int		hex;

@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fillImg.c                                          :+:      :+:    :+:   */
+/*   resolution.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acaceres <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/25 22:58:13 by acaceres          #+#    #+#             */
-/*   Updated: 2025/05/25 22:58:13 by acaceres         ###   ########.fr       */
+/*   Created: 2025/05/25 22:54:32 by acaceres          #+#    #+#             */
+/*   Updated: 2025/05/26 16:47:23 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "mlx_utils.h"
+#ifndef RESOLUTION_H
+# define RESOLUTION_H
 
-void	fill_img(t_img *img, t_color color)
+typedef struct s_resolution
 {
-	unsigned int	i;
-	unsigned int	j;
+	unsigned int	width;
+	unsigned int	height;
+}		t_resolution;
 
-	i = 0;
-	j = 0;
-	while (i != img->resolution.height)
-	{
-		j = 0;
-		while (j != img->resolution.width)
-		{
-			put_pixel(img, color_point(point(j, i), color));
-			++j;
-		}
-		i++;
-	}
-}
+// set resolution by hand
+t_resolution	resolution(unsigned int width, unsigned int height);
+
+// set the resolution by aspect ratio
+t_resolution	set_res_by_a_r(char *aspect_ratio);
+
+#endif

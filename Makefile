@@ -6,7 +6,7 @@
 #    By: acaceres <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/25 23:00:43 by acaceres          #+#    #+#              #
-#    Updated: 2025/05/26 00:36:48 by acaceres         ###   ########.fr        #
+#    Updated: 2025/05/26 16:58:40 by acaceres         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,13 +16,13 @@ LIB_PATH = libft/
 LIB_NAME = libft.a
 LIB = $(LIB_PATH)$(LIB_NAME)
 
-HEADERS = -I ./includes/ -I ./libft/includes/ -I./mlx_utils/includes/ -I./minilibx-linux/ -I./T-Engine/includes/ -I./ft_math/includes/	
+HEADERS = -I ./includes/ -I ./libft/includes/ -I./mlx_utils/includes/ -I./minilibx-linux/ -I./engine/includes/ -I./ft_math/includes/	
 
-SRCS = 		./T-Engine/color/color.c \
-			./T-Engine/geometry/line.c \
-			./T-Engine/geometry/point.c \
-			./T-Engine/geometry/normalize.c \
-			./T-Engine/screen/resolution.c \
+SRCS = 		./engine/color/color.c \
+			./engine/geometry/line.c \
+			./engine/geometry/point.c \
+			./engine/geometry/normalize.c \
+			./engine/screen/resolution.c \
 			./ft_math/ft_abs.c \
 			./ft_math/Q_rsqrt.c \
 			./mandatory/controls/hooks.c \
@@ -93,13 +93,13 @@ SRCS = 		./T-Engine/color/color.c \
 			./mandatory/srcs/render_img.c \
 			./mandatory/srcs/rotate_point.c \
 			./mandatory/srcs/draw_wall.c \
-			./mlx_utils/drawLine.c \
-			./mlx_utils/fillImg.c \
-			./mlx_utils/freeImg.c \
-			./mlx_utils/initImg.c \
+			./mlx_utils/draw_line.c \
+			./mlx_utils/fill_img.c \
+			./mlx_utils/free_img.c \
+			./mlx_utils/init_img.c \
 			./mlx_utils/mlx_main.c \
-			./mlx_utils/openImg.c \
-			./mlx_utils/putPixel.c 
+			./mlx_utils/open_img.c \
+			./mlx_utils/put_pixel.c 
 
 
 OBJS = $(SRCS:%.c=build/%.o)
@@ -108,14 +108,12 @@ build/%.o: %.c
 	@mkdir -p $(dir $@)
 	$(CC) $(CFLAGS) -c $< -o $@ $(HEADERS)
 
-CFLAGS = -Wall -Werror -Wextra -g3# -fsanitize=address
+CFLAGS = -Wall -Werror -Wextra
 LDFLAGS = -L./minilibx-linux -lmlx -lXext -lX11 -lXcursor -lXrender -lXfixes -lm -lz -lbsd
 
 
-#compiler
 CC = cc
 
-#force remove
 RM = rm -f
 
 #########################COLORS####################################
@@ -178,4 +176,12 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re title
+asan: fclean
+asan: CFLAGS += -g3 -fsanitize=address
+asan: all
+
+g: fclean
+g: CFLAGS += -g3
+g: all
+
+.PHONY: all clean fclean re title asan g
