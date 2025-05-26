@@ -6,7 +6,7 @@
 #    By: acaceres <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/25 23:00:43 by acaceres          #+#    #+#              #
-#    Updated: 2025/05/26 16:58:40 by acaceres         ###   ########.fr        #
+#    Updated: 2025/05/26 17:02:26 by acaceres         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ SRCS = 		./engine/color/color.c \
 			./engine/geometry/normalize.c \
 			./engine/screen/resolution.c \
 			./ft_math/ft_abs.c \
-			./ft_math/Q_rsqrt.c \
+			./ft_math/q_rsqrt.c \
 			./mandatory/controls/hooks.c \
 			./mandatory/main.c \
 			./mandatory/main_utils.c \
@@ -97,7 +97,6 @@ SRCS = 		./engine/color/color.c \
 			./mlx_utils/fill_img.c \
 			./mlx_utils/free_img.c \
 			./mlx_utils/init_img.c \
-			./mlx_utils/mlx_main.c \
 			./mlx_utils/open_img.c \
 			./mlx_utils/put_pixel.c 
 
