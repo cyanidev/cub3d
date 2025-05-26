@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   key_events.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Andie <Andie@student.42.fr>                +#+  +:+       +#+        */
+/*   By: afelicia <afelicia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 19:41:50 by Andie             #+#    #+#             */
-/*   Updated: 2025/05/26 00:18:43 by acaceres         ###   ########.fr       */
+/*   Updated: 2025/05/26 18:18:03 by afelicia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ void	select_key_w_s_a_d_e_q(t_cub *cub, int key)
 		k_a(cub);
 	if (key == XK_d)
 		k_d(cub);
-	if (key == XK_e)
+	if (key == XK_Right)
 		k_e(cub);
-	if (key == XK_q)
+	if (key == XK_Left)
 		k_q(cub);
 }
 

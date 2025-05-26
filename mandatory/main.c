@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Andie <Andie@student.42.fr>                +#+  +:+       +#+        */
+/*   By: afelicia <afelicia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 21:15:29 by afelicia          #+#    #+#             */
-/*   Updated: 2025/05/26 00:40:45 by acaceres         ###   ########.fr       */
+/*   Updated: 2025/05/26 18:11:09 by afelicia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,8 +61,6 @@ void	set_cub_data(t_cub **cub, char **argv)
 	if (n == 0)
 	{
 		free_cub(cub);
-		if (write(2, "Error: cannot initialize the general struct\n", 45) == -1)
-			exit(1);
 		exit(1);
 	}
 	(*cub)->main_window = new_window((*cub)->mlx,
@@ -71,7 +69,7 @@ void	set_cub_data(t_cub **cub, char **argv)
 	{
 		free_cub(cub);
 		printf("At exit on the cub main window fails\n");
-		exit(-1);
+		exit(1);
 	}
 }
 
@@ -79,7 +77,7 @@ void	set_cub_player(t_cub *cub)
 {
 	cub->player->camera->pos.px = cub->parsing_px;
 	cub->player->camera->pos.py = cub->parsing_py;
-	cub->player->camera->fov = 46;
+	cub->player->camera->fov = 45;
 	cub->wall_height = 2.0f;
 	cub->height_multiplier = 0.027255f;
 	cub->player->camera->pos.pz = cub->player->camera->fov

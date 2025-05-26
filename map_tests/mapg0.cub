@@ -1,17 +1,17 @@
-   WE                            textures/broken-brick.xpm 
-NO      textures/broken-brick-2.xpm
+   WE                            textures/wood.xpm 
+NO      textures/wood.xpm
 
 
 
-SO textures/broken-brick-3.xpm
+SO textures/wood.xpm
 
-F   69, 222, 199
+F   145, 84, 44
 
-EA textures/broken-brick-4.xpm
+EA textures/wood.xpm
 
 
 
-C 235, 198, 52
+C 103, 168, 84
 
 111111111111111111111111
 100000000000000000000001

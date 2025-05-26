@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_constructor.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Andie <Andie@student.42.fr>                +#+  +:+       +#+        */
+/*   By: afelicia <afelicia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 21:15:48 by afelicia          #+#    #+#             */
-/*   Updated: 2025/05/25 23:48:53 by acaceres         ###   ########.fr       */
+/*   Updated: 2025/05/26 17:46:19 by afelicia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,6 @@ int	init_gen_struct(t_cub *cub, char **argv)
 	ft_constructor
 	Allocates the hole struct, use bzero to NULL every element, 
 	then initialize every single one of them with custom funtions.
-	After bzero every error in funtion have to use the ft_freeGenStruct
-	or error handling and return NULL after that
 */
 int	ft_constructor(char **argv, t_cub **result)
 {
