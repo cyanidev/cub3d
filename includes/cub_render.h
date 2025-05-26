@@ -77,9 +77,6 @@ typedef struct s_dwall_helper
 	float	angle;
 }				t_dwall_helper;
 
-// ERRORS
-int			i_g_s_error(t_cub *cub);
-
 // INIT
 int			open_wall_tex(t_cub *cub);
 int			ft_constructor(char **argv, t_cub **result);

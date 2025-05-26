@@ -22,7 +22,7 @@ int	key_press_game(int key, t_cub *cub)
 	return (1);
 }
 
-void	select_key_w_s_a_d_e_q(t_cub *cub, int key)
+void	select_key_w_s_a_d_l_r(t_cub *cub, int key)
 {
 	if (key == XK_w)
 		k_w(cub);
@@ -36,30 +36,6 @@ void	select_key_w_s_a_d_e_q(t_cub *cub, int key)
 		k_e(cub);
 	if (key == XK_Left)
 		k_q(cub);
-}
-
-void	select_key_0_to_9(t_cub *cub, int key)
-{
-	if (key == XK_0)
-		k_0(cub);
-	if (key == XK_1)
-		cub->height_multiplier -= 0.0001f;
-	if (key == XK_2)
-		cub->height_multiplier += 0.001f;
-	if (key == XK_3)
-		cub->wall_height -= 0.001f;
-	if (key == XK_4)
-		cub->wall_height += 0.001f;
-	if (key == XK_5)
-		cub->max_dist -= 0.01f;
-	if (key == XK_6)
-		cub->max_dist += 0.01f;
-	if (key == XK_7)
-		cub->ambient_occlusion += 0.01f;
-	if (key == XK_8)
-		cub->ambient_occlusion -= 0.01f;
-	if (key == XK_9)
-		k_9(cub);
 }
 
 int	key_press(int key, void *param)
@@ -79,8 +55,7 @@ int	key_press(int key, void *param)
 		free_cub(&cub);
 		exit(1);
 	}
-	select_key_w_s_a_d_e_q(cub, key);
-	select_key_0_to_9(cub, key);
+	select_key_w_s_a_d_l_r(cub, key);
 	if (cub->game_mode == GAME)
 		key_press_game(key, cub);
 	if (cub->game_mode == EDITOR)

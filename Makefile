@@ -68,7 +68,6 @@ SRCS = 		./engine/color/color.c \
 			./mandatory/srcs/draw_sky_n_ground.c \
 			./mandatory/srcs/draw_square.c \
 			./mandatory/srcs/editor_mode.c \
-			./mandatory/srcs/error_handling.c \
 			./mandatory/srcs/frame_update.c \
 			./mandatory/srcs/free_gen_struct.c \
 			./mandatory/srcs/free_cub.c \
